@@ -1,0 +1,176 @@
+<html>
+  <head>
+    <title>computer store</title>
+      <link rel="stylesheet" href="css/all.min.css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <nav class="hover-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+   </nav>
+
+  <div id="search" class="w-100 mt-4 text-center">
+    <input id="input-search" type="text" name="search" placeholder="Search">
+    <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
+    <p id="text-error" class="text-error"></p>
+
+  </div>
+
+  <div id="productPrice" class="w-100 mt-3 text-center">
+    <input id="input-productprice" type="number" name="search" placeholder="product price">
+    <i id="icon-productprice" class="fa-solid fa-magnifying-glass"></i>
+ </div>
+
+ 
+ <div id="container" class="container-fiuld">
+  <div class="row position-relative display-flex justify-content-around">
+    <div class="card col-md-3">
+       <div class="card-side position-absolute top-0 start-0 w-100 front">
+       <img src="img/rams(1).png" width="100%" height="100%" alt="ram">
+    </div>
+      <div class="card-side col-md-4 p-4 position-absolute top-0 start-0 w-100 back">
+        <img src="img/rams.png" width="100%" height="100%" alt="ram">
+      </div>
+    </div>
+
+    <div class="card col-md-3">
+      <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
+       <img src="img/mouses.png" width="100%" height="100%" alt="mouse">
+      </div>
+     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img src="img/mouses(1).png" width="100%" height="100%" alt="mouse">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
+       <img src="img/keyboards.png" width="100%" height="100%" alt="keyboard">
+      </div>
+     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img src="img/keyboards(1).png" width="100%" height="100%" alt="keyboard">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
+       <img src="img/hard disks.png" width="100%" height="100%" alt="hard disk">
+      </div>
+   <div class="card-side  p-4 position-absolute top-0 start-0 w-100 back">
+       <img src="img/hard disks(2).png" width="100%" height="100%" alt="hard disk">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
+       <img src="img/Graphics cards.png" width="100%" height="100%" alt="graphics card">
+      </div>
+     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img src="img/Graphics cards(1).png" width="100%" height="100%" alt="graphics card">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
+       <img src="img/computer monitor(0).png" width="100%" height="100%" alt="computer monitor">
+      </div>
+     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img src="img/computer monitors(1).png" width="100%" height="100%" alt="computer monitor">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
+       <img src="img/matherboards.png" width="100%" height="100%" alt="mather board">
+       </div>
+       <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img src="img/matherboards(1).png" width="100%" height="100%" alt="mather board">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
+       <img src="img/headphones.png" width="100%" height="100%" alt="headphones">
+      </div>
+     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img src="img/headphones(0).png" width="100%" height="100%" alt="headphones">
+     </div>
+   </div>
+
+</div>
+</div>
+
+
+<div class="container-fiuld">
+  <div id="store-products" class="rom d-flex justify-content-evenly">
+
+  </div>       
+
+  <div class="container-fiuld">
+    <div class="mt-5" id="products-carts">
+  
+    </div>                      
+</div>
+
+</div>
+  <div class="containe">
+    <input type="checkbox" name="menu" id="menu" class="menu-toggler">
+    <label for="menu" class="menu-toggler-label">Store products</label>
+    <ul id="stagger-menu" class="stagger-menu">
+      <li style="--i: 0"><button id="ali-products" class="mouse-cursor-gradient-tracking"><span>Ali Product</span></button></li>
+      <li style="--i: 1"><button class=" mouse-cursor-gradient-tracking"><span class="btn-products-store">computer monitor</span></button></li>
+      <li style="--i: 2"><button class=" mouse-cursor-gradient-tracking"><span class="btn-products-store">mouse</span></button></li>
+      <li style="--i: 3"><button class=" mouse-cursor-gradient-tracking"><span class="btn-products-store">keyboard</span></button></li>
+      <li style="--i: 4"><button class=" mouse-cursor-gradient-tracking"><span class="btn-products-store">ram</span></button></li>
+      <li style="--i: 5"><button class=" mouse-cursor-gradient-tracking"><span class="btn-products-store">hard disk</span></button></li>
+      <li style="--i: 6"><button class=" mouse-cursor-gradient-tracking"><span class="btn-products-store">mather board</span></button></li>
+      <li style="--i: 7"><button class=" mouse-cursor-gradient-tracking"><span class="btn-products-store">head phones</span></button></li>
+      <li style="--i: 8"><button class=" mouse-cursor-gradient-tracking"><span class="btn-products-store">graphics card</span></button></li>
+   </ul>
+</div>
+
+<button id="total-money"></button>
+
+<div id="purchase-data"> 
+    <h4>first name : mohmed</h4>
+    <h4>last name : khalad</h4>
+    <h4>eamil : mo237372@gamil.com</h4>
+
+  <form>
+   <input class="inputs" name="card-number" type="text" placeholder="card number"> 
+    <input class="inputs" name="number-phone" type="text" placeholder="number phone"> 
+    <img src="img/card-mastercard.svg" class="mt-3" width="7%">
+    <img src="img/card-visa.svg" class="mt-3" width="7%">
+    <img src="img/card-discover.svg" class="mt-3" width="7%">
+    <img src="img/card-amex.svg" class="mt-3" width="7%">
+    <input class="inputs" name="card-number" type="number" placeholder="Discount coupon"> 
+    <button class="btn-Final-purchase">buy</button>
+
+ </form>
+</div>  
+
+<div id="lightbox-container" class="d-fle align-items-center justify-content-center position-fixed top-0 bottom-0 start-0 end-0">
+    <div id="lightbox-item" class="d-fle col-sm-6 align-items-center justify-content-between position-relative "> 
+        <i id="close" class="far fa-times-circle fa-2x position-absolute top-0 end-0 mt-2 me-2"></i>
+        <i id="prev" class="far fa-arrow-alt-circle-left fa-2x mx-3"></i>
+        <i id="next" class="far fa-arrow-alt-circle-right fa-2x mx-3"></i>
+    </div>
+</div>
+
+
+   
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="js/code.jquery.com_jquery-3.7.0.js"></script>
+  <script src="js/main.js"></script>
+  
+
+</body>
