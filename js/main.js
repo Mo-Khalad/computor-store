@@ -1,4 +1,6 @@
 // * Api *
+
+
 const mouse1 = {
     name: "mouse",
     type: "R8 Mouse Gaming 1623 RGB Black",
@@ -144,22 +146,22 @@ const mouse1 = {
   const keyboard1 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (1).jpg",
+    imges: "img/keyboard(1).jpg",
     salary: 150,
   };const keyboard2 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (2).jpg",
+    imges: "img/keyboard(2).jpg",
     salary: 150,
   };const keyboard3 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (3).jpg",
+    imges: "img/keyboard(3).jpg",
     salary:250,
   };const keyboard4 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (4).jpg",
+    imges: "img/keyboard(4).jpg",
     salary:250,
   };const keyboard5 = {
     name: "keyboard",
@@ -169,13 +171,13 @@ const mouse1 = {
   };const keyboard6 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (6).jpg",
+    imges: "img/keyboard(6).jpg",
     salary: 250,
   };
   const keyboard7 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (7).jpg",
+    imges: "img/keyboard(7).jpg",
     salary: 150,
   };
   const keyboard8 = {
@@ -187,103 +189,103 @@ const mouse1 = {
   const keyboard9 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (9).jpg",
+    imges: "img/keyboard(9).jpg",
     salary: 400,
   };
   const keyboard10 = {
-    name: "kedboard",
-    type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (10).jpg",
+    name:"keyboard",
+    type:"Standard Wired Keyboard PT-201",
+    imges:"img/keyboard(10).jpg",
     salary: 350,
   };
   const keyboard11 = {
     name: "keyboard",
     type: "Logitech Wireless Keyboard For All - MK540",
-    imges: "img/keyboard (11).jpg",
+    imges: "img/keyboard(11).jpg",
     salary: 250,
   };
   const keyboard12 = {
     name: "keyboard",
     type: "HyperX Alloy OriginsTM 60 Mechanical Gaming Keyboard",
-    imges: "img/keyboard (12).jpg",
+    imges: "img/keyboard(12).jpg",
     salary: 200,
   };
   const keyboard13 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (13).jpg",
+    imges: "img/keyboard(13).jpg",
     salary: 400,
   };
   const keyboard14 = {
     name: "keyboard",
     type: "HyperX Alloy OriginsTM 60 Mechanical Gaming Keyboard",
-    imges: "img/keyboard (14).jpg",
+    imges: "img/keyboard(14).jpg",
     salary: 500,
   };
   const keyboard15 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (15).jpg",
+    imges: "img/keyboard(15).webp",
     salary: 100,
   };
   const keyboard16 = {
     name: "keyboard",
     type: "HyperX Alloy OriginsTM 60 Mechanical Gaming Keyboard",
-    imges: "img/keyboard (16).jpg",
+    imges: "img/keyboard(16).jpg",
     salary: 50,
   };
   const keyboard17 = {
     name: "keyboard",
     type: "Logitech Wireless Keyboard For All - MK540",
-    imges: "img/keyboard (17).jpg",
+    imges: "img/keyboard(17).jpg",
     salary: 100,
   };
   const keyboard18 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (18).jpg",
+    imges: "img/keyboard(18).jpg",
     salary: 450,
   };
   const keyboard19 = {
     name: "keyboard",
     type: "HyperX Alloy OriginsTM 60 Mechanical Gaming Keyboard",
-    imges: "img/keyboard (19).jpg",
+    imges: "img/keyboard(19).jpg",
     salary: 400,
   };
   const keyboard20 = {
     name: "keyboard",
     type: "Logitech Wireless Keyboard For All - MK540",
-    imges: "img/keyboard (20).jpg",
+    imges: "img/keyboard(20).jpg",
     salary: 500,
   };
   const keyboard21 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (21).jpg",
+    imges: "img/keyboard(21).jpg",
     salary: 300,
   };
   const keyboard22 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (22).jpg",
+    imges: "img/keyboard(22).jpg",
     salary: 200,
   };
   const keyboard23 = {
     name: "keyboard",
     type: "Logitech Wireless Keyboard For All - MK540",
-    imges: "img/keyboard (23).jpg",
+    imges: "img/keyboard(23).jpg",
     salary: 100,
   };
   const keyboard24 = {
     name: "keyboard",
     type: "Standard Wired Keyboard PT-201",
-    imges: "img/keyboard (24).jpg",
+    imges: "img/keyboard(24).jpg",
     salary: 150,
   };
   const keyboard25 = {
     name: "keyboard",
     type: "Logitech Wireless Keyboard For All - MK540",
-    imges: "img/keyboard (25).jpg",
+    imges: "img/keyboard(25).jpg",
     salary: 100,
   };
   
@@ -912,73 +914,73 @@ const mouse1 = {
   const matherBoard4 = {
     name: "mather board",
     type: "ASUS PRIME H510M-E LGA1200 Micro ATX Motherboard",
-    imges: "img/matherboard(4).jpg",
+    imges:"img/matherboard(4).jpg",
     salary: 4000,
   };
   const matherBoard5 = {
     name: "mather board",
     type: "ASUS INTEL PRIME H510M-K micro ATX MOTHERBOARD",
-    imges: "img/matherboard(5).jpg",
+    imges: "img/matherboard(5).png",
     salary: 3600,
   };
   const matherBoard6 = {
     name: "mather board",
     type: "ASUS PRIME H510M-E LGA1200 Micro ATX Motherboard",
-    imges: "img/matherboard(6).jpg",
+    imges: "img/matherboard(6).png",
     salary: 3200,
   };
   const matherBoard7 = {
     name: "mather board",
     type: "ASUS INTEL PRIME H510M-K micro ATX MOTHERBOARD",
-    imges: "img/matherboard(7).jpg",
+    imges: "img/matherboard(7).jpeg",
     salary: 3100,
   };
   const matherBoard8 = {
     name: "mather board",
     type: "Gigabyte B450M GAMING (rev. 1.x) Motherboard",
-    imges: "img/matherboard(8).jpg",
+    imges: "img/matherboard(8).png",
     salary: 2750,
   };
   const matherBoard9 = {
     name: "mather board",
     type: "ASUS PRIME H510M-E LGA1200 Micro ATX Motherboard",
-    imges: "img/matherboard(9).jpg",
+    imges: "img/matherboard(9).png",
     salary: 3500,
   };
   const matherBoard10 = {
     name: "mather board",
     type: "Gigabyte B450M GAMING (rev. 1.x) Motherboard",
-    imges: "img/matherboard(10).jpg",
+    imges: "img/matherboard(10).png",
     salary: 3300,
   };
   const matherBoard11 = {
     name: "mather board",
     type: "ASUS PRIME H510M-E LGA1200 Micro ATX Motherboard",
-    imges: "img/matherboard(11).jpg",
+    imges: "img/matherboard(11).png",
     salary: 1850,
   };
   const matherBoard12 = {
     name: "mather board",
     type: "Gigabyte B450M GAMING (rev. 1.x) Motherboard",
-    imges: "img/matherboard(12).jpg",
+    imges: "img/matherboard(12).png",
     salary: 3500,
   };
   const matherBoard13 = {
     name: "mather board",
     type: "ASUS PRIME H510M-E LGA1200 Micro ATX Motherboard",
-    imges: "img/matherboard(13).jpg",
+    imges: "img/matherboard(13).png",
     salary: 3250,
   };
   const matherBoard14 = {
     name: "mather board",
     type: "Motherboard GIGABYTE Intel B660M D2H DDR4",
-    imges: "img/matherboard(14).jpg",
+    imges: "img/matherboard(14).png",
     salary: 1300,
   };
   const matherBoard15 = {
     name: "mather board",
     type: "ASUS PRIME H510M-E LGA1200 Micro ATX Motherboard",
-    imges: "img/matherboard(15).jpg",
+    imges:"img/matherboard(15).png",
     salary: 2400,
   };
   const matherBoard16 = {
@@ -990,7 +992,7 @@ const mouse1 = {
   const matherBoard17 = {
     name: "mather board",
     type: "Motherboard GIGABYTE Intel B660M D2H DDR4",
-    imges: "img/matherboard(17).jpg",
+    imges: "img/matherboard(17).png",
     salary: 3500,
   };
   const matherBoard18 = {
@@ -1210,9 +1212,15 @@ const mouse1 = {
   hardDisk20,mouse20,graphicsCard17,keyboard5,matherBoard22,headPhones22,hardDisk21,hardDisk22,ram23,matherBoard23,computerMonitor22,mouse23,
   keyboard3,computerMonitor23,graphicsCard18,hardDisk23,keyboard2,matherBoard24,keyboard1,hardDisk24,graphicsCard19,ram24,headPhones23,
   computerMonitor24,mouse14,keyboard11,hardDisk25,keyboard18,keyboard12,computerMonitor25,mouse17,keyboard13,mouse15,ram25,graphicsCard20,
-  mouse12,keyboard16,headPhones24,matherBoard25,graphicsCard21,mouse7,keyboard15,headPhones25,mouse9,keyboard25, graphicsCard22,
+  mouse12,keyboard16,headPhones24,matherBoard25,graphicsCard21,mouse7,keyboard15,headPhones25,mouse9,keyboard25,graphicsCard22,keyboard4,
   ];
 
+  const hoverNav=document.querySelector(".hover-nav")
+  const navBtns=document.querySelectorAll(".nav-btns")
+
+
+  const carsSoppingTtotal=document.getElementById("cars-sopping-total")
+  const inputName=document.getElementById("input-name")
   const storeProducts = document.getElementById("store-products");
   const closeIcon = document.getElementById("close");
   const lightboxContainer = document.getElementById("lightbox-container");
@@ -1228,49 +1236,162 @@ const mouse1 = {
   const inputSearch = document.getElementById("input-search");
   const iconSearch = document.getElementById("icon-search");
   const inputProductPrice = document.getElementById("input-productprice");
-  const iconProductPrice = document.getElementById("icon-productprice");
-  const productsCarts = document.getElementById("products-carts");
+  const iconProductPrice = document.getElementById("icon-productprice")
+  const productsCarts= document.getElementById("products-carts");
   const purchaseData=document.getElementById("purchase-data");
   const totalMoney = document.getElementById("total-money");
   const aliProducts = document.getElementById("ali-products");
   const btnMouseCursor= document.getElementsByClassName("mouse-cursor-gradient-tracking");
   const iconSoppingCars = document.getElementsByClassName("iconSoppingCars");
   const textError = document.getElementById("text-error");
+  const menuTogglerLabel =document.getElementById("menu-toggler-label");
   let btnBuyProduct = document.querySelector(".btn-buy");
+  const navHome=document.getElementById("nav-home");
+  const navLogIn=document.getElementById("nav-logIn")
+  const inputPassword=document.getElementById("input-password");
+  const error=document.getElementById("Error");
+  const btnLogIn=document.getElementById("btn-logIn");
+  const pageLogIn=document.getElementById("page-logIn");
+  const pageSignIn=document.getElementById("page-signIn")
+  const navSignUp=document.getElementById("nav-signIn")
+  const btnRegister=document.getElementById("btn-register")
+  const btnLoginSignIn=document.getElementById("btn-logIn-signUp")
+  const navbar=document.querySelector(".navbar") 
+  const search=document.getElementById("search")
+  const productPrice=document.getElementById("productPrice")
+  const firstName=document.getElementById("first-name")
+  const lastName=document.getElementById("last-name");
+  const age=document.getElementById("age")
+  const passwordSignUp=document.getElementById("password-signUp");
+  const emailSignUp=document.getElementById("email-signUp");
+  const email=document.getElementById("email");
+  const errorLogin=document.getElementById("Error-login")
+  const pContent=document.getElementById("p-content")
   let ShowSomeProducts = computerStore.filter((element, i) => i < 52);
-  let homePageProducts = ShowSomeProducts;
+  let homePageProducts=computerStore;
   let indexs;
   let arrayCardsShopping = [];
   let arr = "";
 
+/*
+  let height=$(".navbar").outerHeight()
+  window.onscroll= scroll=()=>{if(this.scrollY>=height)$(".menu-toggler-label").css({"backgroundColor":"#cceaf5","color":"#081722","display":"block"})
+  else if(this.scrollY<=height)$(".menu-toggler-label").css({"backgroundColor":"#081722","color":"#cceaf5","display":"none"})}
+*/
+
+  //*function changing colors and background *
+changingStyle=(element,i,background,color)=>[element[i].style.backgroundColor=background,element[i].style.color=color];
+
+//*changing colors and backgound btn-nav*
+for (let i = 0; i < navBtns.length; i++){
+     navBtns[i].addEventListener("click",()=>{
+     for (let i = 0; i < navBtns.length; i++)changingStyle(navBtns,i,"rgb(204, 234, 245)","#081722")
+     changingStyle(navBtns,i,"#081722","rgb(204, 234, 245)")})
+}
+changingStyle(navBtns,0,"#081722","rgb(204, 234, 245)")
+
+errorsNumbers=(elementOne,elementTwo)=>{
+  passwordRejex=/^[a-zA-A0-9]{4}/
+  if(elementOne.value==="")hide(elementTwo);
+  else if(!passwordRejex.test(elementOne.value))
+  {
+    elementTwo.style.display="flex";
+    elementTwo.innerHTML="must start with at least four letters or numbersr";
+  }
+  else hide(elementTwo)
+ }
+
+ inputPassword.onkeyup=()=>errorsNumbers(inputPassword,error)
+ passwordSignUp.onkeyup=()=>errorsNumbers(passwordSignUp,errorLogin)
+
+ errorsTexts=(elementOne,elementTwo)=>{
+   nameRejex=/^[a-zA-Z]{4,15}$/
+   if(elementOne.value==="")hide(elementTwo)
+   else if(!nameRejex.test(elementOne.value)){
+   elementTwo.style.display="flex";
+   elementTwo.innerHTML="must begin with at least four letters and not begin with a number";
+  }
+  else hide(elementTwo);
+}
+inputName.onkeyup=()=>errorsTexts(inputName,error);
+firstName.onkeyup=()=>errorsTexts(firstName,errorLogin);
+
+navHome.addEventListener("click",()=>displayPage(storeProducts,pageSignIn,pageLogIn,container));
+navLogIn.addEventListener("click",()=>displayPage(pageLogIn,pageSignIn,storeProducts));
+navSignUp.addEventListener("click",()=>displayPage(pageSignIn,pageLogIn,storeProducts));
+btnRegister.addEventListener("click",()=>displayPage(pageSignIn,pageLogIn,storeProducts));
+
+async function chackSignUp(){
+  product={
+      first_name:firstName.value,
+      last_name:lastName.value,
+      email:emailSignUp.value,
+      password:passwordSignUp.value,
+      age:age.value,
+    }
+    let response = await axios.post("https://movies-api.routemisr.com/signup",product);
+    if(response.data.message==="success"){
+    displayPage(pageLogIn,pageSignIn,storeProducts);   
+    }
+    else error.innerHTML=response.data.message;
+    $("#Error-login").show(()=>$("#Error-login").fadeOut(5000));  
+   }
+async function chacklogin(){
+    product={
+    email:email.value,
+    password:inputPassword.value,
+  }
+ let response = await axios.post("https://movies-api.routemisr.com/signin",product);
+ if(response.data.message==="success"){
+   changingStyle(navBtns,3,"#081722","rgb(204, 234, 245)")
+   displayPage(storeProducts,pageLogIn,pageSignIn,container)
+   storeProducts.innerHTML='';
+   displayProduct(homePageProducts);
+   productPrice.style.display="block"; 
+   displayPage(navbar,hoverNav,pageLogIn,search)
+   menuTogglerLabel.style.opacity="1";
+   carsSoppingTtotal.style.display="block";
+  }
+   else $("#Error").fadeIn(()=> $(".Error").fadeOut(5000));
+   error.innerHTML=response.data.message;
+}
+btnLogIn.addEventListener("click",chacklogin)
+btnLoginSignIn.addEventListener("click",chackSignUp)
+
 // * display functions *
+displayPage=(show,hide,hide2,show2)=>{
+  container.style.display="none";
+  hide.style.display="none";
+  show.style.display="flex";
+  hide2.style.display="none";
+  show2.style.display="block";
+}
 displayProduct=(element)=>{
-     clearProductsCarts();
-     hideBtnTotalMoney();
-     hidePurchaseData();
-    if(element.length===52)
-     {
+productsCarts.style.display="none";
+     hide(totalMoney);
+     hide(purchaseData);
+     clearStoreProducts();
+    if(element.length===52) {
       for(let i=0; i<element.length;i++){
       storeProducts.innerHTML+=`
-      <div class="products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
+      <div class="position-relative products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
       <img class="img" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
-      <button id="btn" onclick="displayProductDetails(${i})" class="button-shrink">buy</button>
+      <button id="btn" onclick="displayProductError(${i})" class="button-shrink">buy</button>
+      <p class="position-absolute content">Log in</P>
       <h3> name : ${element[i].name} </h3>
       <h3 class="h3-salary"> Salary : ${element[i].salary} EGP</h3>
-      <i id="iconSoppingCars" onclick="addProductsOnTheShoppingCar(${i})" class="iconSoppingCars fa-solid fa-cart-shopping"></i>
       </div> `  
+       Content=document.querySelectorAll(".content");  
     }
   }
-    else{
-     for(let i=0; i<element.length;i++){
-     storeProducts.innerHTML+= `<div class="products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
+    else{ 
+      for(let i=0; i<element.length;i++){
+      storeProducts.innerHTML+= ` <div class="products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
       <img class="img" onclick="displayProductImage(${i})" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
       <button id="btn" onclick="displayProductDetails(${i})" class="button-shrink">buy</button>
       <h3>name : ${element[i].name}</h3>
       <h3 class="h3-salary">Salary : ${element[i].salary} EGP</h3>
-      <i onclick="addProductsOnTheShoppingCar(${i})"class="iconSoppingCars fa-solid fa-cart-shopping"></i>
-      </div>`
-   }
+      <i onclick="addProductsOnTheShoppingCar(${i})"class="iconSoppingCars fa-solid fa-cart-shopping"></i></div>`}
    } 
 }
 displayBtns=()=>{
@@ -1286,29 +1407,26 @@ displayBtns=()=>{
    }
 }
 displayProductDetails=(index)=>{
-    clear();
-    clearContanier();
-    hideBtnTotalMoney();
-    hidePurchaseData();
-    clearProductsCarts();
+    clearStoreProducts();
+    hide(totalMoney);
    storeProducts.innerHTML+=`<div class="products5 col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
-   <img class="img" src="${homePageProducts[index].imges}" width="100%" height="100%" alt="${homePageProducts[index].name}">
-   </div>
-   <div class="salary-type">
-   <P class="type">${homePageProducts[index].type}</p>
-   <h5>Salary : ${homePageProducts[index].salary} EGP</h5>
-   </div>
+   <img class="img" src="${homePageProducts[index].imges}" width="100%" height="100%" alt="${homePageProducts[index].name}"></div>
+   <div class="salary-type"> <P class="type">${homePageProducts[index].type}</p>
+   <h5>Salary : ${homePageProducts[index].salary} EGP</h5> </div>
    <button class="store button-shrink" onclick="displayAllProducts()">page product</button>
-   <button id="buyProduct" class="btn-buy button-shrink" onclick="displayProductsBuyPage(${index})" >buy product</button>
-   </div> 
-   `
+   <button id="buyProduct" class="btn-buy button-shrink" onclick="displayProductsBuyPage(${index})" >buy product</button></div>`
+}
+displayProductError=(index)=>{
+   Content[index].style.display="block";
+   $(".content").slideUp(2000)
 }
 displayPageBuy=element=>{
-    hidePurchaseData();
-    clearProductsCarts();
+    hide(purchaseData);
+    clear(productsCarts);
+    clearStoreProducts();
     let total=Number();
     productsCarts.style.display="block";
- for(let i=0; i<element.length;i++)
+  for(let i=0; i<element.length;i++)
     {
       total+=element[i].salary; 
       productsCarts.innerHTML+=`
@@ -1317,35 +1435,34 @@ displayPageBuy=element=>{
       <div class="name-and-salary"> <h3>${element[i].name} </h3>
       <h3 class="salary-cards">Salary : ${element[i].salary} EGP</h3>
       <button onclick="removeProduct(${i})" class="btn-card-buy  button-shrink">remove</button>
-      </div>
-      </div> `
+      </div> </div> `
     } 
     totalMoney.innerHTML=`total salary : ${total} EGP`;
 }
 displayProductsBuyPage=(index)=>{
-   clear();
    productsCarts.innerHTML="";
    arrayCardsShopping.push(homePageProducts[index])
    showBtnTotalMoney();
+   pContent.innerHTML=arrayCardsShopping.length;
+   carsSoppingTtotal.style.color="#fdbfca";
    displayPageBuy(arrayCardsShopping);
 } 
-displayAllProducts=()=>{
-    clear();
-    homePageProducts=computerStore;
-    displayProduct(homePageProducts);
-}
-displayLightBoxItem=element=>{
-    imgsrc=element;
-    lightboxItem.style.backgroundImage=`url("${imgsrc}")`;
-}
 displayProductImage=i=>{
-    lightboxContainer.style.display="flex"
-    displayLightBoxItem(homePageProducts[i].imges); 
-    indexs=i;
+  lightboxContainer.style.display="flex"
+  displayLightBoxItem(homePageProducts[i].imges); 
+  indexs=i;
 }
+displayAllProducts=()=>displayProduct(homePageProducts);
+displayLightBoxItem=element=>lightboxItem.style.backgroundImage=`url("${element}")`;
+
+carsSoppingTtotal.addEventListener("click",()=>{
+  productsCarts.innerHTML="";
+  showBtnTotalMoney();
+  displayPageBuy(arrayCardsShopping);
+})
 
 // * functions next and prev and close and iconColor and onKeydown*
- getnext=()=>{
+getnext=()=>{ 
     indexs++
     if(indexs===homePageProducts.length)indexs=0;
     displayLightBoxItem(homePageProducts[indexs].imges)
@@ -1356,50 +1473,34 @@ getprev=()=>{
     displayLightBoxItem(homePageProducts[indexs].imges)
 };
 getClose=()=>$("#lightbox-container").hide();
-
 // * onclick functions *
 document.addEventListener("keydown",e=>{
-    if(e.key=='ArrowRight')getnext()
+    if(e.key=='ArrowRight')getnext() 
     else if(e.key=="ArrowLeft")getprev()
     else if(e.key=='Escape')getClose();    
 })
 onclickProduct=element=>{
-     clearProductsCarts();
-       for(let i=0;i<element.length;i++)
-        {
+     clear(productsCarts);
+       for(let i=0;i<element.length;i++){
            element[i].addEventListener("click",()=>{
-            clearContanier();
             arr=element[i].innerHTML;
             homePageProducts=computerStore.filter(element=>element.name==arr);
-            console.log(homePageProducts)
-            clear();
+            clearStoreProducts();
             displayProduct(homePageProducts);      
-         } 
-        )}
+      } 
+    )}
   }
-aliProducts.addEventListener("click",()=>{
-    clear();
-    clearContanier();
-    homePageProducts=computerStore;
-    displayProduct(homePageProducts);  
-  })
+aliProducts.addEventListener("click",()=>displayProduct(homePageProducts=computerStore))
 totalMoney.addEventListener("click",()=>{
-    clear()
-    clearProductsCarts();
     productsCarts.style.display="none";
-    hideBtnTotalMoney(); 
-    if(totalMoney.innerHTML!=='total salary : 0 EGP'){
-      purchaseData.style.display="block";
-    }
+    hide(totalMoney); 
+    if(totalMoney.innerHTML!=='total salary : 0 EGP')purchaseData.style.display="block";
   }) 
 iconSearch.onclick=()=>{
     let values= inputSearch.value;
-     clearSearch();
-     clearProductPrice();     
-     if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyboard"||values==="mather board"||values==="head phones"
-    ||values==="graphics card"||values==="hard disk"){
-      clear();
-      clearContanier();
+     clear(inputSearch);
+     clear(inputProductPrice);     
+     if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyboard"||values==="mather board"||values==="head phones"||values==="graphics card"||values==="hard disk"){
       homePageProducts=computerStore.filter(element=>element.name==values);
       displayProduct(homePageProducts);
     }
@@ -1411,24 +1512,21 @@ iconSearch.onclick=()=>{
   }
 iconProductPrice.addEventListener("click",()=>{
     values=inputProductPrice.value;
+    clearStoreProducts();
+    clear(container);
    if(inputSearch.value==="mouse"||inputSearch.value==="ram"||inputSearch.value==="computer monitor"||inputSearch.value==="keyboard"||inputSearch.value==="mather board"||inputSearch.value==="head phones"
      ||inputSearch.value==="graphics card"||inputSearch.value==="hard disk")
-   {
-    clear();
-    clearContanier();
+   {  
     homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value&&element.name==inputSearch.value);
-    displayProduct(homePageProducts)
+     displayProduct(homePageProducts)
    }
    else if(inputProductPrice.value!=="")
    {
-    clear();
-    clearContanier();
     homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value);
-    console.log(homePageProducts)
     displayProduct(homePageProducts)
    }
-   clearSearch();
-   clearProductPrice();
+   clear(inputSearch);
+   clear(inputProductPrice);
   }
   )
 lightboxContainer.addEventListener('click',e=>{if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon){getClose()}}) 
@@ -1436,41 +1534,31 @@ closeIcon.addEventListener("click",getClose);
 menu.addEventListener("click",displayBtns);
 nextIcon.addEventListener("click",getnext);
 prevIcon.addEventListener("click",getprev);
-
 // * clear functions *
-clear=()=>storeProducts.innerHTML="";
-clearContanier=()=> container.style.display="none"; 
-clearProductsCarts=()=>productsCarts.innerHTML="";
-clearSearch=()=>inputSearch.value="";
-clearProductPrice=()=>inputProductPrice.value="";
+clear=(element)=>element.value="";
+clearStoreProducts=()=>storeProducts.innerHTML="";
+//* hide functions*
+hide=element=>element.style.display="none";
 
-//* hide functions *
-hideProductsCarts=()=>productsCarts.style.display="none";
-hideBtnTotalMoney=()=>totalMoney.style.display="none";
-hidePurchaseData=()=>purchaseData.style.display="none";
-
-// * show functions *
+// * show functions*
 showBtnTotalMoney=()=>totalMoney.style.display="block";
 
 // * add functions *
  addProduct=index=>arrayCardsShopping.push(homePageProducts[index])
  addProductsOnTheShoppingCar=(index)=>{
  addProduct(index);
- iconSoppingCars[index].style.color="#c33764";
+ pContent.innerHTML=arrayCardsShopping.length;
+ iconSoppingCars[index].style.color="#0093E9";
+ carsSoppingTtotal.style.color="#fdbfca";
 }
-
 // * remove functions *
 removeProduct=i=>{
     arrayCardsShopping.splice(i,1);
-    clear();
-    clearProductsCarts(); 
+    clearStoreProducts();
+    pContent.innerHTML=arrayCardsShopping.length;
     displayPageBuy(arrayCardsShopping);
 }
-
 // * run functions *
 onclickProduct(btnProductsStore);
-displayProduct(homePageProducts);
-  
-
-
+displayProduct(ShowSomeProducts)
 
