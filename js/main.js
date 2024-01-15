@@ -1194,8 +1194,7 @@ const mouse1 = {
     imges: "img/ram(25).jpg",
     salary: 400,
   };
-  
-  let computerStore = [
+let computerStore = [
   mouse1,ram1,graphicsCard1,hardDisk1,headPhones1,graphicsCard2,computerMonitor1,mouse2,ram2,headPhones2,mouse3,hardDisk2,headPhones3,
   matherBoard1,graphicsCard3,ram3,hardDisk3,graphicsCard4,matherBoard2,mouse5,headPhones4,graphicsCard5,ram4,computerMonitor3,headPhones5,
   ram5,matherBoard3,hardDisk4,ram6,mouse6,headPhones6,keyboard19,matherBoard4,hardDisk5,ram7,computerMonitor4,matherBoard5,graphicsCard6,
@@ -1214,11 +1213,8 @@ const mouse1 = {
   computerMonitor24,mouse14,keyboard11,hardDisk25,keyboard18,keyboard12,computerMonitor25,mouse17,keyboard13,mouse15,ram25,graphicsCard20,
   mouse12,keyboard16,headPhones24,matherBoard25,graphicsCard21,mouse7,keyboard15,headPhones25,mouse9,keyboard25,graphicsCard22,keyboard4,
   ];
-
   const hoverNav=document.querySelector(".hover-nav")
   const navBtns=document.querySelectorAll(".nav-btns")
-
-
   const carsSoppingTtotal=document.getElementById("cars-sopping-total")
   const inputName=document.getElementById("input-name")
   const storeProducts = document.getElementById("store-products");
@@ -1243,16 +1239,15 @@ const mouse1 = {
   const aliProducts = document.getElementById("ali-products");
   const btnMouseCursor= document.getElementsByClassName("mouse-cursor-gradient-tracking");
   const iconSoppingCars = document.getElementsByClassName("iconSoppingCars");
-  const textError = document.getElementById("text-error");
   const menuTogglerLabel =document.getElementById("menu-toggler-label");
-  let btnBuyProduct = document.querySelector(".btn-buy");
+  const btnBuyProduct = document.querySelector(".btn-buy");
   const navHome=document.getElementById("nav-home");
   const navLogIn=document.getElementById("nav-logIn")
   const inputPassword=document.getElementById("input-password");
   const error=document.getElementById("Error");
   const btnLogIn=document.getElementById("btn-logIn");
   const pageLogIn=document.getElementById("page-logIn");
-  const pageSignIn=document.getElementById("page-signIn")
+  const pageSignUp=document.getElementById("page-signUp")
   const navSignUp=document.getElementById("nav-signIn")
   const btnRegister=document.getElementById("btn-register")
   const btnLoginSignIn=document.getElementById("btn-logIn-signUp")
@@ -1266,22 +1261,19 @@ const mouse1 = {
   const emailSignUp=document.getElementById("email-signUp");
   const email=document.getElementById("email");
   const errorLogin=document.getElementById("Error-login")
-  const pContent=document.getElementById("p-content")
+  const pContent=document.getElementById("p-content");
+  const inputClear=document.querySelectorAll(".input-clear")
+  const aliProductsLlist=document.getElementById("ali-products-list");
   let ShowSomeProducts = computerStore.filter((element, i) => i < 52);
   let homePageProducts=computerStore;
   let indexs;
   let arrayCardsShopping = [];
   let arr = "";
-
-/*
   let height=$(".navbar").outerHeight()
   window.onscroll= scroll=()=>{if(this.scrollY>=height)$(".menu-toggler-label").css({"backgroundColor":"#cceaf5","color":"#081722","display":"block"})
   else if(this.scrollY<=height)$(".menu-toggler-label").css({"backgroundColor":"#081722","color":"#cceaf5","display":"none"})}
-*/
-
-  //*function changing colors and background *
+//*function changing colors and background *
 changingStyle=(element,i,background,color)=>[element[i].style.backgroundColor=background,element[i].style.color=color];
-
 //*changing colors and backgound btn-nav*
 for (let i = 0; i < navBtns.length; i++){
      navBtns[i].addEventListener("click",()=>{
@@ -1289,77 +1281,87 @@ for (let i = 0; i < navBtns.length; i++){
      changingStyle(navBtns,i,"#081722","rgb(204, 234, 245)")})
 }
 changingStyle(navBtns,0,"#081722","rgb(204, 234, 245)")
-
 errorsNumbers=(elementOne,elementTwo)=>{
   passwordRejex=/^[a-zA-A0-9]{4}/
   if(elementOne.value==="")hide(elementTwo);
-  else if(!passwordRejex.test(elementOne.value))
-  {
+  else if(!passwordRejex.test(elementOne.value)){
     elementTwo.style.display="flex";
     elementTwo.innerHTML="must start with at least four letters or numbersr";
-  }
-  else hide(elementTwo)
+  } else hide(elementTwo)
  }
-
- inputPassword.onkeyup=()=>errorsNumbers(inputPassword,error)
- passwordSignUp.onkeyup=()=>errorsNumbers(passwordSignUp,errorLogin)
-
  errorsTexts=(elementOne,elementTwo)=>{
    nameRejex=/^[a-zA-Z]{4,15}$/
    if(elementOne.value==="")hide(elementTwo)
    else if(!nameRejex.test(elementOne.value)){
    elementTwo.style.display="flex";
    elementTwo.innerHTML="must begin with at least four letters and not begin with a number";
-  }
-  else hide(elementTwo);
+  }else hide(elementTwo);
+  return nameRejex;
 }
-inputName.onkeyup=()=>errorsTexts(inputName,error);
-firstName.onkeyup=()=>errorsTexts(firstName,errorLogin);
-
-navHome.addEventListener("click",()=>displayPage(storeProducts,pageSignIn,pageLogIn,container));
-navLogIn.addEventListener("click",()=>displayPage(pageLogIn,pageSignIn,storeProducts));
-navSignUp.addEventListener("click",()=>displayPage(pageSignIn,pageLogIn,storeProducts));
-btnRegister.addEventListener("click",()=>displayPage(pageSignIn,pageLogIn,storeProducts));
-
 async function chackSignUp(){
   product={
-      first_name:firstName.value,
-      last_name:lastName.value,
-      email:emailSignUp.value,
-      password:passwordSignUp.value,
-      age:age.value,
+    first_name:firstName.value,
+    last_name:lastName.value,
+    email:emailSignUp.value,
+    password:passwordSignUp.value,
+    age:age.value,
+  }
+  let response = await axios.post("https://movies-api.routemisr.com/signup",product);
+  for(let i=6;i>2;i--){
+      if(inputClear[i].value===''){
+          errorLogin.innerHTML='';
+          $("#Error-login").show(()=>$("#Error-login").fadeOut(5000)); 
+          errorLogin.innerHTML=`please input ${inputClear[i].placeholder}`;
+     }  
+    else if(inputClear[i].placeholder==inputClear[5].placeholder){
+    if(response.data.message==="success")displayPage(pageLogIn,pageSignUp,storeProducts);
+    else $("#Error-login").show(()=>$("#Error-login").fadeOut(5000)); 
+       errorLogin.innerHTML=response.data.message;
+     }           
+  }
     }
-    let response = await axios.post("https://movies-api.routemisr.com/signup",product);
-    if(response.data.message==="success"){
-    displayPage(pageLogIn,pageSignIn,storeProducts);   
-    }
-    else error.innerHTML=response.data.message;
-    $("#Error-login").show(()=>$("#Error-login").fadeOut(5000));  
-   }
 async function chacklogin(){
     product={
     email:email.value,
     password:inputPassword.value,
   }
  let response = await axios.post("https://movies-api.routemisr.com/signin",product);
- if(response.data.message==="success"){
+ if(response.data.message!=="success"){
+ $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
+ error.innerHTML=response.data.message;
+ } 
+ else if(response.data.message==="success"){
+    if(nameRejex.test(inputName.value)==false)
+  {
+   error.innerHTML="must begin with at least four letters and not begin with a number";
+  $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
+  }
+  else if(nameRejex.test(inputName.value)){ 
    changingStyle(navBtns,3,"#081722","rgb(204, 234, 245)")
-   displayPage(storeProducts,pageLogIn,pageSignIn,container)
    storeProducts.innerHTML='';
    displayProduct(homePageProducts);
    productPrice.style.display="block"; 
-   displayPage(navbar,hoverNav,pageLogIn,search)
    menuTogglerLabel.style.opacity="1";
    carsSoppingTtotal.style.display="block";
-  }
-   else $("#Error").fadeIn(()=> $(".Error").fadeOut(5000));
-   error.innerHTML=response.data.message;
+   purchaseData.innerHTML+=`
+   <h4 class="product-datas"> name : ${inputName.value}</h4>
+    <h4 class="product-datas">email : ${email.value}</h4>
+    <form>
+    <input class="inputs input-clear" name="card-number" type="text" placeholder="card number"> 
+     <input class="inputs input-clear" name="number-phone" type="text" placeholder="number phone"> 
+     <img src="img/card-mastercard.svg" class="mt-3" width="7%">
+     <img src="img/card-visa.svg" class="mt-3" width="7%">
+     <img src="img/card-discover.svg" class="mt-3" width="7%">
+     <img src="img/card-amex.svg" class="mt-3" width="7%">
+     <input class="inputs input-clear" name="card-number" type="number" placeholder="Discount coupon"> 
+     <button class="btn-Final-purchase">buy</button></form>`;
+     displayPage(navbar,hoverNav,pageLogIn,search)
+     displayPage(storeProducts,pageLogIn,pageSignUp,container)}
 }
-btnLogIn.addEventListener("click",chacklogin)
-btnLoginSignIn.addEventListener("click",chackSignUp)
-
+}
 // * display functions *
 displayPage=(show,hide,hide2,show2)=>{
+  clearInputs();
   container.style.display="none";
   hide.style.display="none";
   show.style.display="flex";
@@ -1367,26 +1369,24 @@ displayPage=(show,hide,hide2,show2)=>{
   show2.style.display="block";
 }
 displayProduct=(element)=>{
-productsCarts.style.display="none";
+     hide(productsCarts);
      hide(totalMoney);
      hide(purchaseData);
-     clearStoreProducts();
+     clear(storeProducts);
     if(element.length===52) {
       for(let i=0; i<element.length;i++){
-      storeProducts.innerHTML+=`
-      <div class="position-relative products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
+      storeProducts.innerHTML+=`<div class="position-relative products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
       <img class="img" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
       <button id="btn" onclick="displayProductError(${i})" class="button-shrink">buy</button>
-      <p class="position-absolute content">Log in</P>
+      <p class="position-absolute error-login">Log in</P>
       <h3> name : ${element[i].name} </h3>
-      <h3 class="h3-salary"> Salary : ${element[i].salary} EGP</h3>
-      </div> `  
-       Content=document.querySelectorAll(".content");  
+      <h3 class="h3-salary"> Salary : ${element[i].salary} EGP</h3> </div> `  
+       Content=document.querySelectorAll(".error-login");}
     }
-  }
-    else{ 
-      for(let i=0; i<element.length;i++){
-      storeProducts.innerHTML+= ` <div class="products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
+    else{
+      clear(container);
+       for(let i=0; i<element.length;i++){
+      storeProducts.innerHTML+= `<div class="products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
       <img class="img" onclick="displayProductImage(${i})" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
       <button id="btn" onclick="displayProductDetails(${i})" class="button-shrink">buy</button>
       <h3>name : ${element[i].name}</h3>
@@ -1407,8 +1407,9 @@ displayBtns=()=>{
    }
 }
 displayProductDetails=(index)=>{
-    clearStoreProducts();
+    clear(storeProducts);
     hide(totalMoney);
+    clear(container);
    storeProducts.innerHTML+=`<div class="products5 col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
    <img class="img" src="${homePageProducts[index].imges}" width="100%" height="100%" alt="${homePageProducts[index].name}"></div>
    <div class="salary-type"> <P class="type">${homePageProducts[index].type}</p>
@@ -1418,23 +1419,22 @@ displayProductDetails=(index)=>{
 }
 displayProductError=(index)=>{
    Content[index].style.display="block";
-   $(".content").slideUp(2000)
+   $(".error-login").slideUp(2000);
 }
 displayPageBuy=element=>{
     hide(purchaseData);
     clear(productsCarts);
-    clearStoreProducts();
+    clear(storeProducts);
+    clear(container);
     let total=Number();
     productsCarts.style.display="block";
-  for(let i=0; i<element.length;i++)
-    {
+  for(let i=0; i<element.length;i++){
       total+=element[i].salary; 
-      productsCarts.innerHTML+=`
-      <div class="col-12 mt-5 d-flex style-product-card">
-      <img class="img ms-3" src="${element[i].imges}" width="13%" class="m-4" alt="${element[i].name}"></img> 
-      <div class="name-and-salary"> <h3>${element[i].name} </h3>
-      <h3 class="salary-cards">Salary : ${element[i].salary} EGP</h3>
-      <button onclick="removeProduct(${i})" class="btn-card-buy  button-shrink">remove</button>
+      productsCarts.innerHTML+=`<div class="col-12 mt-5 d-flex style-product-cart">
+      <img class="img ms-3" src="${element[i].imges}" width="13%" class="m-4 inputs" alt="${element[i].name}"></img> 
+      <div class="name-and-salary"><h6>${element[i].name} </h6>
+      <h6>Salary : ${element[i].salary} EGP</h6>
+      <button onclick="removeProduct(${i})" class="btn-product-cart button-shrink">remove</button>
       </div> </div> `
     } 
     totalMoney.innerHTML=`total salary : ${total} EGP`;
@@ -1454,98 +1454,40 @@ displayProductImage=i=>{
 }
 displayAllProducts=()=>displayProduct(homePageProducts);
 displayLightBoxItem=element=>lightboxItem.style.backgroundImage=`url("${element}")`;
-
-carsSoppingTtotal.addEventListener("click",()=>{
-  productsCarts.innerHTML="";
-  showBtnTotalMoney();
-  displayPageBuy(arrayCardsShopping);
-})
-
-// * functions next and prev and close and iconColor and onKeydown*
+// * functions next and prev and close and iconColor and onKeydown *
 getnext=()=>{ 
-    indexs++
-    if(indexs===homePageProducts.length)indexs=0;
-    displayLightBoxItem(homePageProducts[indexs].imges)
+  indexs++
+  if(indexs===homePageProducts.length)indexs=0;
+  displayLightBoxItem(homePageProducts[indexs].imges)
 };
 getprev=()=>{
-    indexs--
-    if(indexs<0)indexs=imgesProducts.length
-    displayLightBoxItem(homePageProducts[indexs].imges)
+  indexs--
+  if(indexs<0)indexs=imgesProducts.length
+  displayLightBoxItem(homePageProducts[indexs].imges)
 };
 getClose=()=>$("#lightbox-container").hide();
-// * onclick functions *
+// * functions onKeyboard*
+inputName.onkeyup=()=>errorsTexts(inputName,error);
+firstName.onkeyup=()=>errorsTexts(firstName,errorLogin);
+lastName.onkeyup=()=>errorsTexts(lastName,errorLogin);
+inputPassword.onkeyup=()=>errorsNumbers(inputPassword,error)
+passwordSignUp.onkeyup=()=>errorsNumbers(passwordSignUp,errorLogin)
 document.addEventListener("keydown",e=>{
-    if(e.key=='ArrowRight')getnext() 
-    else if(e.key=="ArrowLeft")getprev()
-    else if(e.key=='Escape')getClose();    
+  if(e.key=='ArrowRight')getnext(); 
+  else if(e.key=="ArrowLeft")getprev();
+  else if(e.key=='Escape')getClose();    
 })
-onclickProduct=element=>{
-     clear(productsCarts);
-       for(let i=0;i<element.length;i++){
-           element[i].addEventListener("click",()=>{
-            arr=element[i].innerHTML;
-            homePageProducts=computerStore.filter(element=>element.name==arr);
-            clearStoreProducts();
-            displayProduct(homePageProducts);      
-      } 
-    )}
-  }
-aliProducts.addEventListener("click",()=>displayProduct(homePageProducts=computerStore))
-totalMoney.addEventListener("click",()=>{
-    productsCarts.style.display="none";
-    hide(totalMoney); 
-    if(totalMoney.innerHTML!=='total salary : 0 EGP')purchaseData.style.display="block";
-  }) 
-iconSearch.onclick=()=>{
-    let values= inputSearch.value;
-     clear(inputSearch);
-     clear(inputProductPrice);     
-     if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyboard"||values==="mather board"||values==="head phones"||values==="graphics card"||values==="hard disk"){
-      homePageProducts=computerStore.filter(element=>element.name==values);
-      displayProduct(homePageProducts);
-    }
-    else if(values!==""){
-      textError.style.display="block"; 
-      textError.innerHTML="This product is not currently available";
-      $(".text-error").fadeOut(4000,0)
-    }
-  }
-iconProductPrice.addEventListener("click",()=>{
-    values=inputProductPrice.value;
-    clearStoreProducts();
-    clear(container);
-   if(inputSearch.value==="mouse"||inputSearch.value==="ram"||inputSearch.value==="computer monitor"||inputSearch.value==="keyboard"||inputSearch.value==="mather board"||inputSearch.value==="head phones"
-     ||inputSearch.value==="graphics card"||inputSearch.value==="hard disk")
-   {  
-    homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value&&element.name==inputSearch.value);
-     displayProduct(homePageProducts)
-   }
-   else if(inputProductPrice.value!=="")
-   {
-    homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value);
-    displayProduct(homePageProducts)
-   }
-   clear(inputSearch);
-   clear(inputProductPrice);
-  }
-  )
-lightboxContainer.addEventListener('click',e=>{if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon){getClose()}}) 
-closeIcon.addEventListener("click",getClose);
-menu.addEventListener("click",displayBtns);
-nextIcon.addEventListener("click",getnext);
-prevIcon.addEventListener("click",getprev);
-// * clear functions *
-clear=(element)=>element.value="";
-clearStoreProducts=()=>storeProducts.innerHTML="";
+//* clear functions *
+clear=(element)=>element.innerHTML="";
+//clearStoreProducts=()=>storeProducts.innerHTML="";
+clearInputs=()=>inputClear.forEach(element=>element.value="");
 //* hide functions*
 hide=element=>element.style.display="none";
-
-// * show functions*
+//* show functions*
 showBtnTotalMoney=()=>totalMoney.style.display="block";
-
-// * add functions *
- addProduct=index=>arrayCardsShopping.push(homePageProducts[index])
- addProductsOnTheShoppingCar=(index)=>{
+//* add functions *
+addProduct=index=>arrayCardsShopping.push(homePageProducts[index])
+addProductsOnTheShoppingCar=(index)=>{
  addProduct(index);
  pContent.innerHTML=arrayCardsShopping.length;
  iconSoppingCars[index].style.color="#0093E9";
@@ -1554,11 +1496,70 @@ showBtnTotalMoney=()=>totalMoney.style.display="block";
 // * remove functions *
 removeProduct=i=>{
     arrayCardsShopping.splice(i,1);
-    clearStoreProducts();
+    clear(storeProducts);
     pContent.innerHTML=arrayCardsShopping.length;
+    if(arrayCardsShopping.length<=0)[pContent.innerHTML="",carsSoppingTtotal.style.color="#cceaf5"]
     displayPageBuy(arrayCardsShopping);
 }
+// * onclick functions *
+carsSoppingTtotal.addEventListener("click",()=>{
+  productsCarts.innerHTML="";
+  showBtnTotalMoney();
+  displayPageBuy(arrayCardsShopping);
+})
+onclickProduct=element=>{
+     clear(productsCarts);
+       for(let i=0;i<element.length;i++){
+           element[i].addEventListener("click",()=>{
+            arr=element[i].innerHTML;
+            homePageProducts=computerStore.filter(element=>element.name==arr);
+            clear(storeProducts);
+            displayProduct(homePageProducts)})};
+}
+aliProducts.addEventListener("click",()=>displayProduct(homePageProducts=computerStore))
+aliProductsLlist.addEventListener("click",()=>displayProduct(homePageProducts=computerStore))
+totalMoney.addEventListener("click",()=>{
+     hide(productsCarts); 
+     hide(totalMoney); 
+     if(totalMoney.innerHTML!=='total salary : 0 EGP')purchaseData.style.display="block";
+}) 
+iconSearch.onclick=()=>{
+    let values= inputSearch.value;
+     clearInputs();
+     if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyboard"||values==="mather board"||values==="head phones"||values==="graphics card"||values==="hard disk"){
+      homePageProducts=computerStore.filter(element=>element.name==values);
+      displayProduct(homePageProducts)}
+    else if(values!==""){$(".text-error").fadeIn(()=>$(".text-error").html("This product is not currently available"))
+  $(".text-error").fadeOut(4000,0);
+  }
+}
+iconProductPrice.addEventListener("click",()=>{
+    values=inputProductPrice.value;
+    clear(storeProducts);
+    clear(container);
+   if(inputSearch.value==="mouse"||inputSearch.value==="ram"||inputSearch.value==="computer monitor"||inputSearch.value==="keyboard"||inputSearch.value==="mather board"||inputSearch.value==="head phones"
+     ||inputSearch.value==="graphics card"||inputSearch.value==="hard disk"){  
+    homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value&&element.name==inputSearch.value);
+     displayProduct(homePageProducts)
+   }
+   else if(inputProductPrice.value!==""){
+    homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value);
+    displayProduct(homePageProducts)
+   }
+  clearInputs();
+})
+navHome.addEventListener("click",()=>displayPage(storeProducts,pageSignUp,pageLogIn,container));
+navLogIn.addEventListener("click",()=>displayPage(pageLogIn,pageSignUp,storeProducts));
+navSignUp.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
+btnRegister.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
+lightboxContainer.addEventListener('click',e=>{if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon){getClose()}}) 
+closeIcon.addEventListener("click",getClose);
+menu.addEventListener("click",displayBtns);
+nextIcon.addEventListener("click",getnext);
+prevIcon.addEventListener("click",getprev);
+btnLogIn.addEventListener("click",chacklogin);
+btnLoginSignIn.addEventListener("click",chackSignUp);
 // * run functions *
 onclickProduct(btnProductsStore);
-displayProduct(ShowSomeProducts)
+displayProduct(ShowSomeProducts);
 
