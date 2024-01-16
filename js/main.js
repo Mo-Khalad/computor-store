@@ -1488,10 +1488,11 @@ showBtnTotalMoney=()=>totalMoney.style.display="block";
 //* add functions *
 addProduct=index=>arrayCardsShopping.push(homePageProducts[index])
 addProductsOnTheShoppingCar=(index)=>{
- addProduct(index);
+  addProduct(index);
  pContent.innerHTML=arrayCardsShopping.length;
  iconSoppingCars[index].style.color="#0093E9";
  carsSoppingTtotal.style.color="#fdbfca";
+
 }
 // * remove functions *
 removeProduct=i=>{

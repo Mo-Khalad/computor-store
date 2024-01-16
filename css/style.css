@@ -4,7 +4,7 @@
   color:#040d18;
 }
 body ,.inputs-content,#btn-logIn ,#btn-register ,#Error ,#age ,#btn-logIn-signUp ,.mouse-cursor-gradient-tracking,.btn-Final-purchase 
-,.error-login ,.inputs-content::placeholder ,.text-error ,#next ,#prev ,#close ,.inputs{
+,#Error-login ,.inputs-content::placeholder ,.text-error ,#next ,#prev ,#close ,.inputs{
   color:rgb(204, 234, 245);
   background-color:#081722;
 }
@@ -85,18 +85,19 @@ input{
  margin-top: 1rem;
  width:25rem;
  background-color: rgba(153, 83, 83, 0.74);
- display: none;
+ display:none;
 }
-.error-login{
+#Error-login{
+  margin: auto;
+  color: rgb(204, 234, 245);
+  border-radius:2rem;
   left:1.3rem;
   padding:0.7rem 1rem;
   bottom:-0.5rem;
   width:88%;
-  height:3rem;
-  text-align: center;
+  height:4rem;
   font-size:1rem;
   border-radius:2rem;
-  display: none;
 }
 #password-signUp{
   width:12.5rem;
