@@ -1216,7 +1216,6 @@ let computerStore = [
   const hoverNav=document.querySelector(".hover-nav")
   const navBtns=document.querySelectorAll(".nav-btns")
   const carsSoppingTtotal=document.getElementById("cars-sopping-total")
-  const inputName=document.getElementById("input-name")
   const storeProducts = document.getElementById("store-products");
   const closeIcon = document.getElementById("close");
   const lightboxContainer = document.getElementById("lightbox-container");
@@ -1277,10 +1276,10 @@ changingStyle=(element,i,background,color)=>[element[i].style.backgroundColor=ba
 //*changing colors and backgound btn-nav*
 for (let i = 0; i < navBtns.length; i++){
      navBtns[i].addEventListener("click",()=>{
-     for (let i = 0; i < navBtns.length; i++)changingStyle(navBtns,i,"rgb(204, 234, 245)","#081722")
-     changingStyle(navBtns,i,"#081722","rgb(204, 234, 245)")})
+     for (let i = 0; i < navBtns.length; i++)changingStyle(navBtns,i,"transparent","#04090f")
+     changingStyle(navBtns,i,"transparent","#04090f")})
 }
-changingStyle(navBtns,0,"#081722","rgb(204, 234, 245)")
+changingStyle(navBtns,0,"transparent","#ffffff")
 errorsNumbers=(elementOne,elementTwo)=>{
   passwordRejex=/^[a-zA-A0-9]{4}/
   if(elementOne.value==="")hide(elementTwo);
@@ -1331,20 +1330,18 @@ async function chacklogin(){
  error.innerHTML=response.data.message;
  } 
  else if(response.data.message==="success"){
-    if(nameRejex.test(inputName.value)==false)
+
   {
    error.innerHTML="must begin with at least four letters and not begin with a number";
   $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
-  }
-  else if(nameRejex.test(inputName.value)){ 
-   changingStyle(navBtns,3,"#081722","rgb(204, 234, 245)")
+    
+   changingStyle(navBtns,3,"transparent","#ffffff")
    storeProducts.innerHTML='';
    displayProduct(homePageProducts);
    productPrice.style.display="block"; 
    menuTogglerLabel.style.opacity="1";
    carsSoppingTtotal.style.display="block";
    purchaseData.innerHTML+=`
-   <h4 class="product-datas"> name : ${inputName.value}</h4>
     <h4 class="product-datas">email : ${email.value}</h4>
     <form>
     <input class="inputs input-clear" name="card-number" type="text" placeholder="card number"> 
@@ -1356,17 +1353,20 @@ async function chacklogin(){
      <input class="inputs input-clear" name="card-number" type="number" placeholder="Discount coupon"> 
      <button class="btn-Final-purchase">buy</button></form>`;
      displayPage(navbar,hoverNav,pageLogIn,search)
-     displayPage(storeProducts,pageLogIn,pageSignUp,container)}
+     displayPage(storeProducts,hoverNav,pageSignUp,container)}
 }
 }
 // * display functions *
-displayPage=(show,hide,hide2,show2)=>{
+displayPage=(show,hide,hide2,show2,hide3)=>{
   clearInputs();
+  errorLogin.style.display="none";
+  error.style.display="none";
   container.style.display="none";
   hide.style.display="none";
   show.style.display="flex";
   hide2.style.display="none";
   show2.style.display="block";
+
 }
 displayProduct=(element)=>{
      hide(productsCarts);
@@ -1467,7 +1467,6 @@ getprev=()=>{
 };
 getClose=()=>$("#lightbox-container").hide();
 // * functions onKeyboard*
-inputName.onkeyup=()=>errorsTexts(inputName,error);
 firstName.onkeyup=()=>errorsTexts(firstName,errorLogin);
 lastName.onkeyup=()=>errorsTexts(lastName,errorLogin);
 inputPassword.onkeyup=()=>errorsNumbers(inputPassword,error)

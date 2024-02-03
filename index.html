@@ -13,9 +13,9 @@
 <body>
 <nav id="hover-nav" class="hover-nav">
       <ul>
-        <li id="nav-home"><button class="a nav-btns products-list">Home</button></li>
+        <li id="nav-home"><button class="a nav-home products-list">Computer</button></li>
         <li id="nav-logIn"><button class="a nav-btns products-list">login</button></li>
-        <li id="nav-signIn"><button class="a nav-btns products-list">sigIn</button><li>
+        <li id="nav-signIn"><button class="a nav-btns products-list">Register</button><li>
       </ul>
   </nav>
 
@@ -58,27 +58,29 @@
     </div>
   </nav>
 
-<div id="page-logIn" class="page-logIn logIn justify-content-center align-items-center h-100 w-100">
-   <div id="page-content-logIn">
-     <form class="text-center">
-       <input id="input-name" class="input-clear inputs-content mt-5 " type="text" placeholder="please enter your name">
-       <input id="email" class="input-clear inputs-content mt-1" type="email" placeholder=" email">
-       <input id="input-password" class="input-clear inputs-content mt-1 mb-5" type="password" placeholder="password">
-     </form>
-     <p id="Error"></p>
-     <button id="btn-logIn" class="mt-5 button-shrink">LogIn</button>
-     <button id="btn-register" class="button-shrink">Register</button>
-   </div>
-  </div> 
-
-<div id="page-signUp" class="page-sigIn logIn justify-content-center align-items-center h-100 w-100">
-    <div id="page-content-signUp">
+  <div id="page-logIn" class="page-logIn logIn justify-content-start align-items-center h-100 w-100">
+    <div id="page-content-logIn" class="ms-5">
+      <h3 class="mt-4 mb-5 text-login">LogIn</h3>
       <form class="text-center">
-        <input id="first-name" class="input-clear inputs-content mt-5 " type="text" placeholder="first name">
-        <input id="last-name" class="input-clear last-name inputs-content mt-1" type="text" placeholder="last name">
-        <input id="age" class="input-clear inputs-content mt-3" type="number" placeholder="age">
+        <input id="email" class="input-clear inputs-content mt-1" type="email" placeholder=" email">
+        <input id="input-password" class="input-clear inputs-content mt-1 mb-5" type="password" placeholder="password">
+      </form>
+      <p id="Error"></p>
+      <button id="btn-logIn" class="mt-5 mb-1 button-shrink">LogIn</button>
+      <button id="btn-register" class="button-shrink">Register</button>
+    </div>
+   </div> 
+
+ 
+<div id="page-signUp" class="page-sigIn logIn justify-content-start align-items-center h-100 w-100">
+    <div id="page-content-signUp" class="ms-5">
+      <h3 class="mt-4 mb-1 text-login">signUp</h3>
+      <form class="text-center">
+        <input id="first-name" class="input-clear inputs-content mt-5 mb-3 " type="text" placeholder="first name">
+        <input id="last-name" class="input-clear last-name inputs-content mb-3 mt-1" type="text" placeholder="last name">
+        <input id="age" class="input-clear inputs-content mt-1" type="number" placeholder="age">
         <input id="password-signUp" class="input-clear inputs-content mt-1 mb-3" type="password" placeholder="password">
-        <input id="email-signUp" class="input-clear inputs mt-1" type="text" placeholder=" email">
+        <input id="email-signUp" class="input-clear inputs-content mt-1" type="text" placeholder="email">
       </form>
       <p id="Error-login"></p>
       <button id="btn-logIn-signUp" class="mt-5 button-shrink">LogIn</button>

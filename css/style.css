@@ -1,47 +1,44 @@
-.hover-nav ,.navbar ,#page-content-signUp ,#page-content-logIn ,input ,.card-side.front ,.card-side.back ,.products ,.products5  
+.hover-nav ,.navbar ,.card-side.front ,.card-side.back ,.products ,.products5  
 ,.btn-buy ,.btn-Final-purchase ,#total-money ,i,#purchase-data ,.cars-sopping-total ,.dropdown-menu{
   background-color:rgb(204, 234, 245);
   color:#040d18;
 }
-body ,.inputs-content,#btn-logIn ,#btn-register ,#Error ,#age ,#btn-logIn-signUp ,.mouse-cursor-gradient-tracking,.btn-Final-purchase 
-,#Error-login ,.inputs-content::placeholder ,.text-error ,#next ,#prev ,#close ,.inputs{
+.mouse-cursor-gradient-tracking,.btn-Final-purchase 
+,.text-error ,#next ,#prev ,#close{
   color:rgb(204, 234, 245);
   background-color:#081722;
 }
-.btn-products-store:hover{
-  color:rgb(204, 234, 245) !important;
-}  
+.hover-nav{
+  width: 100%;
+  background-color:rgba(5, 6, 7, 0.205);
+  position: fixed;
+  padding:0.3rem 1rem;
+  z-index: 999;
+}
 .nav-btns{
-  background-color:rgb(204, 234, 245);
+  background-color: transparent;
+  border: 0;
+  padding: 0.3rem 0.3rem;
 }
-.nav-btns:hover{
-  background-color:#040d18 !important;
-  color:rgb(204, 234, 245) !important;
+#nav-home{
+  font-weight: 900;
+  font-size:1.5rem;
 }
-.btn-list{
-  background-color:transparent !important;
+.nav-home{
+  background-color: transparent;
+  border: 0;
+
 }
-.btn-list:hover{
-  background-color: transparent !important;
+#nav-logIn ,#nav-signIn{
+  background-color: #56cac7;
+  color: #04090f;
+  border-radius: 2rem;
+  padding:0.1rem 1rem;
+  margin: 0.1rem 1rem;
+  float: right;
 }
-.navbar{
-  background-color:rgb(204, 234, 245) !important;
-}
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-.navbar{
-  display: none;
-}
-.hover-nav li a {
-  position: relative;
-  display: block;
-  color: #081722;
-  text-align: center;
-  z-index: 0;
-  text-decoration: none;
+#nav-signIn{
+background-color: #e4e4e6;  
 }
 #hover-nav ul {
   list-style: none;
@@ -53,60 +50,104 @@ body ,.inputs-content,#btn-logIn ,#btn-register ,#Error ,#age ,#btn-logIn-signUp
   float: left;
 }
 #page-logIn ,#page-signUp{
-  display: none;
-}
-.nav-btns{
-  border: 0;
-  padding: 0.3rem 0.3rem;
+  background-image: url(../img/com.jpg);
+  background-size: 100% 100%;
+  display:none;
+  justify-content:start;
+  position: fixed;
+  top: 0;
 }
 #page-content-signUp ,#page-content-logIn{
-  width:30rem;
+  width:25rem;
   height: 25rem;
   border-radius:1rem;
   text-align:center;
+  background-color:transparent;
+  box-shadow: 1px 1px 2px 2px #56cac7;
+}
+#email ,#input-password ,#password-signUp ,#email-signUp ,#age ,#first-name ,#last-name{
+  background-color:#e4e2e2;
+  margin-bottom:0.5rem;
+  color: #058286;
+}
+#btn-logIn ,#btn-logIn-signUp{
+  background-color: #56cac7;
+  color: #04090f;
+}
+#btn-register{
+  background-color:#e4e4e6 !important;
+  color: #04090f;
+}
+.nav-home{
+  color: #e4e2e2 !important;
+}
+#email::placeholder ,#input-password::placeholder ,.text-login{
+color:#00706c;
+font-weight: 200;
+}
+.text-login{
+  font-weight: 900;
+  color: #e4e2e2;
 }
 input{
   outline: none;
 }
-.inputs-content,#btn-logIn ,#btn-register ,#Error ,#age ,#btn-logIn-signUp,#Error{
+.inputs-content,#btn-logIn ,#btn-register ,#password-signUp ,#email-signUp ,#age ,#btn-logIn-signUp,#Error ,#Error-login{
   padding:0.5rem 1.5rem;
-  width:25rem;
+  width:20rem;
   border-radius:1.8rem;
   border: 0;
 }
-#btn-logIn ,#btn-register ,#Error ,#age ,#btn-logIn-signUp{
-  margin: auto;
-  width:13rem;
-}
-#btn-register{
-  background-color: rgba(0, 0, 0, 0.507) !important;
+#password-signUp ,#email-signUp ,#age ,#first-name ,#last-name{
+  width: 12rem;
 }
 #Error ,#Error-login{
+ position: absolute;
+ top:10rem;
+ right:5rem; 
  margin-top: 1rem;
  width:25rem;
- background-color: rgba(153, 83, 83, 0.74);
+ background-color: rgba(40, 195, 201, 0.74);
+ color: #e4e2e2;
  display:none;
 }
-#Error-login{
-  margin: auto;
-  color: rgb(204, 234, 245);
-  border-radius:2rem;
-  left:1.3rem;
-  padding:0.7rem 1rem;
-  bottom:-0.5rem;
-  width:88%;
-  height:4rem;
-  font-size:1rem;
-  border-radius:2rem;
+
+.btn-products-store:hover{
+  color:rgb(204, 234, 245) !important;
+}  
+
+.btn-list{
+  background-color:transparent !important;
 }
-#password-signUp{
-  width:12.5rem;
+.btn-list:hover{
+  background-color: transparent !important;
+}
+.navbar{
+  background-color:rgb(204, 234, 245) !important;
+  display:none;
+
+}
+
+.icon-computer{
+  font-size: 3rem;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.hover-nav li a {
+  position: relative;
+  display: block;
+  color: #081722;
+  text-align: center;
+  z-index: 0;
+  text-decoration: none;
 }
 button ,.nav-link{
   font-weight: 900 !important;
-}
-#btn-logIn{
-  margin-left:2rem;
 }
 #store-products ,.containe ,#lightbox-item{
   display:flex;
@@ -418,6 +459,7 @@ border-radius: 20rem;
 .products-carts{
   overflow: hidden;
 }
+
 .inputs{
   width:25rem;
   display: inline;
@@ -431,9 +473,11 @@ h4{
   color:#081722;
   font-weight: 800;
 }
-.inputs::placeholder{
-  color:#e4e4e6;
+
+.inputs-content::placeholder{
+  color:#00706c;
 } 
+
 .btn-Final-purchase {
   margin-top: 2rem;
   border-radius: 2rem;
@@ -446,17 +490,17 @@ h4{
 }
 @media screen and (min-width:500px) {
 html{
-  font-size:20px;
+  font-size:18px;
 }
 }
 @media screen and (min-width:500px) and (max-width:759px) {
   html{
-    font-size:19px;
+    font-size:15px;
   }
 }
 @media screen and (min-width:759px) and (max-width:959px) {
   html{
-      font-size:18px;
+      font-size:15px;
   }
 }
 @media screen and (min-width:959px){
