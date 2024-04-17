@@ -1380,8 +1380,9 @@ displayProduct=(element)=>{
       <img class="img" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
       <button id="btn" onclick="displayProductError(${i})" class="button-shrink">buy</button>
       <p class="position-absolute error-login">Log in</P>
-      <h3> name : ${element[i].name} </h3>
-      <h3 class="h3-salary"> Salary : ${element[i].salary} EGP</h3> </div> `  
+      <h3>${element[i].name} </h3>
+      <p><span></span>${element[i].type}</p>
+      <h3 class="h3-salary">${element[i].salary} EGP</h3> </div> `  
        Content=document.querySelectorAll(".error-login");}
     }
     else{

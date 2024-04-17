@@ -1,13 +1,22 @@
-.hover-nav ,.navbar ,.products ,.products5  
+.hover-nav ,.navbar ,.products5  
 ,.btn-buy ,.btn-Final-purchase ,#total-money ,i,#purchase-data ,.cars-sopping-total ,.dropdown-menu{
   background-color:rgb(204, 234, 245);
   color:#040d18;
+}
+
+body{
+  background-color: #f4f4f4;
+}
+
+.products{
+  background-color: #fbffff;
 }
 .mouse-cursor-gradient-tracking,.btn-Final-purchase 
 ,.text-error ,#next ,#prev ,#close{
   color:rgb(204, 234, 245);
   background-color:#081722;
 }
+
 .hover-nav{
   width: 100%;
   background-color:rgba(5, 6, 7, 0.205);
@@ -228,25 +237,27 @@ button ,.nav-link{
     transform: rotateY(0deg);
 }
 .products{
-    max-width: 17rem;
-    height: 22rem;
+    max-width:19rem;
+    height:33rem;
     margin-top: 3rem;
-    border:2px solid rgb(0, 147, 233); ;
     border-radius: 10px;
     overflow: hidden;
 }
 .button-shrink, .store {
-    color:rgb(232, 241, 248);
-    width:100%;
+    width:30%;
     background-color:rgb(101, 181, 246);;
     cursor:pointer;
-    border-width: 1px;
+    border: 0;
+    border-radius: 2rem;
+    float:right;
+    margin-top: 1rem;
     padding: 0px 16px;
     transition: all 0.3s ease-in-out 0s;
 }
 .button-shrink:hover {
     transform: scale(0.8);
 }
+
 h3{
     font-size: 1.1rem;
     color:#081722;
