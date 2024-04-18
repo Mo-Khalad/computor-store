@@ -58,7 +58,7 @@ background-color: #e4e4e6;
 .hover-nav li {
   float: left;
 }
-#page-logIn ,#page-signUp{
+.page-logIn ,#page-signUp{
   background-image: url(../img/com.jpg);
   background-size: 100% 100%;
   display:none;
@@ -74,6 +74,32 @@ background-color: #e4e4e6;
   background-color:transparent;
   box-shadow: 1px 1px 2px 2px #56cac7;
 }
+#layer-content-logIn{
+  width:25rem;
+  height: 25rem;
+  border-radius:1rem;
+  text-align:center;
+  background-color:#ffffff;
+}
+#layer-text-login{
+  color: #323941;
+  font-size:1.6rem;
+}
+#layer-input-email ,#layer-input-password{
+  background-color: #08172210;
+  border-radius:0.5rem;
+  width:80%;
+  
+}
+.layer-label-email ,.layer-label-password{
+  float: left;
+  margin-left:2.5rem;
+  margin-top: 0.5rem;
+  margin-right: 4rem;
+  font-weight: 400;
+  font-size:1rem;
+}
+
 #email ,#input-password ,#password-signUp ,#email-signUp ,#age ,#first-name ,#last-name{
   background-color:#e4e2e2;
   margin-bottom:0.5rem;
@@ -82,6 +108,48 @@ background-color: #e4e4e6;
 #btn-logIn ,#btn-logIn-signUp{
   background-color: #56cac7;
   color: #04090f;
+}
+#layer-btn-logIn{
+  background-color: #303636;
+  width:80% !important;
+  color: #e4e2e2;
+  border-radius:0.5rem;
+  padding:0.3rem;
+}
+#layer-btn-logIn{
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.btn-bacebook ,.btn-google{
+  background-color:#0c185e;
+  border:0;
+  padding:0.3rem;
+  color: #e4e2e2;
+  font-size:0.8rem;
+  font-weight: 100;
+  padding-left: 1.8rem;
+  padding-right:1.8rem;
+  margin-right: 1rem;
+  border-radius:1.9rem;
+}
+.btn-google{
+  background-color:#c92f1b;
+  box-shadow:1px 1px 3px #04090f;
+  color: #e7ebee;
+
+}
+
+.icon-facebook ,.icon-google{
+  border-radius: 0;
+  margin:0.3rem;
+  font-size:0.7rem;
+  background-color: #e4e4e6;
+  padding:0.2rem;
+}
+.icon-google{
+  color: rgb(255, 249, 249);
+  font-size:0.8rem;
+  background-color: transparent;
 }
 #btn-register{
   background-color:#e4e4e6 !important;
@@ -145,6 +213,13 @@ input{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+#layer-login{
+  position:fixed;
+  background-color: #2521217c;
+  z-index: 999999; 
+  display: none; 
+
 }
 
 .hover-nav li a {

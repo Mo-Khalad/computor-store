@@ -1244,26 +1244,34 @@ let computerStore = [
   const navLogIn=document.getElementById("nav-logIn")
   const inputPassword=document.getElementById("input-password");
   const error=document.getElementById("Error");
-  const btnLogIn=document.getElementById("btn-logIn");
   const pageLogIn=document.getElementById("page-logIn");
   const pageSignUp=document.getElementById("page-signUp")
-  const navSignUp=document.getElementById("nav-signIn")
-  const btnRegister=document.getElementById("btn-register")
-  const btnLoginSignIn=document.getElementById("btn-logIn-signUp")
-  const navbar=document.querySelector(".navbar") 
-  const search=document.getElementById("search")
-  const productPrice=document.getElementById("productPrice")
-  const firstName=document.getElementById("first-name")
+  const navSignUp=document.getElementById("nav-signIn");
+  const btnLogIn=document.getElementById("btn-logIn");
+  const btnRegister=document.getElementById("btn-register");
+  const btnLoginSignIn=document.getElementById("btn-logIn-signUp");
+  const navbar=document.querySelector(".navbar"); 
+  const search=document.getElementById("search");
+  const productPrice=document.getElementById("productPrice");
+  const firstName=document.getElementById("first-name");
   const lastName=document.getElementById("last-name");
-  const age=document.getElementById("age")
+  const age=document.getElementById("age");
   const passwordSignUp=document.getElementById("password-signUp");
   const emailSignUp=document.getElementById("email-signUp");
   const email=document.getElementById("email");
-  const errorLogin=document.getElementById("Error-login")
+  const errorLogin=document.getElementById("Error-login");
   const pContent=document.getElementById("p-content");
-  const inputClear=document.querySelectorAll(".input-clear")
+  const inputClear=document.querySelectorAll(".input-clear");
   const aliProductsLlist=document.getElementById("ali-products-list");
-  const iconsProducts=document.querySelectorAll(".icons-products")
+  const iconsProducts=document.querySelectorAll(".icons-products");
+  const layerLogin =document.getElementById("layer-login");
+  const layerContentLogIn=document.getElementById("layer-content-logIn");
+  const layerTextLogin=document.getElementById("layer-text-login");
+  const layerInputEmail=document.getElementById("layer-input-email");
+  const layerInputPassword=document.getElementById("layer-input-password");
+  const layerBtnLogIn=document.getElementById("layer-btn-logIn");
+  const layerBtnRegister=document.getElementById("layer-btn-register")
+
   let ShowSomeProducts = computerStore.filter((element, i) => i < 52);
   let homePageProducts=computerStore;
   let indexs;
@@ -1376,10 +1384,11 @@ displayProduct=(element)=>{
      clear(storeProducts);
     if(element.length===52) {
       for(let i=0; i<element.length;i++){
-      storeProducts.innerHTML+=`<div class="position-relative products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
+      storeProducts.innerHTML+=`
+  
+      <div class="position-relative products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
       <img class="img" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
       <button id="btn" onclick="displayProductError(${i})" class="button-shrink">buy</button>
-      <p class="position-absolute error-login">Log in</P>
       <h3>${element[i].name} </h3>
       <p><span></span>${element[i].type}</p>
       <h3 class="h3-salary">${element[i].salary} EGP</h3> </div> `  
@@ -1420,8 +1429,7 @@ displayProductDetails=(index)=>{
    <button id="buyProduct" class="btn-buy button-shrink" onclick="displayProductsBuyPage(${index})" >buy product</button></div>`
 }
 displayProductError=(index)=>{
-   Content[index].style.display="block";
-   $(".error-login").slideUp(2000);
+   $("#layer-login").css("display","flex");
 }
 displayPageBuy=element=>{
     hide(purchaseData);
@@ -1480,6 +1488,8 @@ document.addEventListener("keydown",e=>{
 })
 //* clear functions *
 clear=(element)=>element.innerHTML="";
+//clearLayerInputPassword()=layerInputPassword.placeholder='';
+
 //clearStoreProducts=()=>storeProducts.innerHTML="";
 clearInputs=()=>inputClear.forEach(element=>element.value="");
 //* hide functions*
@@ -1548,6 +1558,7 @@ iconProductPrice.addEventListener("click",()=>{
     values=inputProductPrice.value;
     clear(storeProducts);
     clear(container);
+
    if(inputSearch.value==="mouse"||inputSearch.value==="ram"||inputSearch.value==="computer monitor"||inputSearch.value==="keyboard"||inputSearch.value==="mather board"||inputSearch.value==="head phones"
      ||inputSearch.value==="graphics card"||inputSearch.value==="hard disk"){  
     homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value&&element.name==inputSearch.value);
@@ -1563,12 +1574,20 @@ navHome.addEventListener("click",()=>displayPage(storeProducts,pageSignUp,pageLo
 navLogIn.addEventListener("click",()=>displayPage(pageLogIn,pageSignUp,storeProducts));
 navSignUp.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
 btnRegister.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
-lightboxContainer.addEventListener('click',e=>{if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon){getClose()}}) 
+lightboxContainer.addEventListener('click',e=>{if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon){getClose()}});
+layerLogin.addEventListener("click", e=>{if(e.target!=layerContentLogIn&&e.target!=layerTextLogin&&e.target!=layerInputEmail&&
+e.target!=layerInputPassword&&e.target!=layerBtnLogIn&&e.target!=layerBtnRegister){
+  layerInputPassword.value='';
+  layerInputEmail.value=''; 
+  $("#layer-login").css("display","none"); 
+}}) 
 closeIcon.addEventListener("click",getClose);
 menu.addEventListener("click",displayBtns);
 nextIcon.addEventListener("click",getnext);
 prevIcon.addEventListener("click",getprev);
+//layerContentLogIn.addEventListener("click",clearLayerInputPassword)
 btnLogIn.addEventListener("click",chacklogin);
+//layerBtnLogin.addEventListener("click" ,chacklogin);
 btnLoginSignIn.addEventListener("click",chackSignUp);
 // * run functions *
 onclickProduct(btnProductsStore);
