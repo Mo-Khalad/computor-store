@@ -8,6 +8,9 @@ body{
   background-color: #f4f4f4;
 }
 
+.nav-search{
+  background-color: #04090f;
+}
 .products{
   background-color: #fbffff;
 }
@@ -18,11 +21,13 @@ body{
 }
 
 .hover-nav{
-  width: 100%;
-  background-color:rgba(5, 6, 7, 0.205);
-  position: fixed;
-  padding:0.3rem 1rem;
-  z-index: 999;
+  width:100%;
+  background-color:#04090f;
+  padding:0.1rem 0.8rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  border-radius:1%;
+  
 }
 .nav-btns{
   background-color: transparent;
@@ -58,6 +63,33 @@ background-color: #e4e4e6;
 .hover-nav li {
   float: left;
 }
+.text-content-computer-store{
+  float: right;
+  color: #fdfeff;
+  font-size:1rem;
+  width:30rem;
+  background-color: #2091ad69;
+  border-radius: 25%;
+  font-weight:900;
+  padding: 2rem;
+  margin-right: 1rem;
+  color: #c1c3c5;
+}
+.icon-computer-tools{
+  background-image: url(../img/computer-tools.jpg);
+  background-attachment: fixed;
+
+  background-size: 100% 100%;
+  position: relative;
+}
+.background-transparent{
+  background-color: #12121386;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .page-logIn ,#page-signUp{
   background-image: url(../img/com.jpg);
   background-size: 100% 100%;
@@ -77,7 +109,7 @@ background-color: #e4e4e6;
 #layer-content-logIn{
   width:25rem;
   height: 25rem;
-  border-radius:1rem;
+  border-radius:1rem; 
   text-align:center;
   background-color:#ffffff;
 }
@@ -239,27 +271,35 @@ button ,.nav-link{
 #store-products{
   flex-wrap:wrap;
 } 
-.menu-toggler-label ,#search ,#productPrice{
+.menu-toggler-label ,search ,#productPrice{
   display: none;
 }
 #input-search, #input-productPrice {
-    width:32rem;
+    width:45rem;
     height:2.5rem;
     text-align: center;
     font-size: 1rem;
-    border: 0; 
+    border: 0;
+    background-color: #f8f9faf8; 
     border-radius: 2rem;
-    color: rgb(8, 23, 34);
+    color: rgb(125, 207, 240);
+    border: solid 1px #31888b;
+    display: none;
 }
-#input-search::placeholder, #input-productPrice::placeholder{
-    color:#040d18;
+/*#input-search::placeholder, #input-productPrice::placeholder{
+    color:#31888b;
 }
+*/
 #icon-search, #icon-productPrice {
     margin-left: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     object-fit: fill;
     border-radius: 2rem;
     padding: 0.5rem;
+    background-color: #fdfeff;
+    color: #31888b;
+    border: solid 1px #31888b;
+ display: none;   
 }
 .text-error{
   width: 25rem;

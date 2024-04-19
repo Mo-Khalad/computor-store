@@ -9,15 +9,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <div id="search" class="w-100 mt-4 text-center">
+    <input id="input-search" class="input-clear" type="text" name="search" placeholder="Search">
+    <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
+    <p id="text-error" class="text-error"></p>
+  </div>
+ 
 <nav id="hover-nav" class="hover-nav">
       <ul>
         <li id="nav-home"><button class="a nav-home products-list">Computer</button></li>
         <li id="nav-logIn"><button class="a nav-btns products-list">login</button></li>
         <li id="nav-signIn"><button class="a nav-btns products-list">Register</button><li>
       </ul>
-  </nav>
+ </nav>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+ <div class="icon-computer-tools w-100 h-100">
+  <div class="background-transparent d-flex justify-content-end align-items-center">
+    <p class="text-content-computer-store">Available computer tools and equipment such as mouse, keyboard and RAM
+      and hard disk and graphics card and head phones and motherboard and computer monitor</p>
+    </div>
+ </div>
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a id="ali-products" class="navbar-brand nav-btns" href="#">ali-products</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,13 +112,13 @@
       <button id="btn-logIn-signUp" class="mt-5 button-shrink w-100">LogIn</button>
     </div>
   </div>
-
+<!--
 <div id="search" class="w-100 mt-4 text-center">
     <input id="input-search" class="input-clear" type="text" name="search" placeholder="Search">
     <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
     <p id="text-error" class="text-error"></p>
   </div>
-
+-->
 <div id="productPrice" class="w-100 mt-3 text-center">
     <input id="input-productprice" class="input-clear" type="number" name="search" placeholder="product price">
     <i id="icon-productprice" class="fa-solid fa-magnifying-glass"></i>
