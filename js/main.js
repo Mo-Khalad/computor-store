@@ -1227,7 +1227,7 @@ let computerStore = [
   const prevIcon = document.getElementById("prev");
   const btnProduct = document.querySelectorAll(".button-shrink");
   const imgesProducts = document.getElementsByClassName("img");
-  const container = document.getElementById("container");
+  const productPreviewImage = document.getElementById("product-preview-image");
   const inputSearch = document.getElementById("input-search");
   const iconSearch = document.getElementById("icon-search");
   const inputProductPrice = document.getElementById("input-productprice");
@@ -1247,7 +1247,7 @@ let computerStore = [
   const pageLogIn=document.getElementById("page-logIn");
   const pageSignUp=document.getElementById("page-signUp")
   const navSignUp=document.getElementById("nav-signIn");
-  const btnLogIn=document.getElementById("btn-logIn");
+  const btnLogIn=document.querySelectorAll(".btn-login")
   const btnRegister=document.getElementById("btn-register");
   const btnLoginSignIn=document.getElementById("btn-logIn-signUp");
   const navbar=document.querySelector(".navbar"); 
@@ -1271,7 +1271,6 @@ let computerStore = [
   const layerInputPassword=document.getElementById("layer-input-password");
   const layerBtnLogIn=document.getElementById("layer-btn-logIn");
   const layerBtnRegister=document.getElementById("layer-btn-register")
-
   let ShowSomeProducts = computerStore.filter((element, i) => i < 52);
   let homePageProducts=computerStore;
   let indexs;
@@ -1328,49 +1327,55 @@ async function chackSignUp(){
      }           
   }
     }
-async function chacklogin(){
-    product={
-    email:email.value,
-    password:inputPassword.value,
-  }
- let response = await axios.post("https://movies-api.routemisr.com/signin",product);
- if(response.data.message!=="success"){
- $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
- error.innerHTML=response.data.message;
- } 
- else if(response.data.message==="success"){
 
-  {
-   error.innerHTML="must begin with at least four letters and not begin with a number";
-  $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
-    
-   changingStyle(navBtns,3,"transparent","#ffffff")
-   storeProducts.innerHTML='';
-   displayProduct(homePageProducts);
-   productPrice.style.display="block"; 
-   menuTogglerLabel.style.opacity="1";
-   carsSoppingTtotal.style.display="block";
-   purchaseData.innerHTML+=`
-    <h4 class="product-datas">email : ${email.value}</h4>
-    <form>
-    <input class="inputs input-clear" name="card-number" type="text" placeholder="card number"> 
-     <input class="inputs input-clear" name="number-phone" type="text" placeholder="number phone"> 
-     <img src="img/card-mastercard.svg" class="mt-3" width="7%">
-     <img src="img/card-visa.svg" class="mt-3" width="7%">
-     <img src="img/card-discover.svg" class="mt-3" width="7%">
-     <img src="img/card-amex.svg" class="mt-3" width="7%">
-     <input class="inputs input-clear" name="card-number" type="number" placeholder="Discount coupon"> 
-     <button class="btn-Final-purchase">buy</button></form>`;
-     displayPage(navbar,hoverNav,pageLogIn,search)
-     displayPage(storeProducts,hoverNav,pageSignUp,container)}
-}
-}
+    let chack=element=>element.value;
+
+    async function chacklogin(elementOne ,elementTwo){
+     product={
+       email:elementOne.value,
+       password:elementTwo.value,
+     }
+     layerLogin.style.display="none";
+   let response = await axios.post("https://movies-api.routemisr.com/signin", product);
+   if(response.data.message!=="success"){
+   $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
+   error.innerHTML=response.data.message;
+   } 
+   else if(response.data.message==="success"){
+  
+    {
+     error.innerHTML="must begin with at least four letters and not begin with a number";
+    $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
+      
+     changingStyle(navBtns,3,"transparent","#ffffff")
+     storeProducts.innerHTML='';
+     displayProduct(homePageProducts);
+     productPrice.style.display="block"; 
+     menuTogglerLabel.style.opacity="1";
+     carsSoppingTtotal.style.display="block";
+     purchaseData.innerHTML+=`
+      <h4 class="product-datas">email : ${email.value}</h4>
+      <form>
+      <input class="inputs input-clear" name="card-number" type="text" placeholder="card number"> 
+       <input class="inputs input-clear" name="number-phone" type="text" placeholder="number phone"> 
+       <img src="img/card-mastercard.svg" class="mt-3" width="7%">
+       <img src="img/card-visa.svg" class="mt-3" width="7%">
+       <img src="img/card-discover.svg" class="mt-3" width="7%">
+       <img src="img/card-amex.svg" class="mt-3" width="7%">
+       <input class="inputs input-clear" name="card-number" type="number" placeholder="Discount coupon"> 
+       <button class="btn-Final-purchase">buy</button></form>`;
+       displayPage(navbar,hoverNav,pageLogIn,search)
+       displayPage(storeProducts,hoverNav,pageSignUp,productPreviewImage)}
+  }
+  }
+
+
 // * display functions *
 displayPage=(show,hide,hide2,show2,hide3)=>{
   clearInputs();
   errorLogin.style.display="none";
   error.style.display="none";
-  container.style.display="none";
+  productPreviewImage.style.display="none";
   hide.style.display="none";
   show.style.display="flex";
   hide2.style.display="none";
@@ -1395,7 +1400,7 @@ displayProduct=(element)=>{
        Content=document.querySelectorAll(".error-login");}
     }
     else{
-      clear(container);
+      clear(productPreviewImage);
        for(let i=0; i<element.length;i++){
       storeProducts.innerHTML+= `<div class="products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
       <img class="img" onclick="displayProductImage(${i})" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
@@ -1420,7 +1425,7 @@ displayBtns=()=>{
 displayProductDetails=(index)=>{
     clear(storeProducts);
     hide(totalMoney);
-    clear(container);
+    clear(productPreviewImage);
    storeProducts.innerHTML+=`<div class="products5 col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
    <img class="img" src="${homePageProducts[index].imges}" width="100%" height="100%" alt="${homePageProducts[index].name}"></div>
    <div class="salary-type"> <P class="type">${homePageProducts[index].type}</p>
@@ -1435,7 +1440,7 @@ displayPageBuy=element=>{
     hide(purchaseData);
     clear(productsCarts);
     clear(storeProducts);
-    clear(container);
+    clear(productPreviewImage);
     let total=Number();
     productsCarts.style.display="block";
   for(let i=0; i<element.length;i++){
@@ -1557,7 +1562,7 @@ iconSearch.onclick=()=>{
 iconProductPrice.addEventListener("click",()=>{
     values=inputProductPrice.value;
     clear(storeProducts);
-    clear(container);
+    clear(productPreviewImage);
 
    if(inputSearch.value==="mouse"||inputSearch.value==="ram"||inputSearch.value==="computer monitor"||inputSearch.value==="keyboard"||inputSearch.value==="mather board"||inputSearch.value==="head phones"
      ||inputSearch.value==="graphics card"||inputSearch.value==="hard disk"){  
@@ -1570,7 +1575,7 @@ iconProductPrice.addEventListener("click",()=>{
    }
   clearInputs();
 })
-navHome.addEventListener("click",()=>displayPage(storeProducts,pageSignUp,pageLogIn,container));
+navHome.addEventListener("click",()=>displayPage(storeProducts,pageSignUp,pageLogIn));
 navLogIn.addEventListener("click",()=>displayPage(pageLogIn,pageSignUp,storeProducts));
 navSignUp.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
 btnRegister.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
@@ -1586,7 +1591,9 @@ menu.addEventListener("click",displayBtns);
 nextIcon.addEventListener("click",getnext);
 prevIcon.addEventListener("click",getprev);
 //layerContentLogIn.addEventListener("click",clearLayerInputPassword)
-btnLogIn.addEventListener("click",chacklogin);
+btnLogIn.forEach(element => element.addEventListener("click" ,()=>chacklogin(email ,inputPassword)) )
+btnLogIn.forEach(element => element.addEventListener("click" ,()=>chacklogin(layerInputEmail ,layerInputPassword))  )
+//btnLogIn.addEventListener("click",chacklogin);
 //layerBtnLogin.addEventListener("click" ,chacklogin);
 btnLoginSignIn.addEventListener("click",chackSignUp);
 // * run functions *

@@ -7,6 +7,9 @@
 body{
   background-color: #f4f4f4;
 }
+#product-preview-image{
+  display: none;
+}
 
 .nav-search{
   background-color: #04090f;
@@ -24,10 +27,11 @@ body{
   width:100%;
   background-color:#04090f;
   padding:0.1rem 0.8rem;
-  margin-top: 1.5rem;
   padding: 0.5rem;
   border-radius:1%;
-  
+  position: fixed !important;
+  top: 0;
+  z-index: 99999; 
 }
 .nav-btns{
   background-color: transparent;
@@ -189,6 +193,7 @@ background-color: #e4e4e6;
 }
 .nav-home{
   color: #e4e2e2 !important;
+  
 }
 #email::placeholder ,#input-password::placeholder ,.text-login{
 color:#00706c;
@@ -246,12 +251,12 @@ input{
   margin: 0;
   box-sizing: border-box;
 }
+
 #layer-login{
   position:fixed;
   background-color: #2521217c;
   z-index: 999999; 
   display: none; 
-
 }
 
 .hover-nav li a {
@@ -311,7 +316,7 @@ button ,.nav-link{
   border-radius: 2rem;
   padding: 0.7rem;
 }
-#container{
+#product-preview-image{
   overflow: hidden;
 }
 .row{
@@ -352,7 +357,7 @@ button ,.nav-link{
     transform: rotateY(0deg);
 }
 .products{
-    max-width:19rem;
+    max-width:15rem;
     height:33rem;
     margin-top: 3rem;
     border-radius: 10px;
