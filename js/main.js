@@ -1213,8 +1213,14 @@ let computerStore = [
   computerMonitor24,mouse14,keyboard11,hardDisk25,keyboard18,keyboard12,computerMonitor25,mouse17,keyboard13,mouse15,ram25,graphicsCard20,
   mouse12,keyboard16,headPhones24,matherBoard25,graphicsCard21,mouse7,keyboard15,headPhones25,mouse9,keyboard25,graphicsCard22,keyboard4,
   ];
+
+
+  const iconsSearchNav=document.getElementById("icon-search-nav");
+  const layerSearch=document.getElementById("layer-search")
   const hoverNav=document.querySelector(".hover-nav")
   const navBtns=document.querySelectorAll(".nav-btns")
+  const Home =document.getElementById("home");
+  const inputSearchProduct=document.getElementById("input-search-product")
   const carsSoppingTtotal=document.getElementById("cars-sopping-total")
   const storeProducts = document.getElementById("store-products");
   const closeIcon = document.getElementById("close");
@@ -1238,10 +1244,11 @@ let computerStore = [
   const aliProducts = document.getElementById("ali-products");
   const btnMouseCursor= document.getElementsByClassName("mouse-cursor-gradient-tracking");
   const iconSoppingCars = document.getElementsByClassName("iconSoppingCars");
-  const menuTogglerLabel =document.getElementById("menu-toggler-label");
+  const menuTogglerLabel =document.getElementById("menu");
   const btnBuyProduct = document.querySelector(".btn-buy");
   const navHome=document.getElementById("nav-home");
   const navLogIn=document.getElementById("nav-logIn")
+  const iconComputerTools=document.getElementById("icon-computer-tools");
   const inputPassword=document.getElementById("input-password");
   const error=document.getElementById("Error");
   const pageLogIn=document.getElementById("page-logIn");
@@ -1271,21 +1278,33 @@ let computerStore = [
   const layerInputPassword=document.getElementById("layer-input-password");
   const layerBtnLogIn=document.getElementById("layer-btn-logIn");
   const layerBtnRegister=document.getElementById("layer-btn-register")
+  const mySwiper=document.getElementById("mySwiper");
+  const errorLayerLogIn=document.getElementById("error-layer-logIn")
   let ShowSomeProducts = computerStore.filter((element, i) => i < 52);
   let homePageProducts=computerStore;
   let indexs;
   let arrayCardsShopping = [];
   let arr = "";
-  let height=$(".navbar").outerHeight()
-  window.onscroll= scroll=()=>{if(this.scrollY>=height)$(".menu-toggler-label").css({"backgroundColor":"#cceaf5","color":"#081722","display":"block"})
-  else if(this.scrollY<=height)$(".menu-toggler-label").css({"backgroundColor":"#081722","color":"#cceaf5","display":"none"})}
-//*function changing colors and background *
+  let height=$(".navbar-one").height()+$(".navbar-two").height();
+
+
+
+ iconsSearchNav.addEventListener("click",()=>layerSearch.style.display="flex")
+
+let scroll=element=>{ 
+  window.onscroll= scroll=()=>{if(this.scrollY<= height)$(element).css({"position":"static",'height':"100px" })
+  else if(this.scrollY>=height)$(element).css({"position":"fixed" ,"top":"0" ,"left":"0" ,'right':"0" ,"height":"60px"})}//$(".menu-toggler-label").css({"backgroundColor":"#081722","color":"#cceaf5","display":"none"})}
+}
+scroll('.navbar-two');
+scroll('.hover-nav');
+  //*function changing colors and background *
 changingStyle=(element,i,background,color)=>[element[i].style.backgroundColor=background,element[i].style.color=color];
 //*changing colors and backgound btn-nav*
 for (let i = 0; i < navBtns.length; i++){
      navBtns[i].addEventListener("click",()=>{
+      mySwiper.style.display="none";
      for (let i = 0; i < navBtns.length; i++)changingStyle(navBtns,i,"transparent","#04090f")
-     changingStyle(navBtns,i,"transparent","#04090f")})
+     changingStyle(navBtns,i,"transparent","#033472")})
 }
 changingStyle(navBtns,0,"transparent","#ffffff")
 errorsNumbers=(elementOne,elementTwo)=>{
@@ -1335,24 +1354,30 @@ async function chackSignUp(){
        email:elementOne.value,
        password:elementTwo.value,
      }
-     layerLogin.style.display="none";
+    
    let response = await axios.post("https://movies-api.routemisr.com/signin", product);
    if(response.data.message!=="success"){
    $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
+   $("#error-layer-logIn").fadeIn(()=>$("#error-layer-logIn").fadeOut(5000));
+   errorLayerLogIn.innerHTML=response.data.message;
    error.innerHTML=response.data.message;
    } 
    else if(response.data.message==="success"){
-  
-    {
+
      error.innerHTML="must begin with at least four letters and not begin with a number";
     $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
+    console.log(height)
       
-     changingStyle(navBtns,3,"transparent","#ffffff")
      storeProducts.innerHTML='';
      displayProduct(homePageProducts);
      productPrice.style.display="block"; 
      menuTogglerLabel.style.opacity="1";
      carsSoppingTtotal.style.display="block";
+     iconComputerTools.style.display="none";
+     layerLogin.style.display="none";
+     Home.style.display="block";
+     productPreviewImage.style.display="block";
+
      purchaseData.innerHTML+=`
       <h4 class="product-datas">email : ${email.value}</h4>
       <form>
@@ -1364,14 +1389,15 @@ async function chackSignUp(){
        <img src="img/card-amex.svg" class="mt-3" width="7%">
        <input class="inputs input-clear" name="card-number" type="number" placeholder="Discount coupon"> 
        <button class="btn-Final-purchase">buy</button></form>`;
-       displayPage(navbar,hoverNav,pageLogIn,search)
-       displayPage(storeProducts,hoverNav,pageSignUp,productPreviewImage)}
+       displayPage(navbar,hoverNav,pageLogIn,search);
+       displayPage(storeProducts,hoverNav,pageSignUp,productPreviewImage);
+
   }
   }
 
 
 // * display functions *
-displayPage=(show,hide,hide2,show2,hide3)=>{
+displayPage=(show,hide,hide2,show2)=>{
   clearInputs();
   errorLogin.style.display="none";
   error.style.display="none";
@@ -1391,18 +1417,18 @@ displayProduct=(element)=>{
       for(let i=0; i<element.length;i++){
       storeProducts.innerHTML+=`
   
-      <div class="position-relative products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
+      <div class="position-relative products  col-md-12 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
       <img class="img" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
       <button id="btn" onclick="displayProductError(${i})" class="button-shrink">buy</button>
-      <h3>${element[i].name} </h3>
+      <h3> ${element[i].name} </h3>
       <p><span></span>${element[i].type}</p>
       <h3 class="h3-salary">${element[i].salary} EGP</h3> </div> `  
        Content=document.querySelectorAll(".error-login");}
     }
     else{
-      clear(productPreviewImage);
+      //clear(productPreviewImage);
        for(let i=0; i<element.length;i++){
-      storeProducts.innerHTML+= `<div class="products col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
+      storeProducts.innerHTML+= `<div class="products col-sm-12  col-md-12 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
       <img class="img" onclick="displayProductImage(${i})" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
       <button id="btn" onclick="displayProductDetails(${i})" class="button-shrink">buy</button>
       <h3>name : ${element[i].name}</h3>
@@ -1425,7 +1451,7 @@ displayBtns=()=>{
 displayProductDetails=(index)=>{
     clear(storeProducts);
     hide(totalMoney);
-    clear(productPreviewImage);
+    //clear(productPreviewImage);
    storeProducts.innerHTML+=`<div class="products5 col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
    <img class="img" src="${homePageProducts[index].imges}" width="100%" height="100%" alt="${homePageProducts[index].name}"></div>
    <div class="salary-type"> <P class="type">${homePageProducts[index].type}</p>
@@ -1440,7 +1466,7 @@ displayPageBuy=element=>{
     hide(purchaseData);
     clear(productsCarts);
     clear(storeProducts);
-    clear(productPreviewImage);
+    //clear(productPreviewImage);
     let total=Number();
     productsCarts.style.display="block";
   for(let i=0; i<element.length;i++){
@@ -1459,7 +1485,7 @@ displayProductsBuyPage=(index)=>{
    arrayCardsShopping.push(homePageProducts[index])
    showBtnTotalMoney();
    pContent.innerHTML=arrayCardsShopping.length;
-   carsSoppingTtotal.style.color="#fdbfca";
+   carsSoppingTtotal.style.color="#033472";
    displayPageBuy(arrayCardsShopping);
 } 
 displayProductImage=i=>{
@@ -1479,7 +1505,7 @@ getprev=()=>{
   indexs--
   if(indexs<0)indexs=imgesProducts.length
   displayLightBoxItem(homePageProducts[indexs].imges)
-};
+}
 getClose=()=>$("#lightbox-container").hide();
 // * functions onKeyboard*
 firstName.onkeyup=()=>errorsTexts(firstName,errorLogin);
@@ -1489,7 +1515,8 @@ passwordSignUp.onkeyup=()=>errorsNumbers(passwordSignUp,errorLogin)
 document.addEventListener("keydown",e=>{
   if(e.key=='ArrowRight')getnext(); 
   else if(e.key=="ArrowLeft")getprev();
-  else if(e.key=='Escape')getClose();    
+  else if(e.key=='Escape')getClose();
+  ;    
 })
 //* clear functions *
 clear=(element)=>element.innerHTML="";
@@ -1507,7 +1534,7 @@ addProductsOnTheShoppingCar=(index)=>{
   addProduct(index);
  pContent.innerHTML=arrayCardsShopping.length;
  iconSoppingCars[index].style.color="#0093E9";
- carsSoppingTtotal.style.color="#fdbfca";
+ carsSoppingTtotal.style.color="#033472";
 
 }
 // * remove functions *
@@ -1515,7 +1542,7 @@ removeProduct=i=>{
     arrayCardsShopping.splice(i,1);
     clear(storeProducts);
     pContent.innerHTML=arrayCardsShopping.length;
-    if(arrayCardsShopping.length<=0)[pContent.innerHTML="",carsSoppingTtotal.style.color="#cceaf5"]
+    if(arrayCardsShopping.length<=0)[pContent.innerHTML="",carsSoppingTtotal.style.color="rgb(22, 23, 24)"]
     displayPageBuy(arrayCardsShopping);
 }
 // * onclick functions *
@@ -1549,8 +1576,12 @@ totalMoney.addEventListener("click",()=>{
      hide(totalMoney); 
      if(totalMoney.innerHTML!=='total salary : 0 EGP')purchaseData.style.display="block";
 }) 
+
+
+
 iconSearch.onclick=()=>{
-    let values= inputSearch.value;
+    let values= inputSearchProduct.value;
+    console.log(values)
      clearInputs();
      if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyboard"||values==="mather board"||values==="head phones"||values==="graphics card"||values==="hard disk"){
       homePageProducts=computerStore.filter(element=>element.name==values);
@@ -1559,29 +1590,68 @@ iconSearch.onclick=()=>{
   $(".text-error").fadeOut(4000,0);
   }
 }
+
+
+
+
 iconProductPrice.addEventListener("click",()=>{
     values=inputProductPrice.value;
+   let valueSearch=inputSearch.value;
     clear(storeProducts);
-    clear(productPreviewImage);
+    //clear(productPreviewImage);
 
-   if(inputSearch.value==="mouse"||inputSearch.value==="ram"||inputSearch.value==="computer monitor"||inputSearch.value==="keyboard"||inputSearch.value==="mather board"||inputSearch.value==="head phones"
+  if(values!==''&& valueSearch==="mouse"||valueSearch==="ram"||valueSearch==="computer monitor"||valueSearch==="keyboard"||valueSearch==="mather board"||
+      valueSearch==="head phones"||valueSearch==="graphics card"||valueSearch==="hard disk"){
+      homePageProducts=computerStore.filter(element=>element.name==valueSearch);
+      layerSearch.style.display='none';
+       displayProduct(homePageProducts)
+    }
+    else if(valueSearch===''||values===''){
+      $(".text-error").fadeIn(()=>$(".text-error").html("Please fill in search input  and price input"))
+      $(".text-error").fadeOut(4000,0);
+     }
+ 
+  else if(valueSearch!==""){$(".text-error").fadeIn(()=>$(".text-error").html("This product is not currently available"))
+  $(".text-error").fadeOut(4000,0);
+  }
+  
+  
+  if(valueSearch!==''&&inputSearch.value==="mouse"||inputSearch.value==="ram"||inputSearch.value==="computer monitor"||inputSearch.value==="keyboard"||inputSearch.value==="mather board"||inputSearch.value==="head phones"
      ||inputSearch.value==="graphics card"||inputSearch.value==="hard disk"){  
     homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value&&element.name==inputSearch.value);
-     displayProduct(homePageProducts)
+    displayProduct(homePageProducts)
    }
+
+   /*
+   else if(valueSearch!==""){$(".text-error").fadeIn(()=>$(".text-error").html("This product is not currently available"))
+  $(".text-error").fadeOut(4000,0);
+  }
+  else $(".text-error").fadeIn(()=>$(".text-error").html("This product is not currently available"))
+  $(".text-error").fadeOut(4000,0);
+*/
+   /*
    else if(inputProductPrice.value!==""){
     homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value);
     displayProduct(homePageProducts)
    }
+   */
   clearInputs();
-})
+  })
+
 navHome.addEventListener("click",()=>displayPage(storeProducts,pageSignUp,pageLogIn));
 navLogIn.addEventListener("click",()=>displayPage(pageLogIn,pageSignUp,storeProducts));
 navSignUp.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
 btnRegister.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
-lightboxContainer.addEventListener('click',e=>{if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon){getClose()}});
+lightboxContainer.addEventListener('click',e=>{if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon)getClose()});
+layerSearch.addEventListener('click',e=>{ if(e.target!=inputSearch&&e.target!=inputProductPrice&&e.target!=iconProductPrice){
+layerSearch.style.display='none';
+}
+});
+
+
+
 layerLogin.addEventListener("click", e=>{if(e.target!=layerContentLogIn&&e.target!=layerTextLogin&&e.target!=layerInputEmail&&
-e.target!=layerInputPassword&&e.target!=layerBtnLogIn&&e.target!=layerBtnRegister){
+e.target!=layerInputPassword&&e.target!=layerBtnLogIn&&e.target!=layerBtnRegister &&e.target!=errorLayerLogIn){
   layerInputPassword.value='';
   layerInputEmail.value=''; 
   $("#layer-login").css("display","none"); 

@@ -6,68 +6,210 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <div id="search" class="w-100 mt-4 text-center">
-    <input id="input-search" class="input-clear" type="text" name="search" placeholder="Search">
-    <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
-    <p id="text-error" class="text-error"></p>
-  </div>
- 
-<nav id="hover-nav" class="hover-nav">
-      <ul>
-        <li id="nav-home"><button class="a nav-home products-list">Home</button></li>
-        <li id="nav-logIn"><button class="a nav-btns products-list">login</button></li>
-        <li id="nav-signIn"><button class="a nav-btns products-list">Register</button><li>
-      </ul>
- </nav>
 
- <div class="icon-computer-tools w-100 h-100">
+
+
+
+  <nav id="hover-nav" class="hover-nav">
+      <ul>
+        <li id="nav-home"><button class="a nav-home products-list"><i class="fa-solid fa-house"></i></button></li>
+        <li id="nav-logIn"><button class="a products-list btns-navbar">login</button></li>
+        <li id="nav-signIn"><button class="a products-list btns-navbar">Register</button><li>
+      </ul>
+   </nav>
+
+<div id="icon-computer-tools" class="icon-computer-tools w-100 ">
   <div class="background-transparent d-flex justify-content-end align-items-center">
     <p class="text-content-computer-store">Available computer tools and equipment such as mouse, keyboard and RAM
       and hard disk and graphics card and head phones and motherboard and computer monitor</p>
     </div>
- </div>
- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a id="ali-products" class="navbar-brand nav-btns" href="#">ali-products</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  </div>
+
+
+<div id="home" class="home">
+<nav class="navbar-one navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#" id="ali-products"> home
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     
+  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li class="nav-item me-5">
+          <i class="icons fa-brands fa-facebook"></i>
+          <i class="icons fa-brands fa-youtube"></i>
+          <i class="icons fa-brands fa-instagram"></i>
+          <i class="icons fa-brands fa-tiktok"></i>
+      </li>
+   
+</ul>
+    </div>
+  </div>
+</nav>
+<nav class="navbar-two navbar d-flex align-items-center justify-content-center navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid ">
+      <i id="cars-sopping-total" class="cars-sopping-total iconSoppingCars fa-solid fa-cart-shopping"> <p id="p-content" class="p-content"></p></i>
+      <i id="icon-search-nav" class="icon-search-nav fa-solid fa-magnifying-glass"></i> 
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active  btn-products-store nav-btns " aria-current="page" href="#">mouse</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">mather board</a>
+        </li>
       <li class="nav-item">
-          </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              External components
-            </a>
-            <ul class="dropdown-menu">
-              <li><button class="a dropdown-item  btn-products-store nav-btns">computer monitor</button></li>
-              <li><button class="a dropdown-item  btn-products-store nav-btns">mouse</button></li>
-              <li><button class="a dropdown-item  btn-products-store nav-btns">keyboard</button></li>
-              <li><button class="a dropdown-item  btn-products-store nav-btns">head phones</button></li>
-            </ul>
-          </li>  
+          <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">keyboard</a>
+        </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              External components
-            </a>
-            <ul class="dropdown-menu">
-              <li><button class="a dropdown-item nav-btns btn-products-store">ram</button></li>
-              <li><button class="a dropdown-item nav-btns btn-products-store">mather board</button></li>
-              <li><button class="a dropdown-item nav-btns btn-products-store">graphics card</button></li>
-            </ul>
-          </li>  
-        </ul>
+        <li class="nav-item">
+          <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">hard disk</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">ram</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">head phones</a>
+        </li>
 
+        <li class="nav-item">
+          <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">graphics card</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">computer monitor</a>
+        </li>
+  
+    </div>
+    <img src="img/icons-home.png" width="75px" class="me-3">
+
+  </div>
+</nav>
+
+
+  <div id="productPrice" class="w-100 mt-3 text-center">
+    <i id="icon-searc" class="fa-solid fa-magnifying-glass"></i>
+  </div>
+</div>
+
+<swiper-container id="mySwiper" class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+<swiper-slide><img src="img/icon-swiper.png" class="wow bounceInUp"></swiper-slide>
+<swiper-slide class="imges-swiper"><h2 class="text-swiper text-light wow bounceInUp">ضمان شهر ضد عيوب الصناعة بفتورة مختومة من شركتنا </h2> </swiper-slide>
+</swiper-container>
+</div>
+
+<div id="search-product" class="w-100 mt-4 text-center">
+  <input id="input-search-product" class="input-search-product input-clear" type="text" name="search" placeholder="Search">
+  <i id="icon-search" class="icon-search-product fa-solid fa-magnifying-glass"></i>
+  <p id="text-error" class="text-error"></p>
+</div>
+
+
+
+<div id="product-preview-image" class="container-fiuld">
+  <div class="row position-relative display-flex justify-content-around">
+    <div class="card col-md-3">
+       <div class="card-side position-absolute top-0 start-0 w-100 front">
+       <img src="img/rams(1).png" width="100%" height="100%" alt="ram">
+    </div>
+      <div class="card-side col-md-4 p-4 position-absolute top-0 start-0 w-100 back">
+        <img src="img/rams.png" width="100%" height="100%" alt="ram">
       </div>
     </div>
-  </nav>
+
+    <div class="card col-md-3">
+      <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
+       <img class="icons-products" src="img/mouses.png" width="100%" height="100%" alt="mouse">
+      </div>
+    <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img class="icons-products" src="img/mouses(1).png" width="100%" height="100%" alt="mouse">
+       </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
+       <img class="icons-products" src="img/keyboards.png" width="100%" height="100%" alt="keyboard">
+      </div>
+     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img class="icons-products" src="img/keyboards(1).png" width="100%" height="100%" alt="keyboard">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
+       <img  class="icons-products" src="img/hard disks.png" width="100%" height="100%" alt="hard disk">
+      </div>
+   <div class="card-side  p-4 position-absolute top-0 start-0 w-100 back">
+       <img  class="icons-products" src="img/hard disks(2).png" width="100%" height="100%" alt="hard disk">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
+       <img  class="icons-products" src="img/Graphics cards.png" width="100%" height="100%" alt="graphics card">
+      </div>
+     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img  class="icons-products" src="img/Graphics cards(1).png" width="100%" height="100%" alt="graphics card">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
+       <img  class="icons-products" src="img/computer monitor(0).png" width="100%" height="100%" alt="computer monitor">
+      </div>
+     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img  class="icons-products" src="img/computer monitors(1).png" width="100%" height="100%" alt="computer monitor">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
+       <img  class="icons-products" src="img/matherboards.png" width="100%" height="100%" alt="mather board">
+       </div>
+       <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img  class="icons-products" src="img/matherboards(1).png" width="100%" height="100%" alt="mather board">
+     </div>
+   </div>
+
+   <div class="card col-md-3">
+      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
+       <img  class="icons-products" src="img/headphones.png" width="100%" height="100%" alt="head phones">
+      </div>
+     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       <img class="icons-products" src="img/headphones(0).png" width="100%" height="100%" alt="head phones">
+     </div>
+   </div>
+
+</div>
+
+  </div>
+
+
+
+<div id="layer-search" class="justify-content-center align-items-center">
+  <div id="search" class="w-100 mt-4 text-center">
+   <input id="input-search" class="input-search-nav input-clear" type="text" name="search" placeholder="Search">
+   <input id="input-productprice" class="input-clear" type="number" name="search" placeholder="product price">
+   <button id="icon-productprice">search</button>
+   <p id="text-error" class="text-error"></p>
+ </div>
+</div>
+
+
+
+
+<i id="cars-sopping-total" class="cars-sopping-total iconSoppingCars fa-solid fa-cart-shopping"> <p id="p-content" class="p-content"></p></i>
+
+
+
 
   <div id="page-logIn" class="page-logIn logIn justify-content-start align-items-center h-100 w-100">
     <div id="page-content-logIn" class="ms-5">
@@ -87,13 +229,15 @@
         <h3 id="layer-text-login" class="mt-4 mb-5">Sign in With</h3>
         <button class="btn-bacebook"><i class="icon-facebook fa-brands fa-facebook-f"></i>facebook</button>
         <button class="btn-google"><i class="icon-google fa-brands fa-google"></i>google</button>
-        <form class="text-center">
+        <form class="text-center ">
           <label class="layer-label-email">email</label>
           <input id="layer-input-email" class="input-clear inputs-content mt-1" type="email">
           <label class="layer-label-password">password</label>
           <input id="layer-input-password" class="input-clear inputs-content mt-1 mb-5" type="password">
         </form>
-        <button id="layer-btn-logIn" class="btn-login">sign in</button>      
+        <p id="error-layer-logIn"></p>
+        <button id="layer-btn-logIn" class="btn-login">sign in</button>     
+ 
      </div> 
   
 </div> 
@@ -112,17 +256,112 @@
       <button id="btn-logIn-signUp" class="mt-5 button-shrink w-100">LogIn</button>
     </div>
   </div>
-<!--
-<div id="search" class="w-100 mt-4 text-center">
-    <input id="input-search" class="input-clear" type="text" name="search" placeholder="Search">
-    <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
-    <p id="text-error" class="text-error"></p>
+
+
+
+
+
+
+<div class="container">
+  <div id="store-products" class="w-100 m-1 rom justify-content-evenly">
+
+  </div>       
+
+  <div class="container-fiuld">
+    <div class="mt-5" id="products-carts">
+  
+    </div>                      
+</div>
+
   </div>
+
+<div class="containe">
+    <input type="checkbox" name="menu" id="menu" class="menu-toggler">
+    <label for="menu" id="menu-toggler-label" class="menu-toggler-label">Store products</label>
+    <ul id="stagger-menu" class="stagger-menu">
+      <li style="--i: 0"><button id="ali-products-list" class="nav-btns mouse-cursor-gradient-tracking"><span>Ali Product</span></button></li>
+      <li style="--i: 1"><button class="mouse-cursor-gradient-tracking"><span class="btn-products-store nav-btns btn-list">computer monitor</span></button></li>
+      <li style="--i: 3"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">keyboard</span></button></li>
+      <li style="--i: 4"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">ram</span></button></li>
+      <li style="--i: 5"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">hard disk</span></button></li>
+      <li style="--i: 6"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">mather board</span></button></li>
+      <li style="--i: 7"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">head phones</span></button></li>
+      <li style="--i: 8"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">graphics card</span></button></li>
+   </ul>
+  </div>
+
+<div id="lightbox-container" class=" align-items-center justify-content-center position-fixed top-0 bottom-0 start-0 end-0">
+  <div id="lightbox-item" class="d-flex col-sm-6 align-items-center justify-content-between position-relative "> 
+      <i id="close" class="far fa-times-circle fa-2x position-absolute top-0 end-0 mt-2 me-2"></i>
+      <i id="prev" class="far fa-arrow-alt-circle-left fa-2x mx-3"></i>
+      <i id="next" class="far fa-arrow-alt-circle-right fa-2x mx-3"></i>
+  </div>
+  </div>
+
+<button id="total-money"></button>
+<div id="purchase-data"></div>  
+
+
+<div class="section-end mt-4">
+  <div class="container">
+    
+    <div class="row">
+     
+      <div class="col-sm-12 col-md-3 col-xxl-3">
+        <h5>call us </h5>
+       
+        <p class="icon text-icon-home "><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24">
+          <path d="M 12 2 A 1 1 0 0 0 11.289062 2.296875 L 1.203125 11.097656 A 0.5 0.5 0 0 0 1 11.5 A 0.5 0.5 0 0 0 1.5 12 L 4 12 L 4 20 C 4 20.552 4.448 21 5 21 L 9 21 C 9.552 21 10 20.552 10 20 L 10 14 L 14 14 L 14 20 C 14 20.552 14.448 21 15 21 L 19 21 C 19.552 21 20 20.552 20 20 L 20 12 L 22.5 12 A 0.5 0.5 0 0 0 23 11.5 A 0.5 0.5 0 0 0 22.796875 11.097656 L 12.716797 2.3027344 A 1 1 0 0 0 12.710938 2.296875 A 1 1 0 0 0 12 2 z"></path>
+      </svg> King Al-Hakim Street - Sixth District - Obour City </p>
+      <p class="icon text-icon-home "><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 24 24">
+        <path d="M 12 2 A 1 1 0 0 0 11.289062 2.296875 L 1.203125 11.097656 A 0.5 0.5 0 0 0 1 11.5 A 0.5 0.5 0 0 0 1.5 12 L 4 12 L 4 20 C 4 20.552 4.448 21 5 21 L 9 21 C 9.552 21 10 20.552 10 20 L 10 14 L 14 14 L 14 20 C 14 20.552 14.448 21 15 21 L 19 21 C 19.552 21 20 20.552 20 20 L 20 12 L 22.5 12 A 0.5 0.5 0 0 0 23 11.5 A 0.5 0.5 0 0 0 22.796875 11.097656 L 12.716797 2.3027344 A 1 1 0 0 0 12.710938 2.296875 A 1 1 0 0 0 12 2 z"></path>
+    </svg> 01221479721 </p>
+    <p class="icon text-icon-home "><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 24 24">
+      <path d="M 12 2 A 1 1 0 0 0 11.289062 2.296875 L 1.203125 11.097656 A 0.5 0.5 0 0 0 1 11.5 A 0.5 0.5 0 0 0 1.5 12 L 4 12 L 4 20 C 4 20.552 4.448 21 5 21 L 9 21 C 9.552 21 10 20.552 10 20 L 10 14 L 14 14 L 14 20 C 14 20.552 14.448 21 15 21 L 19 21 C 19.552 21 20 20.552 20 20 L 20 12 L 22.5 12 A 0.5 0.5 0 0 0 23 11.5 A 0.5 0.5 0 0 0 22.796875 11.097656 L 12.716797 2.3027344 A 1 1 0 0 0 12.710938 2.296875 A 1 1 0 0 0 12 2 z"></path>
+  </svg> Speed_co41@yahoo.com</p>
+      </div>
+      <div class="col-sm-12 col-md-4 col-xl-4">
+          <i class="icons-section-end fa-brands fa-facebook"></i>
+          <i class="icons-section-end fa-brands fa-youtube"></i>
+          <i class="icons-section-end fa-brands fa-instagram"></i>
+          <i class="icons-section-end fa-brands fa-tiktok"></i>
+      </div>
+      <div class="col-sm-12 col-md-2 col-xl-2">
+ <h6 class="text-light">Our refreshing store</h6>
+ <ui>
+  <span class="btn-section-end"> About the store</span>
+  <span class="btn-section-end"> privacy policy </span>
+  <span class="btn-section-end"> Terms and Conditions</span>
+  <span class="btn-section-end"> Blog</span>
+
+
+ </ui>
+ <p></p>
+      </div>
+      <div class="col-3">
+        <p class="text-light">One of the best and best online stores that is easy to use
+        </p>
+      </div>
+  
+    </div>
+  
+  </div>
+  
+
+</div>
+
+
 -->
-<div id="productPrice" class="w-100 mt-3 text-center">
-    <input id="input-productprice" class="input-clear" type="number" name="search" placeholder="product price">
-    <i id="icon-productprice" class="fa-solid fa-magnifying-glass"></i>
-  </div>
+
+
+
+
+
+
+
+
+
+
 <div id="product-preview-image" class="container-fiuld">
   <div class="row position-relative display-flex justify-content-around">
     <div class="card col-md-3">
@@ -200,50 +439,31 @@
 </div>
   </div>
 
-<div class="container-fiuld">
-  <div id="store-products" class="w-75 m-1 rom justify-content-evenly">
 
-  </div>       
 
-  <div class="container-fiuld">
-    <div class="mt-5" id="products-carts">
-  
-    </div>                      
-</div>
 
-  </div>
 
-<div class="containe">
-    <input type="checkbox" name="menu" id="menu" class="menu-toggler">
-    <label for="menu" id="menu-toggler-label" class="menu-toggler-label">Store products</label>
-    <i id="cars-sopping-total" class="cars-sopping-total iconSoppingCars fa-solid fa-cart-shopping"> <p id="p-content" class="p-content"></p></i>
-    <ul id="stagger-menu" class="stagger-menu">
-      <li style="--i: 0"><button id="ali-products-list" class="nav-btns mouse-cursor-gradient-tracking"><span>Ali Product</span></button></li>
-      <li style="--i: 1"><button class="mouse-cursor-gradient-tracking"><span class="btn-products-store nav-btns btn-list">computer monitor</span></button></li>
-      <li style="--i: 3"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">keyboard</span></button></li>
-      <li style="--i: 4"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">ram</span></button></li>
-      <li style="--i: 5"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">hard disk</span></button></li>
-      <li style="--i: 6"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">mather board</span></button></li>
-      <li style="--i: 7"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">head phones</span></button></li>
-      <li style="--i: 8"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">graphics card</span></button></li>
-   </ul>
-  </div>
 
-<div id="lightbox-container" class=" align-items-center justify-content-center position-fixed top-0 bottom-0 start-0 end-0">
-  <div id="lightbox-item" class="d-flex col-sm-6 align-items-center justify-content-between position-relative "> 
-      <i id="close" class="far fa-times-circle fa-2x position-absolute top-0 end-0 mt-2 me-2"></i>
-      <i id="prev" class="far fa-arrow-alt-circle-left fa-2x mx-3"></i>
-      <i id="next" class="far fa-arrow-alt-circle-right fa-2x mx-3"></i>
-  </div>
-  </div>
 
-<button id="total-money"></button>
-<div id="purchase-data"></div>  
+
+
+
+
+
+
+
+
+
 
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+    </script>
   <script>AOS.init();</script>
   <script src="js/code.jquery.com_jquery-3.7.0.js"></script>
   <script src="js/main.js"></script>
