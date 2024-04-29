@@ -12,30 +12,54 @@
 <body>
 
 
-
-
-
-  <nav id="hover-nav" class="hover-nav">
+  <nav id="navbar-home-before-logIn" class="navbar-home-before-logIn w-100 position-absolute top-0">
       <ul>
-        <li id="nav-home"><button class="a nav-home products-list"><i class="fa-solid fa-house"></i></button></li>
-        <li id="nav-logIn"><button class="a products-list btns-navbar">login</button></li>
-        <li id="nav-signIn"><button class="a products-list btns-navbar">Register</button><li>
+        <li id="btn-home"><button><i class="fa-solid fa-house bg-light"></i></button></li>
+        <li id="nav-btn-logIn"><button class="btns-navbar text-dark">Login</button></li>
+        <li id="nav-btn-signUp"><button class="btns-navbar text-dark">Register</button><li>
       </ul>
-   </nav>
+    </nav>
 
-<div id="icon-computer-tools" class="icon-computer-tools w-100 ">
-  <div class="background-transparent d-flex justify-content-end align-items-center">
-    <p class="text-content-computer-store">Available computer tools and equipment such as mouse, keyboard and RAM
-      and hard disk and graphics card and head phones and motherboard and computer monitor</p>
-    </div>
-  </div>
+  <div id="icon-computer-tools" class="icon-computer-tools w-100 ">
+      <div class="background-transparent position-absolute top-0 start-0 end-0 bottom-0 d-flex justify-content-end align-items-center">
+        <p class="text-content-computer-store">Available computer tools and equipment such as mouse, keyboard and RAM
+          and hard disk and graphics card and head phones and motherboard and computer monitor</p>
+        </div>
+      </div>
 
+  <div id="page-logIn" class="top-0 justify-content-start align-items-center h-100 w-100">
+        <div class="ms-5 text-center page-content-logIn">
+          <h3 class="mt-4 mb-5 text-light fs-4 fw-bolder ">LogIn</h3>
+          <form>
+            <input id="email" class="input-clear mt-1 style-inputs-content" type="email" placeholder=" email">
+            <input id="password" class="input-clear mt-1 mb-5 style-inputs-content" type="password" placeholder="password">
+          </form>
+          <p id="Error" class="text-light"></p>
+          <button id="btn-logIn" class="btn-login mt-5 mb-1 button-shrink w-100">LogIn</button>
+          <button id="btn-register" class="button-shrink w-100">Register</button>
+        </div>
+       </div> 
+<div id="page-signUp" class="top-0 justify-content-start align-items-center h-100 w-100">
+        <div  class="text-center ms-5 page-content-signUp">
+          <h3 class="mt-4 mb-1 text-light fs-4 fw-bolder">signUp</h3>
+          <form class="text-center">
+            <input id="first-name" class="input-clear style-inputs-content mt-5 mb-3 " type="text" placeholder="first name">
+            <input id="last-name" class="input-clear style-inputs-content mb-3 mt-1" type="text" placeholder="last name">
+            <input id="age" class="input-clear style-inputs-content mt-1" type="number" placeholder="age">
+            <input id="password-signUp" class="input-clear style-inputs-content mt-1 mb-3" type="password" placeholder="password">
+            <input id="email-signUp" class="input-clear style-inputs-content mt-1" type="text" placeholder="email">
+          </form>
+          <p id="Error-signUp" class="text-light"></p>
+          <button id="btn-logIn-signUp" class="mt-5 button-shrink w-100">LogIn</button>
+        </div>
+      </div>
 
-<div id="home" class="home">
-<nav class="navbar-one navbar navbar-expand-lg bg-body-tertiary">
+      
+
+<div id="home">
+<nav class="navbar-icons navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand text-light" href="#" id="ali-products"> home
-    </a>
+    <a class="navbar-brand text-light" href="#" id="icon-house"><i class="icon-house fa-solid fa-house bg-light"></i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,20 +72,19 @@
           <i class="icons fa-brands fa-instagram"></i>
           <i class="icons fa-brands fa-tiktok"></i>
       </li>
-   
 </ul>
     </div>
   </div>
 </nav>
-<nav class="navbar-two navbar d-flex align-items-center justify-content-center navbar-expand-lg bg-body-tertiary">
+<nav class="navbar-products navbar align-items-center justify-content-center navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid ">
-      <i id="cars-sopping-total" class="cars-sopping-total iconSoppingCars fa-solid fa-cart-shopping"> <p id="p-content" class="p-content"></p></i>
-      <i id="icon-search-nav" class="icon-search-nav fa-solid fa-magnifying-glass"></i> 
+      <i id="cars-sopping-total" class="fa-solid fa-cart-shopping"> <p id="Products-counter" class="text-center fs-6"></p></i>
+      <i id="icon-search-nav" class="fs-5 fa-solid fa-magnifying-glass"></i> 
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+      <ul class="m-auto navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active  btn-products-store nav-btns " aria-current="page" href="#">mouse</a>
+          <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">mouse</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">mather board</a>
@@ -93,26 +116,22 @@
   </div>
 </nav>
 
-
-  <div id="productPrice" class="w-100 mt-3 text-center">
-    <i id="icon-searc" class="fa-solid fa-magnifying-glass"></i>
-  </div>
-</div>
-
 <swiper-container id="mySwiper" class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
 centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
-<swiper-slide><img src="img/icon-swiper.png" class="wow bounceInUp"></swiper-slide>
-<swiper-slide class="imges-swiper"><h2 class="text-swiper text-light wow bounceInUp">ضمان شهر ضد عيوب الصناعة بفتورة مختومة من شركتنا </h2> </swiper-slide>
+<swiper-slide><img src="img/icon-swiper.png" class="wow bounceInUp w-100 h-100 d-flex align-items-center justify-content-center"></swiper-slide>
+<swiper-slide class="imges-swiper  d-flex align-items-center justify-content-center"><h2 class="text-swiper text-center text-light wow bounceInUp">ضمان شهر ضد عيوب الصناعة بفتورة مختومة من شركتنا </h2> </swiper-slide>
 </swiper-container>
+
 </div>
 
-<div id="search-product" class="w-100 mt-4 text-center">
-  <input id="input-search-product" class="input-search-product input-clear" type="text" name="search" placeholder="Search">
-  <i id="icon-search" class="icon-search-product fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div id="search-product" class="w-100 mt-4 search-product text-center">
+  <input id="input-search-product" class="bg-light text-center input-clear" type="text" name="search" placeholder="Search">
+  <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
   <p id="text-error" class="text-error"></p>
 </div>
-
-
 
 <div id="product-preview-image" class="container-fiuld">
   <div class="row position-relative display-flex justify-content-around">
@@ -163,7 +182,7 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 
    <div class="card col-md-3">
       <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
-       <img  class="icons-products" src="img/computer monitor(0).png" width="100%" height="100%" alt="computer monitor">
+       <img  class="icons-products" src="img/computer monitors.png" width="100%" height="100%" alt="computer monitor">
       </div>
      <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
        <img  class="icons-products" src="img/computer monitors(1).png" width="100%" height="100%" alt="computer monitor">
@@ -175,13 +194,13 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
        <img  class="icons-products" src="img/matherboards.png" width="100%" height="100%" alt="mather board">
        </div>
        <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
-       <img  class="icons-products" src="img/matherboards(1).png" width="100%" height="100%" alt="mather board">
+       <img class="icons-products" src="img/matherboards(1).png" width="100%" height="100%" alt="mather board">
      </div>
    </div>
 
    <div class="card col-md-3">
       <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
-       <img  class="icons-products" src="img/headphones.png" width="100%" height="100%" alt="head phones">
+       <img class="icons-products" src="img/headphones.png" width="100%" height="100%" alt="head phones">
       </div>
      <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
        <img class="icons-products" src="img/headphones(0).png" width="100%" height="100%" alt="head phones">
@@ -193,76 +212,35 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
   </div>
 
 
-
-<div id="layer-search" class="justify-content-center align-items-center">
-  <div id="search" class="w-100 mt-4 text-center">
+<div id="page-layer-search" class="justify-content-center align-items-center position-fixed top-0 end-0 start-0 bottom-0">
+  <div id="contents-page-layer-search" class="w-100 mt-4 text-center">
    <input id="input-search" class="input-search-nav input-clear" type="text" name="search" placeholder="Search">
-   <input id="input-productprice" class="input-clear" type="number" name="search" placeholder="product price">
-   <button id="icon-productprice">search</button>
-   <p id="text-error" class="text-error"></p>
+   <input id="input-productPrice" class="input-clear" type="number" name="search" placeholder="productprice">
+   <button id="btn-search" class="m-auto">search</button>
+   <p id="text-error" class="text-error style-text-error"></p>
  </div>
 </div>
 
 
-
-
-<i id="cars-sopping-total" class="cars-sopping-total iconSoppingCars fa-solid fa-cart-shopping"> <p id="p-content" class="p-content"></p></i>
-
-
-
-
-  <div id="page-logIn" class="page-logIn logIn justify-content-start align-items-center h-100 w-100">
-    <div id="page-content-logIn" class="ms-5">
-      <h3 class="mt-4 mb-5 text-login">LogIn</h3>
-      <form class="text-center">
-        <input id="email" class="input-clear inputs-content mt-1" type="email" placeholder=" email">
-        <input id="input-password" class=" input-clear inputs-content mt-1 mb-5" type="password" placeholder="password">
-      </form>
-      <p id="Error"></p>
-      <button id="btn-logIn" class="btn-login mt-5 mb-1 button-shrink w-100">LogIn</button>
-      <button id="btn-register" class="button-shrink w-100">Register</button>
-    </div>
-   </div> 
-
-   <div id="layer-login" class="layer-login top-0 bottom-0 start-0 end-0 align-items-center justify-content-center">
-    <div id="layer-content-logIn" class="ms-5 ">
-        <h3 id="layer-text-login" class="mt-4 mb-5">Sign in With</h3>
-        <button class="btn-bacebook"><i class="icon-facebook fa-brands fa-facebook-f"></i>facebook</button>
-        <button class="btn-google"><i class="icon-google fa-brands fa-google"></i>google</button>
+<div id="layer-page-logIn" class=" layer-login top-0 bottom-0 start-0 end-0 align-items-center justify-content-center">
+    <div id="content-layer-logIn" class="ms-5 text-center">
+        <h3 id="login-layer-text" class="mt-4 mb-5">Sign in With</h3>
+        <button class="btn-facebook text-light"><i class="icon-facebook fa-brands fa-facebook-f"></i>facebook</button>
+        <button class="btn-google text-light"><i class="icon-google text-light fa-brands fa-google"></i>google</button>
         <form class="text-center ">
           <label class="layer-label-email">email</label>
           <input id="layer-input-email" class="input-clear inputs-content mt-1" type="email">
           <label class="layer-label-password">password</label>
           <input id="layer-input-password" class="input-clear inputs-content mt-1 mb-5" type="password">
         </form>
-        <p id="error-layer-logIn"></p>
+        <p id="error-layer-logIn" class="m-auto"></p>
         <button id="layer-btn-logIn" class="btn-login">sign in</button>     
  
      </div> 
   
-</div> 
-
-<div id="page-signUp" class="page-sigIn logIn justify-content-start align-items-center h-100 w-100">
-    <div id="page-content-signUp" class="ms-5">
-      <h3 class="mt-4 mb-1 text-login">signUp</h3>
-      <form class="text-center">
-        <input id="first-name" class="input-clear inputs-content mt-5 mb-3 " type="text" placeholder="first name">
-        <input id="last-name" class="input-clear last-name inputs-content mb-3 mt-1" type="text" placeholder="last name">
-        <input id="age" class="input-clear inputs-content mt-1" type="number" placeholder="age">
-        <input id="password-signUp" class="input-clear inputs-content mt-1 mb-3" type="password" placeholder="password">
-        <input id="email-signUp" class="input-clear inputs-content mt-1" type="text" placeholder="email">
-      </form>
-      <p id="Error-login"></p>
-      <button id="btn-logIn-signUp" class="mt-5 button-shrink w-100">LogIn</button>
-    </div>
-  </div>
-
-
-
-
-
-
-<div class="container">
+  </div> 
+ 
+  <div class="container">
   <div id="store-products" class="w-100 m-1 rom justify-content-evenly">
 
   </div>       
@@ -275,20 +253,8 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 
   </div>
 
-<div class="containe">
-    <input type="checkbox" name="menu" id="menu" class="menu-toggler">
-    <label for="menu" id="menu-toggler-label" class="menu-toggler-label">Store products</label>
-    <ul id="stagger-menu" class="stagger-menu">
-      <li style="--i: 0"><button id="ali-products-list" class="nav-btns mouse-cursor-gradient-tracking"><span>Ali Product</span></button></li>
-      <li style="--i: 1"><button class="mouse-cursor-gradient-tracking"><span class="btn-products-store nav-btns btn-list">computer monitor</span></button></li>
-      <li style="--i: 3"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">keyboard</span></button></li>
-      <li style="--i: 4"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">ram</span></button></li>
-      <li style="--i: 5"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">hard disk</span></button></li>
-      <li style="--i: 6"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">mather board</span></button></li>
-      <li style="--i: 7"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">head phones</span></button></li>
-      <li style="--i: 8"><button class="mouse-cursor-gradient-tracking"><span class="nav-btns btn-products-store btn-list">graphics card</span></button></li>
-   </ul>
-  </div>
+ 
+
 
 <div id="lightbox-container" class=" align-items-center justify-content-center position-fixed top-0 bottom-0 start-0 end-0">
   <div id="lightbox-item" class="d-flex col-sm-6 align-items-center justify-content-between position-relative "> 
@@ -351,6 +317,12 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 </div>
 
 
+
+
+
+
+
+
 -->
 
 
@@ -359,85 +331,6 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 
 
 
-
-
-
-<div id="product-preview-image" class="container-fiuld">
-  <div class="row position-relative display-flex justify-content-around">
-    <div class="card col-md-3">
-       <div class="card-side position-absolute top-0 start-0 w-100 front">
-       <img src="img/rams(1).png" width="100%" height="100%" alt="ram">
-    </div>
-      <div class="card-side col-md-4 p-4 position-absolute top-0 start-0 w-100 back">
-        <img src="img/rams.png" width="100%" height="100%" alt="ram">
-      </div>
-    </div>
-
-    <div class="card col-md-3">
-      <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
-       <img class="icons-products" src="img/mouses.png" width="100%" height="100%" alt="mouse">
-      </div>
-    <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
-       <img class="icons-products" src="img/mouses(1).png" width="100%" height="100%" alt="mouse">
-       </div>
-   </div>
-
-   <div class="card col-md-3">
-      <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
-       <img class="icons-products" src="img/keyboards.png" width="100%" height="100%" alt="keyboard">
-      </div>
-     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
-       <img class="icons-products" src="img/keyboards(1).png" width="100%" height="100%" alt="keyboard">
-     </div>
-   </div>
-
-   <div class="card col-md-3">
-      <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
-       <img  class="icons-products" src="img/hard disks.png" width="100%" height="100%" alt="hard disk">
-      </div>
-   <div class="card-side  p-4 position-absolute top-0 start-0 w-100 back">
-       <img  class="icons-products" src="img/hard disks(2).png" width="100%" height="100%" alt="hard disk">
-     </div>
-   </div>
-
-   <div class="card col-md-3">
-      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
-       <img  class="icons-products" src="img/Graphics cards.png" width="100%" height="100%" alt="graphics card">
-      </div>
-     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
-       <img  class="icons-products" src="img/Graphics cards(1).png" width="100%" height="100%" alt="graphics card">
-     </div>
-   </div>
-
-   <div class="card col-md-3">
-      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
-       <img  class="icons-products" src="img/computer monitor(0).png" width="100%" height="100%" alt="computer monitor">
-      </div>
-     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
-       <img  class="icons-products" src="img/computer monitors(1).png" width="100%" height="100%" alt="computer monitor">
-     </div>
-   </div>
-
-   <div class="card col-md-3">
-      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
-       <img  class="icons-products" src="img/matherboards.png" width="100%" height="100%" alt="mather board">
-       </div>
-       <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
-       <img  class="icons-products" src="img/matherboards(1).png" width="100%" height="100%" alt="mather board">
-     </div>
-   </div>
-
-   <div class="card col-md-3">
-      <div class="card-side p-4 position-absolute top-0 start-0 w-100 front">
-       <img  class="icons-products" src="img/headphones.png" width="100%" height="100%" alt="head phones">
-      </div>
-     <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
-       <img class="icons-products" src="img/headphones(0).png" width="100%" height="100%" alt="head phones">
-     </div>
-   </div>
-
-</div>
-  </div>
 
 
 

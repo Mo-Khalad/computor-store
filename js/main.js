@@ -1215,88 +1215,90 @@ let computerStore = [
   ];
 
 
-  const iconsSearchNav=document.getElementById("icon-search-nav");
-  const layerSearch=document.getElementById("layer-search")
-  const hoverNav=document.querySelector(".hover-nav")
-  const navBtns=document.querySelectorAll(".nav-btns")
-  const Home =document.getElementById("home");
-  const inputSearchProduct=document.getElementById("input-search-product")
-  const carsSoppingTtotal=document.getElementById("cars-sopping-total")
-  const storeProducts = document.getElementById("store-products");
-  const closeIcon = document.getElementById("close");
-  const lightboxContainer = document.getElementById("lightbox-container");
-  const lightboxItem = document.getElementById("lightbox-item");
-  const btnProductsStore = document.querySelectorAll(".btn-products-store");
-  const staggerMenu = document.getElementById("stagger-menu");
-  const menu = document.getElementById("menu");
-  const nextIcon = document.getElementById("next");
-  const prevIcon = document.getElementById("prev");
-  const btnProduct = document.querySelectorAll(".button-shrink");
-  const imgesProducts = document.getElementsByClassName("img");
-  const productPreviewImage = document.getElementById("product-preview-image");
-  const inputSearch = document.getElementById("input-search");
-  const iconSearch = document.getElementById("icon-search");
-  const inputProductPrice = document.getElementById("input-productprice");
-  const iconProductPrice = document.getElementById("icon-productprice")
-  const productsCarts= document.getElementById("products-carts");
-  const purchaseData=document.getElementById("purchase-data");
-  const totalMoney = document.getElementById("total-money");
-  const aliProducts = document.getElementById("ali-products");
-  const btnMouseCursor= document.getElementsByClassName("mouse-cursor-gradient-tracking");
-  const iconSoppingCars = document.getElementsByClassName("iconSoppingCars");
-  const menuTogglerLabel =document.getElementById("menu");
-  const btnBuyProduct = document.querySelector(".btn-buy");
-  const navHome=document.getElementById("nav-home");
-  const navLogIn=document.getElementById("nav-logIn")
-  const iconComputerTools=document.getElementById("icon-computer-tools");
-  const inputPassword=document.getElementById("input-password");
-  const error=document.getElementById("Error");
+  const navbarHomeBeforeLogIn=document.querySelector(".navbar-home-before-logIn");
+  const btnHome=document.getElementById("btn-home");
+  const navBtnLogIn=document.getElementById("nav-btn-logIn");
+  const navBtnSignUp=document.getElementById("nav-btn-signUp");
   const pageLogIn=document.getElementById("page-logIn");
-  const pageSignUp=document.getElementById("page-signUp")
-  const navSignUp=document.getElementById("nav-signIn");
-  const btnLogIn=document.querySelectorAll(".btn-login")
+  const email=document.getElementById("email");
+  const Password=document.getElementById("password");
+  const inputClear=document.querySelectorAll(".input-clear");
+  const error=document.getElementById("Error");
+  const btnLogIn=document.querySelectorAll(".btn-login");
   const btnRegister=document.getElementById("btn-register");
-  const btnLoginSignIn=document.getElementById("btn-logIn-signUp");
-  const navbar=document.querySelector(".navbar"); 
-  const search=document.getElementById("search");
-  const productPrice=document.getElementById("productPrice");
+  const pageSignUp=document.getElementById("page-signUp")
   const firstName=document.getElementById("first-name");
   const lastName=document.getElementById("last-name");
   const age=document.getElementById("age");
   const passwordSignUp=document.getElementById("password-signUp");
   const emailSignUp=document.getElementById("email-signUp");
-  const email=document.getElementById("email");
-  const errorLogin=document.getElementById("Error-login");
-  const pContent=document.getElementById("p-content");
-  const inputClear=document.querySelectorAll(".input-clear");
-  const aliProductsLlist=document.getElementById("ali-products-list");
+  const ErrorSignUp=document.getElementById("Error-signUp");
+  const btnLoginSignUp=document.getElementById("btn-logIn-signUp");
+  const Home =document.getElementById("home");
+  const iconHouse = document.getElementById("icon-house");
+  const carsSoppingTotal=document.getElementById("cars-sopping-total");
+  const iconSoppingCars = document.getElementsByClassName("iconSoppingCars");
+  const productsCounter=document.getElementById("Products-counter");
+  const iconsSearchNav=document.getElementById("icon-search-nav");
+  const navBtns=document.querySelectorAll(".nav-btns"); 
+  const btnProductsStore = document.querySelectorAll(".btn-products-store");
+  const mySwiper=document.getElementById("mySwiper");
+  const inputSearchProduct=document.getElementById("input-search-product");
+  const iconSearch = document.getElementById("icon-search");
   const iconsProducts=document.querySelectorAll(".icons-products");
-  const layerLogin =document.getElementById("layer-login");
-  const layerContentLogIn=document.getElementById("layer-content-logIn");
-  const layerTextLogin=document.getElementById("layer-text-login");
+  const pageLayerSearch=document.getElementById("page-layer-search")
+  const inputSearch = document.getElementById("input-search");
+  const btnSearch = document.getElementById("btn-search")
+  const layerPageLogIn =document.getElementById("layer-page-logIn");
+  const contentLayerLogIn =document.getElementById("content-layer-logIn");
+  const loginLayerText=document.getElementById("login-layer-text");
   const layerInputEmail=document.getElementById("layer-input-email");
   const layerInputPassword=document.getElementById("layer-input-password");
-  const layerBtnLogIn=document.getElementById("layer-btn-logIn");
-  const layerBtnRegister=document.getElementById("layer-btn-register")
-  const mySwiper=document.getElementById("mySwiper");
   const errorLayerLogIn=document.getElementById("error-layer-logIn")
+  const layerBtnLogIn=document.getElementById("layer-btn-logIn");
+  const searchProduct=document.getElementById("search-product");
+  const storeProducts = document.getElementById("store-products");
+  const closeIcon = document.getElementById("close");
+  const lightboxContainer = document.getElementById("lightbox-container");
+  const lightboxItem = document.getElementById("lightbox-item");
+ 
+  const nextIcon = document.getElementById("next");
+  const prevIcon = document.getElementById("prev");
+  const btnProduct = document.querySelectorAll(".button-shrink");
+  const imgesProducts = document.getElementsByClassName("img");
+  const productPreviewImage = document.getElementById("product-preview-image");
+  const inputProductPrice = document.getElementById("input-productPrice");
+  const productsCarts= document.getElementById("products-carts");
+  const purchaseData=document.getElementById("purchase-data");
+  const totalMoney = document.getElementById("total-money");
+  const btnMouseCursor= document.getElementsByClassName("mouse-cursor-gradient-tracking");
+  const btnBuyProduct = document.querySelector(".btn-buy");
+  const iconComputerTools=document.getElementById("icon-computer-tools");
+  const navbar=document.querySelector(".navbar"); 
+  const contentsPageLayerSearch=document.getElementById("contents-page-layer-search");
+   
+ 
   let ShowSomeProducts = computerStore.filter((element, i) => i < 52);
   let homePageProducts=computerStore;
   let indexs;
   let arrayCardsShopping = [];
   let arr = "";
-  let height=$(".navbar-one").height()+$(".navbar-two").height();
+  let height=$(".navbar-icons").height()+$(".navbar-products").height();
 
 
-
- iconsSearchNav.addEventListener("click",()=>layerSearch.style.display="flex")
+ iconsSearchNav.addEventListener("click",()=>
+ {
+  pageLayerSearch.style.display="flex"
+  inputProductPrice.value='';
+  inputSearch.value='';
+})
 
 let scroll=element=>{ 
-  window.onscroll= scroll=()=>{if(this.scrollY<= height)$(element).css({"position":"static",'height':"100px" })
+  window.onscroll= scroll=()=>{if(this.scrollY<= height)$(element).css({"position":"",'height':"100px" })
   else if(this.scrollY>=height)$(element).css({"position":"fixed" ,"top":"0" ,"left":"0" ,'right':"0" ,"height":"60px"})}//$(".menu-toggler-label").css({"backgroundColor":"#081722","color":"#cceaf5","display":"none"})}
 }
-scroll('.navbar-two');
-scroll('.hover-nav');
+scroll('.navbar-products');
+scroll('.navbar-home-before-logIn');
   //*function changing colors and background *
 changingStyle=(element,i,background,color)=>[element[i].style.backgroundColor=background,element[i].style.color=color];
 //*changing colors and backgound btn-nav*
@@ -1306,13 +1308,12 @@ for (let i = 0; i < navBtns.length; i++){
      for (let i = 0; i < navBtns.length; i++)changingStyle(navBtns,i,"transparent","#04090f")
      changingStyle(navBtns,i,"transparent","#033472")})
 }
-changingStyle(navBtns,0,"transparent","#ffffff")
 errorsNumbers=(elementOne,elementTwo)=>{
   passwordRejex=/^[a-zA-A0-9]{4}/
   if(elementOne.value==="")hide(elementTwo);
   else if(!passwordRejex.test(elementOne.value)){
     elementTwo.style.display="flex";
-    elementTwo.innerHTML="must start with at least four letters or numbersr";
+    elementTwo.innerHTML="must start with at least four letters or number";
   } else hide(elementTwo)
  }
  errorsTexts=(elementOne,elementTwo)=>{
@@ -1333,19 +1334,20 @@ async function chackSignUp(){
     age:age.value,
   }
   let response = await axios.post("https://movies-api.routemisr.com/signup",product);
-  for(let i=6;i>2;i--){
+  for(let i=6;i>1;i--){
       if(inputClear[i].value===''){
-          errorLogin.innerHTML='';
-          $("#Error-login").show(()=>$("#Error-login").fadeOut(5000)); 
-          errorLogin.innerHTML=`please input ${inputClear[i].placeholder}`;
+          ErrorSignUp.innerHTML='';
+          $("#Error-signUp").show(()=>$("#Error-signUp").fadeOut(5000)); 
+          ErrorSignUp.innerHTML=`please input ${inputClear[i].placeholder}`;
      }  
     else if(inputClear[i].placeholder==inputClear[5].placeholder){
     if(response.data.message==="success")displayPage(pageLogIn,pageSignUp,storeProducts);
-    else $("#Error-login").show(()=>$("#Error-login").fadeOut(5000)); 
-       errorLogin.innerHTML=response.data.message;
+    else $("#Error-signUp").show(()=>$("#Error-signUp").fadeOut(5000)); 
+       ErrorSignUp.innerHTML=response.data.message;
      }           
   }
     }
+    
 
     let chack=element=>element.value;
 
@@ -1370,12 +1372,13 @@ async function chackSignUp(){
       
      storeProducts.innerHTML='';
      displayProduct(homePageProducts);
-     productPrice.style.display="block"; 
-     menuTogglerLabel.style.opacity="1";
-     carsSoppingTtotal.style.display="block";
+     //productPrice.style.display="block"; 
+    // menuTogglerLabel.style.opacity="1";
+     carsSoppingTotal.style.display="block";
      iconComputerTools.style.display="none";
-     layerLogin.style.display="none";
+     layerPageLogIn.style.display="none";
      Home.style.display="block";
+     searchProduct.style.display='block';
      productPreviewImage.style.display="block";
 
      purchaseData.innerHTML+=`
@@ -1389,8 +1392,8 @@ async function chackSignUp(){
        <img src="img/card-amex.svg" class="mt-3" width="7%">
        <input class="inputs input-clear" name="card-number" type="number" placeholder="Discount coupon"> 
        <button class="btn-Final-purchase">buy</button></form>`;
-       displayPage(navbar,hoverNav,pageLogIn,search);
-       displayPage(storeProducts,hoverNav,pageSignUp,productPreviewImage);
+       displayPage(navbar,navbarHomeBeforeLogIn,pageLogIn,contentsPageLayerSearch);
+       displayPage(storeProducts,navbarHomeBeforeLogIn,pageSignUp,productPreviewImage);
 
   }
   }
@@ -1399,7 +1402,7 @@ async function chackSignUp(){
 // * display functions *
 displayPage=(show,hide,hide2,show2)=>{
   clearInputs();
-  errorLogin.style.display="none";
+  ErrorSignUp.style.display="none";
   error.style.display="none";
   productPreviewImage.style.display="none";
   hide.style.display="none";
@@ -1436,18 +1439,8 @@ displayProduct=(element)=>{
       <i onclick="addProductsOnTheShoppingCar(${i})"class="iconSoppingCars fa-solid fa-cart-shopping"></i></div>`}
    } 
 }
-displayBtns=()=>{
-    for(let i=0;i<btnMouseCursor.length;i++){
-     $(".stagger-menu").toggle();
-       btnMouseCursor[i].addEventListener('mousemove', e => {
-       let rect = e.target.getBoundingClientRect();
-       let x = e.clientX - rect.left;
-       let y = e.clientY - rect.top;
-       btnMouseCursor[i].style.setProperty('--x', x + 'px');
-       btnMouseCursor[i].style.setProperty('--y', y + 'px');
-     });
-   }
-}
+
+
 displayProductDetails=(index)=>{
     clear(storeProducts);
     hide(totalMoney);
@@ -1460,7 +1453,7 @@ displayProductDetails=(index)=>{
    <button id="buyProduct" class="btn-buy button-shrink" onclick="displayProductsBuyPage(${index})" >buy product</button></div>`
 }
 displayProductError=(index)=>{
-   $("#layer-login").css("display","flex");
+   $("#layer-page-logIn").css("display","flex");
 }
 displayPageBuy=element=>{
     hide(purchaseData);
@@ -1484,8 +1477,8 @@ displayProductsBuyPage=(index)=>{
    productsCarts.innerHTML="";
    arrayCardsShopping.push(homePageProducts[index])
    showBtnTotalMoney();
-   pContent.innerHTML=arrayCardsShopping.length;
-   carsSoppingTtotal.style.color="#033472";
+   productsCounter.innerHTML=arrayCardsShopping.length;
+   carsSoppingTotal.style.color="#033472";
    displayPageBuy(arrayCardsShopping);
 } 
 displayProductImage=i=>{
@@ -1496,25 +1489,25 @@ displayProductImage=i=>{
 displayAllProducts=()=>displayProduct(homePageProducts);
 displayLightBoxItem=element=>lightboxItem.style.backgroundImage=`url("${element}")`;
 // * functions next and prev and close and iconColor and onKeydown *
-getnext=()=>{ 
+getNext=()=>{ 
   indexs++
   if(indexs===homePageProducts.length)indexs=0;
   displayLightBoxItem(homePageProducts[indexs].imges)
 };
-getprev=()=>{
+getPrev=()=>{
   indexs--
   if(indexs<0)indexs=imgesProducts.length
   displayLightBoxItem(homePageProducts[indexs].imges)
 }
 getClose=()=>$("#lightbox-container").hide();
 // * functions onKeyboard*
-firstName.onkeyup=()=>errorsTexts(firstName,errorLogin);
-lastName.onkeyup=()=>errorsTexts(lastName,errorLogin);
-inputPassword.onkeyup=()=>errorsNumbers(inputPassword,error)
-passwordSignUp.onkeyup=()=>errorsNumbers(passwordSignUp,errorLogin)
+firstName.onkeyup=()=>errorsTexts(firstName,ErrorSignUp);
+lastName.onkeyup=()=>errorsTexts(lastName,ErrorSignUp);
+Password.onkeyup=()=>errorsNumbers(Password,error)
+passwordSignUp.onkeyup=()=>errorsNumbers(passwordSignUp,ErrorSignUp)
 document.addEventListener("keydown",e=>{
-  if(e.key=='ArrowRight')getnext(); 
-  else if(e.key=="ArrowLeft")getprev();
+  if(e.key=='ArrowRight')getNext(); 
+  else if(e.key=="ArrowLeft")getPrev();
   else if(e.key=='Escape')getClose();
   ;    
 })
@@ -1532,21 +1525,21 @@ showBtnTotalMoney=()=>totalMoney.style.display="block";
 addProduct=index=>arrayCardsShopping.push(homePageProducts[index])
 addProductsOnTheShoppingCar=(index)=>{
   addProduct(index);
- pContent.innerHTML=arrayCardsShopping.length;
+ productsCounter.innerHTML=arrayCardsShopping.length;
  iconSoppingCars[index].style.color="#0093E9";
- carsSoppingTtotal.style.color="#033472";
+ carsSoppingTotal.style.color="#033472";
 
 }
 // * remove functions *
 removeProduct=i=>{
     arrayCardsShopping.splice(i,1);
     clear(storeProducts);
-    pContent.innerHTML=arrayCardsShopping.length;
-    if(arrayCardsShopping.length<=0)[pContent.innerHTML="",carsSoppingTtotal.style.color="rgb(22, 23, 24)"]
+    productsCounter.innerHTML=arrayCardsShopping.length;
+    if(arrayCardsShopping.length<=0)[productsCounter.innerHTML="",carsSoppingTotal.style.color="rgb(22, 23, 24)"]
     displayPageBuy(arrayCardsShopping);
 }
 // * onclick functions *
-carsSoppingTtotal.addEventListener("click",()=>{
+carsSoppingTotal.addEventListener("click",()=>{
   productsCarts.innerHTML="";
   showBtnTotalMoney();
   displayPageBuy(arrayCardsShopping);
@@ -1569,8 +1562,7 @@ onclickIconProducts=element=>{
          clear(storeProducts);
          displayProduct(homePageProducts)})};
 }
-aliProducts.addEventListener("click",()=>displayProduct(homePageProducts=computerStore))
-aliProductsLlist.addEventListener("click",()=>displayProduct(homePageProducts=computerStore))
+iconHouse.addEventListener("click",()=>displayProduct(homePageProducts=computerStore))
 totalMoney.addEventListener("click",()=>{
      hide(productsCarts); 
      hide(totalMoney); 
@@ -1594,16 +1586,17 @@ iconSearch.onclick=()=>{
 
 
 
-iconProductPrice.addEventListener("click",()=>{
+btnSearch.addEventListener("click",()=>{
     values=inputProductPrice.value;
    let valueSearch=inputSearch.value;
     clear(storeProducts);
-    //clear(productPreviewImage);
+        //clear(productPreviewImage);
+
 
   if(values!==''&& valueSearch==="mouse"||valueSearch==="ram"||valueSearch==="computer monitor"||valueSearch==="keyboard"||valueSearch==="mather board"||
       valueSearch==="head phones"||valueSearch==="graphics card"||valueSearch==="hard disk"){
       homePageProducts=computerStore.filter(element=>element.name==valueSearch);
-      layerSearch.style.display='none';
+      pageLayerSearch.style.display='none';
        displayProduct(homePageProducts)
     }
     else if(valueSearch===''||values===''){
@@ -1638,34 +1631,34 @@ iconProductPrice.addEventListener("click",()=>{
   clearInputs();
   })
 
-navHome.addEventListener("click",()=>displayPage(storeProducts,pageSignUp,pageLogIn));
-navLogIn.addEventListener("click",()=>displayPage(pageLogIn,pageSignUp,storeProducts));
-navSignUp.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
+btnHome.addEventListener("click",()=>displayPage(storeProducts,pageSignUp,pageLogIn));
+navBtnLogIn.addEventListener("click",()=>displayPage(pageLogIn,pageSignUp,storeProducts));
+navBtnSignUp.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
 btnRegister.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
 lightboxContainer.addEventListener('click',e=>{if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon)getClose()});
-layerSearch.addEventListener('click',e=>{ if(e.target!=inputSearch&&e.target!=inputProductPrice&&e.target!=iconProductPrice){
-layerSearch.style.display='none';
+pageLayerSearch.addEventListener('click',e=>{ if(e.target!=inputSearch&&e.target!=inputProductPrice&&e.target!=btnSearch){
+pageLayerSearch.style.display='none';
 }
 });
 
 
 
-layerLogin.addEventListener("click", e=>{if(e.target!=layerContentLogIn&&e.target!=layerTextLogin&&e.target!=layerInputEmail&&
-e.target!=layerInputPassword&&e.target!=layerBtnLogIn&&e.target!=layerBtnRegister &&e.target!=errorLayerLogIn){
+layerPageLogIn.addEventListener("click", e=>{if(e.target!= contentLayerLogIn &&e.target!=loginLayerText&&e.target!=layerInputEmail&&
+e.target!=layerInputPassword&&e.target!=layerBtnLogIn&&e.target!=errorLayerLogIn){
   layerInputPassword.value='';
   layerInputEmail.value=''; 
-  $("#layer-login").css("display","none"); 
+  $("#layer-page-logIn").css("display","none"); 
 }}) 
 closeIcon.addEventListener("click",getClose);
-menu.addEventListener("click",displayBtns);
-nextIcon.addEventListener("click",getnext);
-prevIcon.addEventListener("click",getprev);
-//layerContentLogIn.addEventListener("click",clearLayerInputPassword)
-btnLogIn.forEach(element => element.addEventListener("click" ,()=>chacklogin(email ,inputPassword)) )
+//menu.addEventListener("click",displayBtns);
+nextIcon.addEventListener("click",getNext);
+prevIcon.addEventListener("click",getPrev);
+//contentLayerLogIn .addEventListener("click",clearLayerInputPassword)
+btnLogIn.forEach(element => element.addEventListener("click" ,()=>chacklogin(email ,Password)) )
 btnLogIn.forEach(element => element.addEventListener("click" ,()=>chacklogin(layerInputEmail ,layerInputPassword))  )
 //btnLogIn.addEventListener("click",chacklogin);
 //layerBtnLogin.addEventListener("click" ,chacklogin);
-btnLoginSignIn.addEventListener("click",chackSignUp);
+btnLoginSignUp.addEventListener("click",chackSignUp);
 // * run functions *
 onclickProduct(btnProductsStore);
 onclickIconProducts(iconsProducts);

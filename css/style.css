@@ -11,98 +11,68 @@ body {
   margin: 0;
   padding: 0;
 }
-
-.products5 ,.btn-buy ,.btn-Final-purchase ,#total-money ,#purchase-data ,.cars-sopping-total{
-  background-color:rgb(204, 234, 245);
-  color:#040d18;
-
-  color: #033472;
-}
-#search{
-  display:  block !important;
-}
-
-.nav-search{
-  background-color: #04090f;
-}
-.products{
-  background-color: #fbffff;
-}
-.mouse-cursor-gradient-tracking,.btn-Final-purchase 
-,.text-error ,#next ,#prev ,#close{
-  color:rgb(204, 234, 245);
-  background-color:#081722;
-}
-.navbar{
-  display: block;
-}
-
-
-
-
-.navbar-two{
-  background-color: #fdfdfda6 !important;
-  z-index: 88;
-  height:100px;
-  box-shadow: 1px 1px 1px rgba(161, 154, 154, 0.815);
-  padding: 0.2rem 0.2rem;
-  display: flex;
-  justify-content:center;
-  align-items: center;
-}
-.icon-computer-tools
-.hover-nav {
-  width:100%;
-  padding:0.4rem 0.4rem !important;
-  padding: 0.1rem;
-  position: absolute;
-  border-radius:1%;
-  top: 0;
-  z-index: 99999;
-  display: none; 
-}
-
-.icon-computer-tools
-.styleColor{
-  color: #d6d9db;
-
-}
-
-.fa-house{
-  color: #00706c;
-  background-color: #e4e2e2;
-  padding:0.5rem;
-  margin-left:0.1rem;
-  border-radius: 50% !important;
-}
-.nav-home{
+button{
   background-color: transparent;
   border: 0;
 }
-
-#nav-logIn ,#nav-signIn{
+input{
+  outline: none;
+}
+.navbar-home-before-logIn {
+  padding:0.4rem 0.4rem !important;
+  padding: 0.1rem;
+  border-radius:1%;
+  z-index: 99999;
+}
+#navbar-home-before-logIn ul {
+  list-style: none;
+  overflow: hidden;
+}
+.navbar-home-before-logIn li {
+  float: left;
+}
+.navbar-home-before-logIn li a {
+  position: relative;
+  display: block;
+  color: #081722;
+  text-align: center;
+  z-index: 0;
+  text-decoration: none;
+}
+#btn-home ,.btns-navbar{
+  background-color: transparent;
+  border: 0;
+  font-weight: 900;
+}
+#nav-btn-logIn ,#nav-btn-signUp{
   background-color: #56cac7;
-  color: #04090f;
   border-radius: 2rem;
   padding:0.1rem 1rem;
   margin: 0.1rem 1rem;
   float: right;
 }
-#nav-signIn{
-background-color: #e4e4e6;  
+#nav-btn-signUp{
+  background-color: #e4e4e6;  
 }
-#hover-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+.fa-house{
+  margin-left:0.1rem;
+  border-radius: 50% !important;
+  background-color: transparent;
+  color: #aadddd;
+  padding: 0.5rem;
+  font-size:1rem;
 }
-.hover-nav li {
-  float: left;
+.icon-computer-tools{
+  background-image: url(../img/computer-tools.jpg);
+  background-attachment: fixed;
+  background-size:100% 100%;
+  height: 100%;
+}
+.background-transparent{
+  background-color: #040d18a8;
 }
 .text-content-computer-store{
   float: right;
-  color: #fdfeff;
   font-size:1rem;
   width:30rem;
   background-color: #2091ad69;
@@ -112,115 +82,256 @@ background-color: #e4e4e6;
   margin-right: 1rem;
   color: #c1c3c5;
 }
-
-#error-layer-logIn{
-  background-color: #a52920 !important;
-  color: #d6d9db;
-  margin-top:-1rem !important;
-  margin-bottom: 0.2rem !important;
-  width:85%;
-  border-radius: 2rem;
-  margin: auto;
-  padding: 1rem;
-  z-index: 99999;
-  display: none;
-  
-}
-.icon-computer-tools{
-  background-image: url(../img/computer-tools.jpg);
-  background-attachment: fixed;
-  background-size:100% 100%;
-  height: 100%;
-  display: none;
-}
-
-#layer-search{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #000000ea;
-  z-index: 9999999;
-  flex-wrap:wrap;
-  display: none;
-
-}
-.background-transparent{
-  position: absolute;
-  background-color: #040d1865;
-  top:0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.page-logIn ,#page-signUp{
+#page-logIn ,#page-signUp{
   background-image: url(../img/com.jpg);
   background-size: 100% 100%;
-  display:none;
-  justify-content:start;
+  display:flex;
   position: fixed;
-  top: 0;
+  display: none ;
 }
-#page-content-signUp ,#page-content-logIn{
+.page-content-signUp ,.page-content-logIn{
   width:25rem;
   height: 25rem;
   border-radius:1rem;
-  text-align:center;
   background-color:transparent;
   box-shadow: 1px 1px 2px 2px #56cac7;
 }
-#layer-content-logIn{
-  width:25rem;
-  height: 28rem;
-  border-radius:1rem; 
-  text-align:center;
-  background-color:#ffffff;
-}
-#layer-text-login{
-  color: #323941;
-  font-size:1.6rem;
-}
-#layer-input-email ,#layer-input-password{
-  background-color: #08172210;
-  border-radius:0.5rem;
-  width:80%;
-  
-}
-.layer-label-email ,.layer-label-password{
-  float: left;
-  margin-left:2.5rem;
-  margin-top: 0.5rem;
-  margin-right: 4rem;
-  font-weight: 400;
-  font-size:1rem;
-}
-
-#email ,#input-password ,#password-signUp ,#email-signUp ,#age ,#first-name ,#last-name{
+#email ,#password ,#password-signUp ,#email-signUp ,#age ,#first-name ,#last-name{
   background-color:#e4e2e2;
   margin-bottom:0.5rem;
   color: #058286;
 }
-#btn-logIn ,#btn-logIn-signUp{
-  background-color: #56cac7;
+#btn-logIn ,.style-inputs-content ,#btn-register ,#btn-logIn-signUp,#Error ,#Error-signUp{
+    padding:0.5rem 1.5rem;
+    width:20rem;
+    border-radius:1.8rem;
+    border: 0;
+} 
+.style-inputs-content::placeholder{
+  color:#00706c;
+} 
+#Error ,#Error-signUp{
+  position: absolute;
+  top:10rem;
+  right:5rem; 
+  margin-top: 1rem;
+  width:25rem;
+  background-color: rgba(40, 195, 201, 0.74);
+  display:none;
+ }
+ #btn-register{
+  background-color:#e4e4e6 !important;
   color: #04090f;
+} 
+#password-signUp ,#email-signUp ,#age ,#first-name ,#last-name{
+  width: 12rem;
 }
-#layer-btn-logIn{
-  background-color: #303636;
-  width:80% !important;
+#home{
+  display:none;
+  }
+.navbar-icons{
+    background-color:#033472 !important;
+    padding: 0.1rem 0.3rem !important;
+    height: 2.2rem !important;
+}
+.icon-house{
+  background-color: transparent !important;
   color: #e4e2e2;
-  border-radius:0.5rem;
-  padding:0.3rem;
 }
-#layer-btn-logIn{
-  margin-right: 1rem;
+.fa-facebook ,.fa-instagram ,.fa-youtube ,.fa-tiktok{
+  transition-delay:0.2s !important;
+  
+}
+.fa-facebook:hover{
+  color: #19bcc2;
+}
+.fa-youtube:hover{
+  color: #e00d0d;
+}
+.fa-instagram:hover{
+  color: #ff2ff5;
+}
+.fa-tiktok:hover{
+  color: #181625;
+}
+.navbar-products{
+  background-color: #fdfdfd77 !important;
+  z-index:9999999 !important ;
+  height:5rem;
+  box-shadow: 1px 1px 1px rgba(161, 154, 154, 0.815);
+  padding: 0.2rem 0.2rem;
+}
+#cars-sopping-total{
+  background-color: transparent;
+   font-size:1.5rem;
+   color: rgb(22, 23, 24);
+   border-radius:2rem;
+   padding:0.5rem 1rem;
+   height:3.5rem;
+   display:block;   
+   margin-top: 1.1rem; 
+ }
+ .iconSoppingCars{
+  color:#081722;
+  margin-top: 1rem;
+  font-size: 1rem;
+  margin-left: 5rem;
+}
+#Products-counter{
+  margin-left: 0.7rem;
+  margin-top:-2.6rem;
+  color:#033472;
+}  
+swiper-container {
+  width: 100%;
+  height: 85%;
+  margin-top:-0.9rem;
+}
+.imges-swiper{
+  background-image: url(../img/images-swiper.png);
+  background-size:100% 100%;
+}
+swiper-slide {
+  font-size: 18px;
+  display: flex;
+}
+swiper-slide img {
+  display: block;
+  object-fit: cover;
+}
+.search-product::placeholder ,#icon-search{
+  color:rgb(1, 111, 145) !important;
+}
+#input-search-product{
+  border: solid 1px rgb(1, 111, 145);
+  border-radius: 2rem;
+  padding:0.5rem 0.5rem;
+  width: 30rem;
+}
+#icon-search{
+  background-color: transparent;
+  border: solid 1px rgb(1, 111, 145);
+  border-radius: 2rem;
+  padding: 0.7rem 0.7rem;
+}
+#product-preview-image{
+  overflow: hidden;
+  display: none;
+}
+.row{
+  flex-wrap:wrap;
+}
+.card {
+  perspective: 150rem;
+  position: relative;
+  height:10rem;
+  border-radius: 50%;
+  border:solid 0.1rem #56cac7;
+  margin:2rem;
+  margin-top: 5rem;
+  max-width:100px;
+  box-shadow: none;
+  background: none;
+}
+.card-side{
+ height:10rem;
+ border-radius:15px;
+ transition: all 0.8s ease;
+ backface-visibility: hidden;
+ position: absolute;
+ top: 0;
+ left: 0;
+ padding: 2rem;
+ display:inline;
+}
+.card-side.back {
+  transform: rotateY(-180deg);
+}
+.card:hover .card-side.front {
+  transform: rotateY(180deg);
+}
+.card:hover .card-side.back {
+  transform: rotateY(0deg);
+}
+.text-error{
+  width: 25rem;
+  font-size: 1rem;
+  font-weight: 800;
+  background-color: rgba(200, 80, 192, 0.733);
+  display: none;
+  margin: 1rem auto auto;
+  border-radius: 2rem;
+  padding: 0.7rem;
+}
+#page-layer-search{
+  background-color: #000000ea;
+  z-index: 9999999;
+  flex-wrap:wrap;
+  display: none;
+}
+#contentsPageLayerSearch{
+  display:  block !important;
+}
+#input-search::placeholder, #input-productPrice::placeholder{
+  color:#aadddd;
+}
+#input-search ,#input-productPrice{
+  width:50rem;
+  text-align: center;
+  background-color: transparent;
+  border-bottom:solid 3px rgb(5, 24, 44);
+  margin: auto;
+  border: 0;
+  border-bottom: solid 2px #f3f3f39a ;
+  margin-bottom: 2rem;
+  padding:0.5rem 0.5rem;
+  color: #e6f6ff;
+}
+#btn-search{
   margin-left: 1rem;
+  font-size: 1.2rem;
+  object-fit: fill;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  background-color: #fdfeff;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: #31888b;
+  border: solid 1px #31888b;
+  display: block;   
 }
-.btn-bacebook ,.btn-google{
+.style-text-error{
+ background-color: #c1c3c5;
+ color: #00706c;
+}
+#layer-page-logIn{
+  position:fixed;
+  background-color: #2521217c;
+  z-index: 999999; 
+  display: none; 
+}
+#content-layer-logIn{
+  width:25rem;
+  height: 28rem;
+  border-radius:1rem; 
+  background-color:#ffffff;
+}
+#login-layer-text{
+  color: #323941;
+  font-size:1.6rem;
+}
+
+.icon-facebook ,.icon-google{
+  border-radius: 0;
+  margin:0.3rem;
+  font-size:0.7rem;
+  color: #e4e4e6;
+  padding:0.2rem;
+}
+.btn-facebook ,.btn-google{
   background-color:#0c185e;
   border:0;
   padding:0.3rem;
-  color: #e4e2e2;
   font-size:0.8rem;
   font-weight: 100;
   padding-left: 1.8rem;
@@ -232,73 +343,78 @@ background-color: #e4e4e6;
   background-color:#c92f1b;
   box-shadow:1px 1px 3px #04090f;
   color: #e7ebee;
-
-}
-.home
-.icon-search-nav{
-  font-size: 1rem;
-}
-
-
-.icon-facebook ,.icon-google{
-  border-radius: 0;
-  margin:0.3rem;
-  font-size:0.7rem;
-  color: #e4e4e6;
-  padding:0.2rem;
 }
 .icon-google{
-  color: rgb(255, 249, 249);
   font-size:0.8rem;
   background-color: transparent;
 }
-#btn-register{
-  background-color:#e4e4e6 !important;
-  color: #04090f;
-}
-
-#email::placeholder ,#input-password::placeholder ,.text-login{
-color:#00706c;
-font-weight: 200;
-}
-.text-login{
-  font-weight: 900;
-  color: #e4e2e2;
-}
-input{
-  outline: none;
-}
-.inputs-content,#btn-logIn ,#btn-register ,#password-signUp ,#email-signUp ,#age ,#btn-logIn-signUp,#Error ,#Error-login{
-  padding:0.5rem 1.5rem;
-  width:20rem;
-  border-radius:1.8rem;
+#layer-input-email ,#layer-input-password{
+  background-color: #08172210;
+  border-radius:0.5rem;
+  padding: 0.5rem 0.5rem;
   border: 0;
+  width:80%;
 }
-#password-signUp ,#email-signUp ,#age ,#first-name ,#last-name{
-  width: 12rem;
+.layer-label-email ,.layer-label-password{
+  float: left;
+  margin-left:2.5rem;
+  margin-top: 0.5rem;
+  margin-right: 4rem;
+  font-weight: 400;
+  font-size:1rem;
 }
-#Error ,#Error-login{
- position: absolute;
- top:10rem;
- right:5rem; 
- margin-top: 1rem;
- width:25rem;
- background-color: rgba(40, 195, 201, 0.74);
- color: #e4e2e2;
- display:none;
+#error-layer-logIn{
+  background-color: #a52920 !important;
+  color: #d6d9db;
+  margin-top:-1rem !important;
+  margin-bottom: 0.2rem !important;
+  width:85%;
+  border-radius: 2rem;
+  padding: 1rem;
+  z-index: 99999;
+  display: none;
+  
+}
+#layer-btn-logIn{
+  background-color: #303636;
+  width:80% !important;
+  color: #e4e2e2;
+  border-radius:0.5rem;
+  padding:0.4rem 0.2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
+ #search-product{
+  display: none;
+ }
+ 
 
-.search-product
 
-.show
-.dropdown
+ 
 
-.btn-list{
-  background-color:transparent !important;
+
+products5 ,.btn-buy ,.btn-Final-purchase ,#total-money ,#purchase-data ,.cars-sopping-total{
+  background-color:rgb(204, 234, 245);
+  color:#040d18;
+
+  color: #033472;
 }
-.btn-list:hover{
-  background-color: transparent !important;
+
+.nav-search{
+  background-color: #04090f;
+}
+.products{
+  background-color: #fbffff;
+}
+.btn-Final-purchase ,#next ,#prev ,#close{
+  color:rgb(204, 234, 245);
+  background-color:#081722;
+}
+
+.styleColor{
+  color: #d6d9db;
+
 }
 
 .cars-sopping-total
@@ -306,164 +422,15 @@ input{
   font-size: 3rem;
 }
 
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-#layer-login{
-  position:fixed;
-  background-color: #2521217c;
-  z-index: 999999; 
-  display: none; 
-}
-
-.hover-nav li a {
-  position: relative;
-  display: block;
-  color: #081722;
-  text-align: center;
-  z-index: 0;
-  text-decoration: none;
-}
 button ,.nav-link{
   font-weight: 900 !important;
 }
-#store-products ,.containe ,#lightbox-item{
+#store-products ,#lightbox-item{
   display:flex;
 }
 #store-products{
   flex-wrap:wrap;
 } 
-.menu-toggler-label ,#productPrice{
-  display: block;
-}
-
-#input-productPrice {
-    width:45rem;
-    height:2.5rem;
-    text-align: center;
-    font-size: 1rem;
-    border: 0;
-    background-color: #f8f9faf8; 
-    border-radius: 2rem;
-    color: rgb(125, 207, 240);
-    border: solid 1px #31888b;
-    display: block;
-}
-
-.input-search-product{
-  border: solid 1px rgb(1, 111, 145);
-  border-radius: 2rem;
-  background-color: #f5f5f5;
-  padding:0.5rem 0.5rem;
-  width: 30rem;
-  text-align: center;
-}
-.icon-search-product{
-  background-color: transparent;
-  border: solid 1px rgb(1, 111, 145);
-  border-radius: 2rem;
-  padding: 0.7rem 0.7rem;
-  color:rgb(1, 111, 145);
-}
-#search-product::placeholder{
-  color:rgb(1, 111, 145) !important;
-}
-.input-search-nav ,#input-productPrice{
-  width:50rem;
-  text-align: center;
-  background-color: transparent;
-  border-bottom:solid 3px rgb(5, 24, 44);
-  margin: auto;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  margin-bottom: 2rem;
-  padding:0.5rem 0.5rem;
-  color: #0093E9;
-}
-#icon-productprice{
-  background-color:rgb(9, 79, 136) !important;
-  margin: auto;
-  padding: 0.4rem 0.5rem;
-  border-radius: 2rem;
-  color: #c1c3c5;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  border: 0;
-  display: block;
-  
-}
-#input-search::placeholder, #input-productPrice::placeholder{
-    color:#31888b;
-}
-/*
- #icon-productPrice{
-    margin-left: 1rem;
-    font-size: 1.2rem;
-    object-fit: fill;
-    border-radius: 2rem;
-    padding: 0.5rem;
-    background-color: #fdfeff;
-    color: #31888b;
-    border: solid 1px #31888b;
-    display: block;   
-}
-*/
-.card
-.row
-.text-error{
-  width: 25rem;
-  font-size: 1rem;
-  font-weight: 800;
-  background-color: rgba(200, 80, 192, 0.733) !important;
-  display: none;
-  margin: 1rem auto auto;
-  border-radius: 2rem;
-  padding: 0.7rem;
-}
-
-#product-preview-image{
-  overflow: hidden;
-}
-.row{
-    flex-wrap:wrap;
-}
-.card {
-    perspective: 150rem;
-    position: relative;
-    height:10rem;
-    border-radius: 50%;
-    border:solid 0.1rem #56cac7;
-    margin:2rem;
-    margin-top: 5rem;
-    max-width:100px;
-    box-shadow: none;
-    background: none;
-}
-.card-side{
-   height:10rem;
-   border-radius:15px;
-   transition: all 0.8s ease;
-   backface-visibility: hidden;
-   position: absolute;
-   top: 0;
-   left: 0;
-   padding: 2rem;
-   display:inline;
-}
-.card-side.back {
-    transform: rotateY(-180deg);
-}
-.card:hover .card-side.front {
-    transform: rotateY(180deg);
-}
-.card:hover .card-side.back {
-    transform: rotateY(0deg);
-}
-
 
 .products{
     max-width:15rem;
@@ -496,102 +463,12 @@ h3{
 .h3-salary{
 display:inline;
 }
-.iconSoppingCars{
-    color:#081722;
-    margin-top: 1rem;
-    font-size: 1rem;
-    margin-left: 5rem;
-}
+
 .iconSoppingCars:hover {
   color: rgb(0, 147, 233);;
 }
-.containe {
-  overflow-x: hidden;
-  position: fixed;
-  top:0;
-  justify-content: start;
-  align-items: center;
-  z-index: 99999;
-}
-.mouse-cursor-gradient-tracking span{
-    position: relative;
-}
-.mouse-cursor-gradient-tracking::before {
-    --size: 0;
-    content: '';
-    position: absolute;
-    left: var(--x);
-    top: var(--y);
-    width: var(--size);
-    height: var(--size);
-    background: radial-gradient(circle closest-side, pink, transparent);
-    transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease;
-}
-.mouse-cursor-gradient-tracking:hover::before {
-    --size: 200px;
-}
-.mouse-cursor-gradient-tracking {
-  position: relative;
-  width: 150px;
-  font-size: 0.8rem;
-  text-align: center;
-  border:1px solid rgb(204, 234, 245);
-  background-color: transparent;
-  cursor: pointer;
-  border-radius: 1rem;
-  margin: 3rem 3rem; 
-  padding: 0.3rem 0.5rem;
-  margin: 0.5rem 1rem 0.5rem 12px;
-  overflow: hidden;
-}
-.menu-toggler-label {
-  cursor: pointer;
-  margin-right: 0.3rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color:rgb(204, 234, 245) !important;
-  background-color:#040d18 !important;
-  border: 2px solid rgb(204, 234, 245);
-  margin-left: 1rem;
-  position: fixed;
-  top:0.2rem;
-  right:1rem;
-  border-radius: 0.3rem;
-  padding: 0.3rem;
-  opacity:0;
-}
-.cars-sopping-total{
- background-color: transparent;
-  font-size:1.5rem;
-  color: rgb(22, 23, 24);
-  border-radius:2rem;
-  padding:0.5rem 1rem;
-  height:3.5rem;
-  display: none;    
-}
-.Home
-.p-content{
-  text-align: center;
-  margin-left: 0.7rem;
-  font-size:1rem;
-  margin-top:-2.6rem;
-  font-weight: 900;
-  color:#033472;
-}  
-.stagger-menu{
-list-style-type: none;
-margin:1rem 1rem;
-padding: 0px;
-margin-top:5rem !important;
-background-color: #040d18;
-border: 2px solid rgb(204, 234, 245);
-border-radius:0.5rem;
-display:none;
-}
-.menu-toggler{
-display:none;
-}
+
+
 .products5 {
     margin-top: 3rem;
     max-width: 40rem;
@@ -714,9 +591,6 @@ h4{
   font-weight: 800;
 }
 
-.inputs-content::placeholder{
-  color:#00706c;
-} 
 
 .btn-Final-purchase {
   margin-top: 2rem;
@@ -748,47 +622,6 @@ html{
       font-size:16px;
   }
 }
-
-#home{
-display: block;
-}
-.navbar-one{
-  background-color:#033472 !important;
-  padding: 0.1rem 0.3rem !important;
-  height: 2.2rem !important;
-  margin-top: -1.1rem;
-}
-
-swiper-container {
-  width: 100%;
-  height: 80%;
-  margin-top: -1.2rem;
-}
-.imges-swiper{
-  background-image: url(../img/images-swiper.png);
-  background-size:100% 100%;
-}
-swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.btns-navbar{
-  background-color: transparent;
-  border: 0;
-}
-
 .btn-section-end{
   background-color: transparent;
   color: #e4e4e6;
