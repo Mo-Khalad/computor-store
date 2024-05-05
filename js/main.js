@@ -1,5 +1,6 @@
 // * Api *
-
+'icon-house'
+'cars-sopping-total'
 
 const mouse1 = {
     name: "mouse",
@@ -1277,6 +1278,8 @@ let computerStore = [
   const navbar=document.querySelector(".navbar"); 
   const contentsPageLayerSearch=document.getElementById("contents-page-layer-search");
    
+  "icons-products"
+  const noProduct=document.getElementById("no-product");
  
   let ShowSomeProducts = computerStore.filter((element, i) => i < 52);
   let homePageProducts=computerStore;
@@ -1372,6 +1375,7 @@ async function chackSignUp(){
       
      storeProducts.innerHTML='';
      displayProduct(homePageProducts);
+
      //productPrice.style.display="block"; 
     // menuTogglerLabel.style.opacity="1";
      carsSoppingTotal.style.display="block";
@@ -1419,7 +1423,6 @@ displayProduct=(element)=>{
     if(element.length===52) {
       for(let i=0; i<element.length;i++){
       storeProducts.innerHTML+=`
-  
       <div class="position-relative products  col-md-12 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
       <img class="img" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
       <button id="btn" onclick="displayProductError(${i})" class="button-shrink">buy</button>
@@ -1441,7 +1444,12 @@ displayProduct=(element)=>{
 }
 
 
+
 displayProductDetails=(index)=>{
+  noProduct.style.display='none';
+  mySwiper.style.display='none';
+  productPreviewImage.style.display='none';
+  searchProduct.style.display='none';
     clear(storeProducts);
     hide(totalMoney);
     //clear(productPreviewImage);
@@ -1456,6 +1464,7 @@ displayProductError=(index)=>{
    $("#layer-page-logIn").css("display","flex");
 }
 displayPageBuy=element=>{
+  mySwiper.style.display='none';
     hide(purchaseData);
     clear(productsCarts);
     clear(storeProducts);
@@ -1463,6 +1472,8 @@ displayPageBuy=element=>{
     let total=Number();
     productsCarts.style.display="block";
   for(let i=0; i<element.length;i++){
+    
+    
       total+=element[i].salary; 
       productsCarts.innerHTML+=`<div class="col-12 mt-5 d-flex style-product-cart">
       <img class="img ms-3" src="${element[i].imges}" width="13%" class="m-4 inputs" alt="${element[i].name}"></img> 
@@ -1472,9 +1483,12 @@ displayPageBuy=element=>{
       </div> </div> `
     } 
     totalMoney.innerHTML=`total salary : ${total} EGP`;
+  
 }
 displayProductsBuyPage=(index)=>{
-   productsCarts.innerHTML="";
+  noProduct.style.display='none';
+  productsCarts.innerHTML="";
+   mySwiper.style.display='none';
    arrayCardsShopping.push(homePageProducts[index])
    showBtnTotalMoney();
    productsCounter.innerHTML=arrayCardsShopping.length;
@@ -1518,7 +1532,7 @@ clear=(element)=>element.innerHTML="";
 //clearStoreProducts=()=>storeProducts.innerHTML="";
 clearInputs=()=>inputClear.forEach(element=>element.value="");
 //* hide functions*
-hide=element=>element.style.display="none";
+ hide=element=>element.style.display="none";
 //* show functions*
 showBtnTotalMoney=()=>totalMoney.style.display="block";
 //* add functions *
@@ -1533,6 +1547,11 @@ addProductsOnTheShoppingCar=(index)=>{
 // * remove functions *
 removeProduct=i=>{
     arrayCardsShopping.splice(i,1);
+    if(arrayCardsShopping.length===0){
+      noProduct.style.display='flex';
+      totalMoney.style.display='none';
+    }
+    else noProduct.style.display='none';
     clear(storeProducts);
     productsCounter.innerHTML=arrayCardsShopping.length;
     if(arrayCardsShopping.length<=0)[productsCounter.innerHTML="",carsSoppingTotal.style.color="rgb(22, 23, 24)"]
@@ -1541,13 +1560,26 @@ removeProduct=i=>{
 // * onclick functions *
 carsSoppingTotal.addEventListener("click",()=>{
   productsCarts.innerHTML="";
-  showBtnTotalMoney();
+  productPreviewImage.style.display='none';
+  if (productsCounter.innerHTML===''){
+    noProduct.style.display='flex';
+    totalMoney.style.display='none';
+  
+  }
+  
+  else {
+    noProduct.style.display='none';
+    totalMoney.style.display='block';
+  }
+ 
   displayPageBuy(arrayCardsShopping);
 })
 onclickProduct=element=>{
      clear(productsCarts);
        for(let i=0;i<element.length;i++){
            element[i].addEventListener("click",()=>{
+            noProduct.style.display='none';
+            productPreviewImage.style.display='none';
             arr=element[i].innerHTML;
             homePageProducts=computerStore.filter(element=>element.name==arr);
             clear(storeProducts);
@@ -1557,12 +1589,20 @@ onclickIconProducts=element=>{
   clear(productsCarts);
     for(let i=0;i<element.length;i++){
         element[i].addEventListener("click",()=>{
+          productPreviewImage.style.display='none';
+          mySwiper.style.display='none';
          arr=element[i].alt;
          homePageProducts=computerStore.filter(element=>element.name==arr);
          clear(storeProducts);
          displayProduct(homePageProducts)})};
 }
-iconHouse.addEventListener("click",()=>displayProduct(homePageProducts=computerStore))
+iconHouse.addEventListener("click",()=>{
+  productPreviewImage.style.display='block';
+  searchProduct.style.display='block';
+  noProduct.style.display="none";
+  displayProduct(homePageProducts=computerStore)
+  mySwiper.style.display='block';
+})
 totalMoney.addEventListener("click",()=>{
      hide(productsCarts); 
      hide(totalMoney); 
@@ -1590,14 +1630,20 @@ btnSearch.addEventListener("click",()=>{
     values=inputProductPrice.value;
    let valueSearch=inputSearch.value;
     clear(storeProducts);
-        //clear(productPreviewImage);
+    noProduct.style.display='none';
 
 
   if(values!==''&& valueSearch==="mouse"||valueSearch==="ram"||valueSearch==="computer monitor"||valueSearch==="keyboard"||valueSearch==="mather board"||
       valueSearch==="head phones"||valueSearch==="graphics card"||valueSearch==="hard disk"){
       homePageProducts=computerStore.filter(element=>element.name==valueSearch);
       pageLayerSearch.style.display='none';
-       displayProduct(homePageProducts)
+       displayProduct(homePageProducts);
+       console.log(storeProducts);
+       console.log(homePageProducts)
+      console.log($('#store-products').height())
+       if(storeProducts===''){
+        alert('no')
+       }else alert("y")
     }
     else if(valueSearch===''||values===''){
       $(".text-error").fadeIn(()=>$(".text-error").html("Please fill in search input  and price input"))

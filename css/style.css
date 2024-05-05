@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 button{
   background-color: transparent;
   border: 0;
@@ -391,14 +392,43 @@ swiper-slide img {
  
 
 
+
+
  
+#no-product{
+  display: none;
+
+ }
 
 
-products5 ,.btn-buy ,.btn-Final-purchase ,#total-money ,#purchase-data ,.cars-sopping-total{
-  background-color:rgb(204, 234, 245);
+
+ .section-end{
+  background-color: #033472;
+  padding:1rem 1rem;
+  height:15rem;
+  bottom: 0;
+}
+
+
+
+
+/*
+#purchase-data{
+
+} 
+*/
+
+products5 ,.btn-buy ,.btn-Final-purchase ,#total-money ,.cars-sopping-total{
+  background-color: #cfe4ff;
   color:#040d18;
 
   color: #033472;
+}
+
+#purchase-data{
+  background-color: #eef3f880;
+  box-shadow:1px 1px 3px #033472 ;
+  
 }
 
 .nav-search{
@@ -643,9 +673,4 @@ font-size: 1rem;
   color: antiquewhite
 }
 
-.section-end{
-  position: relative;
-  bottom:-10;
-  background-color: #033472;
-  padding:1rem 1rem;
-}
+
