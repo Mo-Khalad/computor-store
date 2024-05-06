@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+ 
 
   
 
@@ -269,8 +269,8 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 
 <button id="total-money">total salary : 0 EGP</button>
 <div id="no-product" class=" justify-content-around align-items-center">
-<img width="40%" src="img/box.png">
-<h2>There are no products</h2>
+<img width="20%" src="img/box.png">
+<h2 class="text-no-product">There Are No Products</h2>
 </div>
 
 <div id="purchase-data" class="mt-4"></div> 
@@ -341,3 +341,58 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
   <script src="js/code.jquery.com_jquery-3.7.0.js"></script>
   <script src="js/main.js"></script>
 </body>
+
+
+
+
+
+
+<!--
+
+
+
+<body>
+
+
+
+
+<div class="product-preview-wrapper col-md-3 ">
+
+  <div class="product-preview ">
+    <img class="img" src='img/box.jpg' width="100%" height="55%" alt="img">
+    <h3>mohmed </h3>
+    <p><span></span>mo</p>
+    <h3 class="h3-salary">moo</h3>
+    <button id="btn"  class="w-100 button-shrink">buy</button>
+
+  </div>
+  
+
+</div>
+
+   
+</body>
+
+
+ <div class="position-relative products col-md-12 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
+      <img class="img" src="${element[i].imges}" width="100%" height="65%" alt="${element[i].name}">
+      <h3> ${element[i].name} </h3>
+      <p><span></span>${element[i].type}</p>
+      <h3 class="h3-salary">${element[i].salary} EGP</h3>
+      <button id="btn-preview" onclick="displayProductError(${i})" class="w-100 button-shrink">buy</button>
+
+      </div> 
+
+  <div class="products mb-5 col-sm-12  col-md-12 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
+      <img class="img" onclick="displayProductImage(${i})" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
+      <button id="btn-preview" onclick="displayProductDetails(${i})" class="button-shrink">buy</button>
+      <h3>name : ${element[i].name}</h3>
+      <h3 class="h3-salary">Salary : ${element[i].salary} EGP</h3>
+      <i onclick="addProductsOnTheShoppingCar(${i})"class="iconSoppingCars fa-solid fa-cart-shopping"></i></div>`}
+   } 
+}
+
+
+-->
+
+</html>

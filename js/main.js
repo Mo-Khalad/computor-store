@@ -5,7 +5,7 @@
 const mouse1 = {
     name: "mouse",
     type: "R8 Mouse Gaming 1623 RGB Black",
-    imges: "img/mouse(1).jpg",
+    imges: "img/mouse(1).png",
     salary: 300,
   };
   const mouse2 = {
@@ -395,7 +395,7 @@ const mouse1 = {
   const computerMonitor18 = {
     name: "computer monitor",
     type: "DELL S2421HN - 24-inch IPS Full HD LED Monitor With AMD FreeSync",
-    imges: "img/computer monitor(18).jpg",
+    imges: "img/computer monitor(18).png",
     salary: 750,
   };
   const computerMonitor19 = {
@@ -1238,7 +1238,7 @@ let computerStore = [
   const Home =document.getElementById("home");
   const iconHouse = document.getElementById("icon-house");
   const carsSoppingTotal=document.getElementById("cars-sopping-total");
-  const iconSoppingCars = document.getElementsByClassName("iconSoppingCars");
+ // const iconSoppingCars = document.getElementsByClassName("iconSoppingCars");
   const productsCounter=document.getElementById("Products-counter");
   const iconsSearchNav=document.getElementById("icon-search-nav");
   const navBtns=document.querySelectorAll(".nav-btns"); 
@@ -1423,26 +1423,45 @@ displayProduct=(element)=>{
     if(element.length===52) {
       for(let i=0; i<element.length;i++){
       storeProducts.innerHTML+=`
-      <div class="position-relative products  col-md-12 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
-      <img class="img" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
-      <button id="btn" onclick="displayProductError(${i})" class="button-shrink">buy</button>
-      <h3> ${element[i].name} </h3>
-      <p><span></span>${element[i].type}</p>
-      <h3 class="h3-salary">${element[i].salary} EGP</h3> </div> `  
+      <div class="product-preview-wrapper p-1 position-relative col-md-12 col-12">
+
+      <div class="product-preview ">
+        <img class="img-preview" src="${element[i].imges}" width="100%" height="55%" alt="${element[i].name}">
+        <h3>${element[i].name} </h3>
+        <p>${element[i].type}</p>
+        <h3 class="h3-salary">${element[i].salary} EGP</h3>
+        <button id="btn-preview" onclick="displayProductError(${i})"  class=" button-shrink">buy</button>
+    
+
+      </div>
+      
+    
+    </div>
+     ` 
+ 
        Content=document.querySelectorAll(".error-login");}
     }
     else{
       //clear(productPreviewImage);
        for(let i=0; i<element.length;i++){
-      storeProducts.innerHTML+= `<div class="products col-sm-12  col-md-12 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
-      <img class="img" onclick="displayProductImage(${i})" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
-      <button id="btn" onclick="displayProductDetails(${i})" class="button-shrink">buy</button>
-      <h3>name : ${element[i].name}</h3>
-      <h3 class="h3-salary">Salary : ${element[i].salary} EGP</h3>
-      <i onclick="addProductsOnTheShoppingCar(${i})"class="iconSoppingCars fa-solid fa-cart-shopping"></i></div>`}
-   } 
-}
+      storeProducts.innerHTML+= `
+      <div class="product-preview-wrapper p-1 position-relative col-md-12 col-12">
+       <div class="product-preview ">
+        <img class="img-preview" onclick="displayProductImage(${i})" src="${element[i].imges}" width="100%" height="55%" alt="${element[i].name}">
+        <i class="icon-eye fa-solid fa-eye" onclick="displayProductDetails(${i})"></i>
+        <img class="icon-add-cart" onclick="addProductsOnTheShoppingCar(${i})" src="img/icon-add-cart.png" width="35px">
+        <h3>${element[i].name} </h3>
+        <p>${element[i].type}</p>
+        <h3 class="h3-salary">${element[i].salary} EGP</h3>
+        
+        </div>
+        </div>
 
+        `}
+      
+      
+       }    
+      }
 
 
 displayProductDetails=(index)=>{
@@ -1540,7 +1559,9 @@ addProduct=index=>arrayCardsShopping.push(homePageProducts[index])
 addProductsOnTheShoppingCar=(index)=>{
   addProduct(index);
  productsCounter.innerHTML=arrayCardsShopping.length;
- iconSoppingCars[index].style.color="#0093E9";
+ 
+ //iconSoppingCars[index].style.color="#0093E9";
+ 
  carsSoppingTotal.style.color="#033472";
 
 }
@@ -1560,6 +1581,7 @@ removeProduct=i=>{
 // * onclick functions *
 carsSoppingTotal.addEventListener("click",()=>{
   productsCarts.innerHTML="";
+  searchProduct.style.display='';
   productPreviewImage.style.display='none';
   if (productsCounter.innerHTML===''){
     noProduct.style.display='flex';
@@ -1635,15 +1657,20 @@ btnSearch.addEventListener("click",()=>{
 
   if(values!==''&& valueSearch==="mouse"||valueSearch==="ram"||valueSearch==="computer monitor"||valueSearch==="keyboard"||valueSearch==="mather board"||
       valueSearch==="head phones"||valueSearch==="graphics card"||valueSearch==="hard disk"){
-      homePageProducts=computerStore.filter(element=>element.name==valueSearch);
+      homePageProducts=computerStore.filter(element=>element.name==valueSearch&&element.salary==values);
       pageLayerSearch.style.display='none';
        displayProduct(homePageProducts);
        console.log(storeProducts);
        console.log(homePageProducts)
       console.log($('#store-products').height())
-       if(storeProducts===''){
-        alert('no')
-       }else alert("y")
+       if(homePageProducts.length===0){
+        if(homePageProducts.length===0){
+          noProduct.style.display='flex';
+          searchProduct.style.display='none';
+          productPreviewImage.style.display='none';
+          mySwiper.style.display='none';
+         }else noProduct.style.display='none';
+       }
     }
     else if(valueSearch===''||values===''){
       $(".text-error").fadeIn(()=>$(".text-error").html("Please fill in search input  and price input"))

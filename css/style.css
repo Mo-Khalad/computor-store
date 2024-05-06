@@ -1,3 +1,5 @@
+
+
 *{
   margin: 0;
   padding: 0;
@@ -5,6 +7,7 @@
 }
 body {
   background: #eee;
+  background-color: #fffcfb;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
@@ -172,12 +175,7 @@ input{
    display:block;   
    margin-top: 1.1rem; 
  }
- .iconSoppingCars{
-  color:#081722;
-  margin-top: 1rem;
-  font-size: 1rem;
-  margin-left: 5rem;
-}
+ 
 #Products-counter{
   margin-left: 0.7rem;
   margin-top:-2.6rem;
@@ -418,6 +416,8 @@ swiper-slide img {
 } 
 */
 
+
+
 products5 ,.btn-buy ,.btn-Final-purchase ,#total-money ,.cars-sopping-total{
   background-color: #cfe4ff;
   color:#040d18;
@@ -462,13 +462,7 @@ button ,.nav-link{
   flex-wrap:wrap;
 } 
 
-.products{
-    max-width:15rem;
-    height:33rem;
-    margin-top: 3rem;
-    border-radius: 10px;
-    overflow: hidden;
-}
+
 .button-shrink, .store {
     width:30%;
     background-color:rgb(101, 181, 246);;
@@ -494,10 +488,6 @@ h3{
 display:inline;
 }
 
-.iconSoppingCars:hover {
-  color: rgb(0, 147, 233);;
-}
-
 
 .products5 {
     margin-top: 3rem;
@@ -508,9 +498,7 @@ display:inline;
     border:1px solid rgb(204, 234, 245);
     border-radius: 10px;
 }
-.img{
-  border-radius:0.5rem;
-}
+
 .salary-type {
   width: 40rem;
   text-align: center;
@@ -672,5 +660,104 @@ font-size: 1rem;
   padding-left: 2rem;
   color: antiquewhite
 }
+.text-no-product{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/*
+.img{
+  border-bottom: solid 2px #b1b8be8f;
+  width: 120%;
+  margin-left: -1.3rem;
+  margin-top: -2rem;
+}
+.products{
+  margin-top: 3rem;
+  border-radius: 10px;
+}
+.products{
+  background-color:#eee;
+  background-color: #fffcfb;
+  padding: 1rem;
+  width:25%;
+  box-shadow:1px 1px 1px 3px #b1b8be8f;
+  transition: all 3s;
+}
+.products:hover{
+transform: scale(1.9,1.7);
+background-color: #0093E9;
+}
 
+*/
+ 
+#btn-preview{
+  opacity: 0;
+  transition: all 1s;
+  position: absolute;
+  left:-20rem;
+  border: 0;
+  margin-top:2rem ;
+  background-color: #f7f7f7;
+  color:#033472 ;
+  width: 80%;
+  border: solid 1px #033472;
+  padding:0.2rem 0.2rem;
+}
 
+.product-preview-wrapper{
+  box-shadow:1px 1px 1px 3px #b1b8be8f;
+  background-color: #fffcfb;
+  width:15rem;
+  height:25rem;
+  margin-top: 2rem;
+  transition: all 1s;
+  position: relative;
+  overflow: hidden;
+margin-left: 2rem;
+  max-width: 25rem;
+}
+.icon-eye{
+
+  font-size:2rem;
+  opacity: 0;
+  transition: all 2s;
+  position: absolute;
+  color: #033472;
+  bottom: 1rem;
+  left: -20rem;
+}
+.img-preview{
+  border-bottom: solid 2px #b1b8be8f;
+  margin-top: -2rem;
+  border-radius:0.5rem;
+}
+.product-preview{
+  width:100%;
+  height:100%;
+  margin-top: 2rem;
+}
+.product-preview-wrapper:hover{
+  transform: scale(1 , 1.1);
+  box-shadow:2px 3px 4px 5px #b1b8be8f;
+} 
+.product-preview-wrapper:hover #btn-preview {
+  opacity: 1;
+  left:1.3rem;
+
+}
+.product-preview-wrapper:hover .icon-eye{
+  opacity: 1;
+  left:7rem;
+  bottom:1rem;
+}
+.icon-add-cart{
+  position: absolute;
+  right:-20rem;
+  opacity: 0;
+  bottom: 1rem;
+  transition: all 2s;
+}
+.product-preview-wrapper:hover .icon-add-cart{
+  opacity: 1;
+  right:9rem;
+  bottom:1rem;
+}
