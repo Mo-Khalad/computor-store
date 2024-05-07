@@ -1238,7 +1238,6 @@ let computerStore = [
   const Home =document.getElementById("home");
   const iconHouse = document.getElementById("icon-house");
   const carsSoppingTotal=document.getElementById("cars-sopping-total");
- // const iconSoppingCars = document.getElementsByClassName("iconSoppingCars");
   const productsCounter=document.getElementById("Products-counter");
   const iconsSearchNav=document.getElementById("icon-search-nav");
   const navBtns=document.querySelectorAll(".nav-btns"); 
@@ -1278,7 +1277,7 @@ let computerStore = [
   const navbar=document.querySelector(".navbar"); 
   const contentsPageLayerSearch=document.getElementById("contents-page-layer-search");
    
-  "icons-products"
+  const body=document.getElementById('body')
   const noProduct=document.getElementById("no-product");
  
   let ShowSomeProducts = computerStore.filter((element, i) => i < 52);
@@ -1287,6 +1286,239 @@ let computerStore = [
   let arrayCardsShopping = [];
   let arr = "";
   let height=$(".navbar-icons").height()+$(".navbar-products").height();
+
+
+
+// * functions next and prev and close and iconColor and onKeydown *
+getNext=()=>{ 
+  indexs++
+  if(indexs===homePageProducts.length)indexs=0;
+  displayLightBoxItem(homePageProducts[indexs].imges)
+};
+getPrev=()=>{
+  indexs--
+  if(indexs<0)indexs=imgesProducts.length
+  displayLightBoxItem(homePageProducts[indexs].imges)
+}
+getClose=()=>$("#lightbox-container").hide();
+// * functions onKeyboard*
+firstName.onkeyup=()=>errorsTexts(firstName,ErrorSignUp);
+lastName.onkeyup=()=>errorsTexts(lastName,ErrorSignUp);
+Password.onkeyup=()=>errorsNumbers(Password,error)
+passwordSignUp.onkeyup=()=>errorsNumbers(passwordSignUp,ErrorSignUp)
+document.addEventListener("keydown",e=>{
+  if(e.key=='ArrowRight')getNext(); 
+  else if(e.key=="ArrowLeft")getPrev();
+  else if(e.key=='Escape')getClose();
+  ;    
+})
+//* clear functions *
+clear=(element)=>element.innerHTML="";
+clearInputs=()=>inputClear.forEach(element=>element.value="");
+//* hide functions*
+ hide=element=>element.style.display="none";
+//* show functions*
+showBtnTotalMoney=()=>totalMoney.style.display="block";
+//* add functions *
+addProduct=index=>arrayCardsShopping.push(homePageProducts[index])
+addProductsOnTheShoppingCar=(index)=>{
+  addProduct(index);
+ productsCounter.innerHTML=arrayCardsShopping.length;
+ 
+ //iconSoppingCars[index].style.color="#0093E9";
+ 
+ carsSoppingTotal.style.color="#033472";
+
+}
+// * display functions *
+
+displayPage=(show,hide,hide2,show2)=>{
+  clearInputs();
+  ErrorSignUp.style.display="none";
+  error.style.display="none";
+  productPreviewImage.style.display="none";
+  hide.style.display="none";
+  show.style.display="flex";
+  hide2.style.display="none";
+  show2.style.display="block";
+
+}
+displayProduct=(element)=>{
+     hide(productsCarts);
+     hide(totalMoney);
+     hide(purchaseData);
+    if(element.length===52) {
+      for(let i=0; i<element.length;i++){
+      storeProducts.innerHTML+=`
+      <div class="product-preview-wrapper p-1 position-relative col-md-12 col-12">
+
+      <div class="product-preview ">
+        <img class="img-preview" src="${element[i].imges}" width="100%" height="55%" alt="${element[i].name}">
+        <h3>${element[i].name} </h3>
+        <p>${element[i].type}</p>
+        <h3 class="h3-salary">${element[i].salary} EGP</h3>
+        <button id="btn-preview" onclick="displayProductError(${i})"  class=" button-shrink">buy</button>
+    
+
+      </div>
+      
+    
+    </div>
+     ` 
+ 
+       Content=document.querySelectorAll(".error-login");}
+    }
+    else{
+       for(let i=0; i<element.length;i++){
+      storeProducts.innerHTML+= `
+      <div class="product-preview-wrapper p-1 position-relative col-md-12 col-12">
+       <div class="product-preview ">
+        <img class="img-preview" onclick="displayProductImage(${i})" src="${element[i].imges}" width="100%" height="55%" alt="${element[i].name}">
+        <i class="icon-eye fa-solid fa-eye" onclick="displayProductDetails(${i})"></i>
+        <img class="icon-add-cart" onclick="addProductsOnTheShoppingCar(${i})" src="img/icon-add-cart.png" width="35px">
+        <h3>${element[i].name} </h3>
+        <p>${element[i].type}</p>
+        <h3 class="h3-salary">${element[i].salary} EGP</h3>
+        
+        </div>
+        </div>
+
+        `}
+      
+     }    
+}
+displayProductDetails=(index)=>{
+  noProduct.style.display='none';
+  mySwiper.style.display='none';
+  productPreviewImage.style.display='none';
+  searchProduct.style.display='none';
+    clear(storeProducts);
+    hide(totalMoney);
+    //clear(productPreviewImage);
+   storeProducts.innerHTML+=`<div class="products5 col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+   <img class="img" src="${homePageProducts[index].imges}" width="100%" height="100%" alt="${homePageProducts[index].name}"></div>
+   <div class="salary-type"> <P class="type">${homePageProducts[index].type}</p>
+   <h5>Salary : ${homePageProducts[index].salary} EGP</h5> </div>
+   <button class="store button-shrink" onclick="displayAllProducts()">page product</button>
+   <button id="buyProduct" class="btn-buy button-shrink" onclick="displayProductsBuyPage(${index})" >buy product</button></div>`
+}
+displayProductError=(index)=>{
+   $("#layer-page-logIn").css("display","flex");
+}
+displayPageBuy=element=>{
+  mySwiper.style.display='none';
+    hide(purchaseData);
+    clear(productsCarts);
+    clear(storeProducts);
+    //clear(productPreviewImage);
+    let total=Number();
+    productsCarts.style.display="block";
+  for(let i=0; i<element.length;i++){
+    
+    
+      total+=element[i].salary; 
+      productsCarts.innerHTML+=`<div class="col-12 mt-5 d-flex style-product-cart">
+      <img class="img ms-3" src="${element[i].imges}" width="13%" class="m-4 inputs" alt="${element[i].name}"></img> 
+      <div class="name-and-salary"><h6>${element[i].name} </h6>
+      <h6>Salary : ${element[i].salary} EGP</h6>
+      <button onclick="removeProduct(${i})" class="btn-product-cart button-shrink">remove</button>
+      </div> </div> `
+    } 
+    totalMoney.innerHTML=`total salary : ${total} EGP`;
+  
+}
+displayProductsBuyPage=(index)=>{
+  noProduct.style.display='none';
+  productsCarts.innerHTML="";
+   mySwiper.style.display='none';
+   arrayCardsShopping.push(homePageProducts[index])
+   showBtnTotalMoney();
+   productsCounter.innerHTML=arrayCardsShopping.length;
+   carsSoppingTotal.style.color="#033472";
+   displayPageBuy(arrayCardsShopping);
+} 
+displayProductImage=i=>{
+  lightboxContainer.style.display="flex"
+  displayLightBoxItem(homePageProducts[i].imges); 
+  indexs=i;
+}
+displayAllProducts=()=>displayProduct(homePageProducts);
+displayLightBoxItem=element=>lightboxItem.style.backgroundImage=`url("${element}")`;
+
+// * remove functions *
+removeProduct=i=>{
+    arrayCardsShopping.splice(i,1);
+    if(arrayCardsShopping.length===0){
+      noProduct.style.display='flex';
+      totalMoney.style.display='none';
+    }
+    else noProduct.style.display='none';
+    clear(storeProducts);
+    productsCounter.innerHTML=arrayCardsShopping.length;
+    if(arrayCardsShopping.length<=0)[productsCounter.innerHTML="",carsSoppingTotal.style.color="rgb(22, 23, 24)"]
+    displayPageBuy(arrayCardsShopping);
+}
+
+
+
+
+
+
+
+let local= JSON.parse(localStorage.getItem("products")) ;
+
+
+
+if(local==="success"){
+  $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
+
+    //   error.innerHTML="must begin with at least four letters and not begin with a number";
+     // $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
+      storeProducts.innerHTML="";
+      displayProduct(homePageProducts);
+      navbarHomeBeforeLogIn.style.display='none'; 
+       //productPrice.style.display="block"; 
+      // menuTogglerLabel.style.opacity="1";
+       carsSoppingTotal.style.display="block";
+       iconComputerTools.style.display="none";
+       layerPageLogIn.style.display="none";
+       Home.style.display="block";
+       searchProduct.style.display='block';
+       productPreviewImage.style.display="block";
+  
+       purchaseData.innerHTML+=`
+        <h4 class="product-datas">email : ${email.value}</h4>
+        <form>
+        <input class="inputs input-clear" name="card-number" type="text" placeholder="card number"> 
+         <input class="inputs input-clear" name="number-phone" type="text" placeholder="number phone"> 
+         <img src="img/card-mastercard.svg" class="mt-3" width="7%">
+         <img src="img/card-visa.svg" class="mt-3" width="7%">
+         <img src="img/card-discover.svg" class="mt-3" width="7%">
+         <img src="img/card-amex.svg" class="mt-3" width="7%">
+         <input class="inputs input-clear" name="card-number" type="number" placeholder="Discount coupon"> 
+         <button class="btn-Final-purchase">buy</button></form>`;
+         displayPage(navbar,navbarHomeBeforeLogIn,pageLogIn,contentsPageLayerSearch);
+         displayPage(storeProducts,navbarHomeBeforeLogIn,pageSignUp,productPreviewImage);
+  
+
+        }
+else $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  iconsSearchNav.addEventListener("click",()=>
@@ -1362,6 +1594,7 @@ async function chackSignUp(){
     
    let response = await axios.post("https://movies-api.routemisr.com/signin", product);
    if(response.data.message!=="success"){
+
    $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
    $("#error-layer-logIn").fadeIn(()=>$("#error-layer-logIn").fadeOut(5000));
    errorLayerLogIn.innerHTML=response.data.message;
@@ -1369,12 +1602,13 @@ async function chackSignUp(){
    } 
    else if(response.data.message==="success"){
 
-     error.innerHTML="must begin with at least four letters and not begin with a number";
-    $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
-    console.log(height)
+//     error.innerHTML="must begin with at least four letters and not begin with a number";
+ //   $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
+$(".loading").fadeIn(()=>$(".loading").fadeOut(8000));
       
      storeProducts.innerHTML='';
      displayProduct(homePageProducts);
+    // $(".loading").fadeIn(()=>$(".loading").fadeOut(8000));
 
      //productPrice.style.display="block"; 
     // menuTogglerLabel.style.opacity="1";
@@ -1398,130 +1632,15 @@ async function chackSignUp(){
        <button class="btn-Final-purchase">buy</button></form>`;
        displayPage(navbar,navbarHomeBeforeLogIn,pageLogIn,contentsPageLayerSearch);
        displayPage(storeProducts,navbarHomeBeforeLogIn,pageSignUp,productPreviewImage);
+       localStorage.setItem("products",JSON.stringify("success"))
 
   }
   }
 
 
-// * display functions *
-displayPage=(show,hide,hide2,show2)=>{
-  clearInputs();
-  ErrorSignUp.style.display="none";
-  error.style.display="none";
-  productPreviewImage.style.display="none";
-  hide.style.display="none";
-  show.style.display="flex";
-  hide2.style.display="none";
-  show2.style.display="block";
 
-}
-displayProduct=(element)=>{
-     hide(productsCarts);
-     hide(totalMoney);
-     hide(purchaseData);
-     clear(storeProducts);
-    if(element.length===52) {
-      for(let i=0; i<element.length;i++){
-      storeProducts.innerHTML+=`
-      <div class="product-preview-wrapper p-1 position-relative col-md-12 col-12">
-
-      <div class="product-preview ">
-        <img class="img-preview" src="${element[i].imges}" width="100%" height="55%" alt="${element[i].name}">
-        <h3>${element[i].name} </h3>
-        <p>${element[i].type}</p>
-        <h3 class="h3-salary">${element[i].salary} EGP</h3>
-        <button id="btn-preview" onclick="displayProductError(${i})"  class=" button-shrink">buy</button>
-    
-
-      </div>
-      
-    
-    </div>
-     ` 
- 
-       Content=document.querySelectorAll(".error-login");}
-    }
-    else{
-      //clear(productPreviewImage);
-       for(let i=0; i<element.length;i++){
-      storeProducts.innerHTML+= `
-      <div class="product-preview-wrapper p-1 position-relative col-md-12 col-12">
-       <div class="product-preview ">
-        <img class="img-preview" onclick="displayProductImage(${i})" src="${element[i].imges}" width="100%" height="55%" alt="${element[i].name}">
-        <i class="icon-eye fa-solid fa-eye" onclick="displayProductDetails(${i})"></i>
-        <img class="icon-add-cart" onclick="addProductsOnTheShoppingCar(${i})" src="img/icon-add-cart.png" width="35px">
-        <h3>${element[i].name} </h3>
-        <p>${element[i].type}</p>
-        <h3 class="h3-salary">${element[i].salary} EGP</h3>
-        
-        </div>
-        </div>
-
-        `}
-      
-      
-       }    
-      }
-
-
-displayProductDetails=(index)=>{
-  noProduct.style.display='none';
-  mySwiper.style.display='none';
-  productPreviewImage.style.display='none';
-  searchProduct.style.display='none';
-    clear(storeProducts);
-    hide(totalMoney);
-    //clear(productPreviewImage);
-   storeProducts.innerHTML+=`<div class="products5 col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
-   <img class="img" src="${homePageProducts[index].imges}" width="100%" height="100%" alt="${homePageProducts[index].name}"></div>
-   <div class="salary-type"> <P class="type">${homePageProducts[index].type}</p>
-   <h5>Salary : ${homePageProducts[index].salary} EGP</h5> </div>
-   <button class="store button-shrink" onclick="displayAllProducts()">page product</button>
-   <button id="buyProduct" class="btn-buy button-shrink" onclick="displayProductsBuyPage(${index})" >buy product</button></div>`
-}
-displayProductError=(index)=>{
-   $("#layer-page-logIn").css("display","flex");
-}
-displayPageBuy=element=>{
-  mySwiper.style.display='none';
-    hide(purchaseData);
-    clear(productsCarts);
-    clear(storeProducts);
-    //clear(productPreviewImage);
-    let total=Number();
-    productsCarts.style.display="block";
-  for(let i=0; i<element.length;i++){
-    
-    
-      total+=element[i].salary; 
-      productsCarts.innerHTML+=`<div class="col-12 mt-5 d-flex style-product-cart">
-      <img class="img ms-3" src="${element[i].imges}" width="13%" class="m-4 inputs" alt="${element[i].name}"></img> 
-      <div class="name-and-salary"><h6>${element[i].name} </h6>
-      <h6>Salary : ${element[i].salary} EGP</h6>
-      <button onclick="removeProduct(${i})" class="btn-product-cart button-shrink">remove</button>
-      </div> </div> `
-    } 
-    totalMoney.innerHTML=`total salary : ${total} EGP`;
-  
-}
-displayProductsBuyPage=(index)=>{
-  noProduct.style.display='none';
-  productsCarts.innerHTML="";
-   mySwiper.style.display='none';
-   arrayCardsShopping.push(homePageProducts[index])
-   showBtnTotalMoney();
-   productsCounter.innerHTML=arrayCardsShopping.length;
-   carsSoppingTotal.style.color="#033472";
-   displayPageBuy(arrayCardsShopping);
-} 
-displayProductImage=i=>{
-  lightboxContainer.style.display="flex"
-  displayLightBoxItem(homePageProducts[i].imges); 
-  indexs=i;
-}
-displayAllProducts=()=>displayProduct(homePageProducts);
-displayLightBoxItem=element=>lightboxItem.style.backgroundImage=`url("${element}")`;
 // * functions next and prev and close and iconColor and onKeydown *
+/*
 getNext=()=>{ 
   indexs++
   if(indexs===homePageProducts.length)indexs=0;
@@ -1578,6 +1697,8 @@ removeProduct=i=>{
     if(arrayCardsShopping.length<=0)[productsCounter.innerHTML="",carsSoppingTotal.style.color="rgb(22, 23, 24)"]
     displayPageBuy(arrayCardsShopping);
 }
+*/
+
 // * onclick functions *
 carsSoppingTotal.addEventListener("click",()=>{
   productsCarts.innerHTML="";
@@ -1635,7 +1756,6 @@ totalMoney.addEventListener("click",()=>{
 
 iconSearch.onclick=()=>{
     let values= inputSearchProduct.value;
-    console.log(values)
      clearInputs();
      if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyboard"||values==="mather board"||values==="head phones"||values==="graphics card"||values==="hard disk"){
       homePageProducts=computerStore.filter(element=>element.name==values);
@@ -1651,27 +1771,29 @@ iconSearch.onclick=()=>{
 btnSearch.addEventListener("click",()=>{
     values=inputProductPrice.value;
    let valueSearch=inputSearch.value;
-    clear(storeProducts);
     noProduct.style.display='none';
 
+  if(values!=='' && valueSearch!==''&&inputSearch.value==="mouse"||inputSearch.value==="ram"||inputSearch.value==="computer monitor"||inputSearch.value==="keyboard"||inputSearch.value==="mather board"||inputSearch.value==="head phones"
+    ||inputSearch.value==="graphics card"||inputSearch.value==="hard disk"){  
+   homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value&&element.name==inputSearch.value);
+   pageLayerSearch.style.display='none';
 
-  if(values!==''&& valueSearch==="mouse"||valueSearch==="ram"||valueSearch==="computer monitor"||valueSearch==="keyboard"||valueSearch==="mather board"||
-      valueSearch==="head phones"||valueSearch==="graphics card"||valueSearch==="hard disk"){
-      homePageProducts=computerStore.filter(element=>element.name==valueSearch&&element.salary==values);
-      pageLayerSearch.style.display='none';
-       displayProduct(homePageProducts);
-       console.log(storeProducts);
-       console.log(homePageProducts)
-      console.log($('#store-products').height())
-       if(homePageProducts.length===0){
-        if(homePageProducts.length===0){
-          noProduct.style.display='flex';
-          searchProduct.style.display='none';
-          productPreviewImage.style.display='none';
-          mySwiper.style.display='none';
-         }else noProduct.style.display='none';
-       }
-    }
+   if(homePageProducts.length===0){
+    if(homePageProducts.length===0){
+      noProduct.style.display='flex';
+      searchProduct.style.display='none';
+      productPreviewImage.style.display='none';
+      mySwiper.style.display='none';
+     }
+     else{
+       noProduct.style.display='none';
+      }
+    } 
+   
+   displayProduct(homePageProducts)
+  }
+
+
     else if(valueSearch===''||values===''){
       $(".text-error").fadeIn(()=>$(".text-error").html("Please fill in search input  and price input"))
       $(".text-error").fadeOut(4000,0);
@@ -1682,12 +1804,7 @@ btnSearch.addEventListener("click",()=>{
   }
   
   
-  if(valueSearch!==''&&inputSearch.value==="mouse"||inputSearch.value==="ram"||inputSearch.value==="computer monitor"||inputSearch.value==="keyboard"||inputSearch.value==="mather board"||inputSearch.value==="head phones"
-     ||inputSearch.value==="graphics card"||inputSearch.value==="hard disk"){  
-    homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value&&element.name==inputSearch.value);
-    displayProduct(homePageProducts)
-   }
-
+ 
    /*
    else if(valueSearch!==""){$(".text-error").fadeIn(()=>$(".text-error").html("This product is not currently available"))
   $(".text-error").fadeOut(4000,0);
