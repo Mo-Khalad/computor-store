@@ -1236,7 +1236,9 @@ let computerStore = [
   const ErrorSignUp=document.getElementById("Error-signUp");
   const btnLoginSignUp=document.getElementById("btn-logIn-signUp");
   const Home =document.getElementById("home");
-  const iconHouse = document.getElementById("icon-house");
+  //const iconHouse = document.getElementById("icon-house");
+  const iconHouse = document.querySelectorAll(".icon-house");
+
   const carsSoppingTotal=document.getElementById("cars-sopping-total");
   const productsCounter=document.getElementById("Products-counter");
   const iconsSearchNav=document.getElementById("icon-search-nav");
@@ -1351,12 +1353,11 @@ displayProduct=(element)=>{
       for(let i=0; i<element.length;i++){
       storeProducts.innerHTML+=`
       <div class="product-preview-wrapper p-1 position-relative col-md-12 col-12">
-
-      <div class="product-preview ">
+        <div class="product-preview ">
         <img class="img-preview" src="${element[i].imges}" width="100%" height="55%" alt="${element[i].name}">
         <h3>${element[i].name} </h3>
         <p>${element[i].type}</p>
-        <h3 class="h3-salary">${element[i].salary} EGP</h3>
+        <h3 class="h3-salary">${element[i].salary} EGP </h3>
         <button id="btn-preview" onclick="displayProductError(${i})"  class=" button-shrink">buy</button>
     
 
@@ -1412,17 +1413,20 @@ displayPageBuy=element=>{
     clear(storeProducts);
     //clear(productPreviewImage);
     let total=Number();
-    productsCarts.style.display="block";
+    productsCarts.style.display="flex";
   for(let i=0; i<element.length;i++){
     
     
       total+=element[i].salary; 
-      productsCarts.innerHTML+=`<div class="col-12 mt-5 d-flex style-product-cart">
-      <img class="img ms-3" src="${element[i].imges}" width="13%" class="m-4 inputs" alt="${element[i].name}"></img> 
-      <div class="name-and-salary"><h6>${element[i].name} </h6>
-      <h6>Salary : ${element[i].salary} EGP</h6>
-      <button onclick="removeProduct(${i})" class="btn-product-cart button-shrink">remove</button>
-      </div> </div> `
+      productsCarts.innerHTML+=`
+      <div class="col-md-3 ms-5 mt-5 d-flex justify-content-space-between style-product-cart">
+      <img class="img ms-3" src="${element[i].imges}" width="30%" class="m-4 inputs" alt="${element[i].name}"></img> 
+      <div class=" name-and-salary"><h6 class='style-salary'>${element[i].name} </h6>
+      <h6 class='style-salary'>Salary : ${element[i].salary} EGP</h6>
+      <button onclick="removeProduct(${i})" class="btn-product-cart ms-3 button-shrink">remove</button>
+      </div> 
+      </div>
+      `
     } 
     totalMoney.innerHTML=`total salary : ${total} EGP`;
   
@@ -1530,7 +1534,7 @@ else $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
 
 let scroll=element=>{ 
   window.onscroll= scroll=()=>{if(this.scrollY<= height)$(element).css({"position":"",'height':"100px" })
-  else if(this.scrollY>=height)$(element).css({"position":"fixed" ,"top":"0" ,"left":"0" ,'right':"0" ,"height":"60px"})}//$(".menu-toggler-label").css({"backgroundColor":"#081722","color":"#cceaf5","display":"none"})}
+  else if(this.scrollY>=height)$(element).css({"position":"fixed" ,"top":"0" ,"left":"0" ,'right':"0" ,"height":"60px" })}//$(".menu-toggler-label").css({"backgroundColor":"#081722","color":"#cceaf5","display":"none"})}
 }
 scroll('.navbar-products');
 scroll('.navbar-home-before-logIn');
@@ -1604,7 +1608,7 @@ async function chackSignUp(){
 
 //     error.innerHTML="must begin with at least four letters and not begin with a number";
  //   $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
-$(".loading").fadeIn(()=>$(".loading").fadeOut(8000));
+$(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
       
      storeProducts.innerHTML='';
      displayProduct(homePageProducts);
@@ -1739,13 +1743,14 @@ onclickIconProducts=element=>{
          clear(storeProducts);
          displayProduct(homePageProducts)})};
 }
-iconHouse.addEventListener("click",()=>{
+
+iconHouse.forEach((element)=>element.addEventListener("click",()=>{
   productPreviewImage.style.display='block';
   searchProduct.style.display='block';
   noProduct.style.display="none";
   displayProduct(homePageProducts=computerStore)
   mySwiper.style.display='block';
-})
+}))
 totalMoney.addEventListener("click",()=>{
      hide(productsCarts); 
      hide(totalMoney); 
@@ -1755,14 +1760,18 @@ totalMoney.addEventListener("click",()=>{
 
 
 iconSearch.onclick=()=>{
-    let values= inputSearchProduct.value;
-     clearInputs();
+
+let  values=inputSearchProduct.value;
+
      if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyboard"||values==="mather board"||values==="head phones"||values==="graphics card"||values==="hard disk"){
       homePageProducts=computerStore.filter(element=>element.name==values);
+      clear(storeProducts)
       displayProduct(homePageProducts)}
     else if(values!==""){$(".text-error").fadeIn(()=>$(".text-error").html("This product is not currently available"))
   $(".text-error").fadeOut(4000,0);
   }
+  clearInputs();
+
 }
 
 
@@ -1772,11 +1781,13 @@ btnSearch.addEventListener("click",()=>{
     values=inputProductPrice.value;
    let valueSearch=inputSearch.value;
     noProduct.style.display='none';
-
+clear(storeProducts)
   if(values!=='' && valueSearch!==''&&inputSearch.value==="mouse"||inputSearch.value==="ram"||inputSearch.value==="computer monitor"||inputSearch.value==="keyboard"||inputSearch.value==="mather board"||inputSearch.value==="head phones"
     ||inputSearch.value==="graphics card"||inputSearch.value==="hard disk"){  
    homePageProducts=computerStore.filter((element)=>element.salary==inputProductPrice.value&&element.name==inputSearch.value);
    pageLayerSearch.style.display='none';
+   displayProduct(homePageProducts)
+
 
    if(homePageProducts.length===0){
     if(homePageProducts.length===0){
@@ -1790,7 +1801,6 @@ btnSearch.addEventListener("click",()=>{
       }
     } 
    
-   displayProduct(homePageProducts)
   }
 
 
