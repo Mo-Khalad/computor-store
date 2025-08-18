@@ -11,12 +11,9 @@
 </head>
 <body id="body">
  
-
-  
-
   <nav id="navbar-home-before-logIn" class="navbar-home-before-logIn w-100 position-absolute top-0">
       <ul>
-        <li id="btn-home"><button><i class="fa-solid fa-house bg-light"></i></button></li>
+        <li id="btn-home"><button><i class="fa-solid fa-house house bg-light"></i></button></li>
         <li id="nav-btn-logIn"><button class="btns-navbar text-dark">Login</button></li>
         <li id="nav-btn-signUp"><button class="btns-navbar text-dark">Register</button><li>
       </ul>
@@ -45,49 +42,41 @@
         <div  class="text-center ms-5 page-content-signUp">
           <h3 class="mt-4 mb-1 text-light fs-4 fw-bolder">signUp</h3>
           <form class="text-center">
-            <input id="first-name" class="input-clear style-inputs-content mt-5 mb-3 " type="text" placeholder="first name">
-            <input id="last-name" class="input-clear style-inputs-content mb-3 mt-1" type="text" placeholder="last name">
-            <input id="age" class="input-clear style-inputs-content mt-1" type="number" placeholder="age">
+            <input id="first-name" class="input-clear style-inputs-content mt-5 mb-3 " type="text" placeholder="name">
+            <input id="phone" class="input-clear style-inputs-content mt-1" type="number" placeholder="phone">
             <input id="password-signUp" class="input-clear style-inputs-content mt-1 mb-3" type="password" placeholder="password">
-            <input id="email-signUp" class="input-clear style-inputs-content mt-1" type="text" placeholder="email">
+            <input id="rePassword" class="input-clear style-inputs-content mb-3 mt-1" type="password" placeholder="rePassword">
+            <input id="email-signUp" class="input-clear style-inputs-content mt-1 w-75" type="text" placeholder="email">
           </form>
           <p id="Error-signUp" class="text-light"></p>
           <button id="btn-logIn-signUp" class="mt-5 button-shrink w-100">LogIn</button>
         </div>
       </div>
 
-      
-
-
 <div id="home">
-<nav class="navbar-icons navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar-icons navbar navbar-expand-lg bg-body-tertiary"> 
   <div class="container-fluid">
-    <a class="navbar-brand text-light icon-house" href="#" id="icon-house" ><i class="icon-house fa-solid fa-house bg-light"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-     
-  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+     <a class="navbar-brand text-light icon-house" href="#" id="icon-house" ><i class="icon-house fa-solid fa-house bg-light"></i></a>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       <li class="nav-item me-5">
-          <i class="icons fa-brands fa-facebook"></i>
-          <i class="icons fa-brands fa-youtube"></i>
-          <i class="icons fa-brands fa-instagram"></i>
-          <i class="icons fa-brands fa-tiktok"></i>
+          <i class="icons mt-1 fa-brands fa-facebook"></i>
+          <i class="icons mt-1 fa-brands fa-youtube"></i>
+          <i class="icons mt-1 fa-brands fa-instagram"></i>
+          <i class="icons mt-1 fa-brands fa-tiktok"></i>
       </li>
+      <li id="logOut" class="icons">logOut</li>
 </ul>
-    </div>
-  </div>
+  </div>  
 </nav>
-<nav class="navbar-products navbar align-items-center justify-content-center navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid ">
-      <i id="cars-sopping-total" class="fa-solid fa-cart-shopping"> <p id="Products-counter" class="text-center fs-6"></p></i>
-      <i id="icon-search-nav" class="fs-5 fa-solid fa-magnifying-glass"></i> 
 
+<nav class="navbar-products navbar navbar-expand-lg bg-body-tertiary">
+  <div class="nav container-fluid d-flex justify-content-between">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="m-auto navbar-nav mb-2 mb-lg-0">
+        <img class="logo" src="img/icons-home.png" width="75px" class="icon-house me-3">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 m-auto">
         <li class="nav-item">
-          <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">mouse</a>
+          <a class="nav-link active btn-products-store nav-btns" aria-current="page" href="#">mouse</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">mather board</a>
@@ -112,11 +101,21 @@
         <li class="nav-item">
           <a class="nav-link active  btn-products-store nav-btns" aria-current="page" href="#">computer monitor</a>
         </li>
-  
-    </div>
-    <img src="img/icons-home.png" width="75px" class="icon-house me-3">
+      </ul>
 
+     </div>
+
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+      <div class="d-flex align-items-center">
+        <i id="icon-search-nav" class="fs-5 fa-solid fa-magnifying-glass"></i> 
+        <i id="cars-sopping-total" class="fa-solid fa-cart-shopping"> <p id="Products-counter" class="text-center fs-6"></p></i>
+    </div>
   </div>
+    
+   
 </nav>
 
 <swiper-container id="mySwiper" class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
@@ -124,7 +123,7 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 <swiper-slide class="imges-swiper  d-flex align-items-center justify-content-center wow bounceInUp"><h2 class="text-swiper text-center text-light wow bounceInUp">ضمان شهر ضد عيوب الصناعة بفتورة مختومة من شركتنا </h2> </swiper-slide>
 <swiper-slide><img src="img/icon-swiper.png" class="wow bounceInUp w-100 h-100 d-flex align-items-center justify-content-center"></swiper-slide>
 </swiper-container>
-
+ 
 </div>
 
 <div id="search-product" class="w-100 mt-4 search-product text-center">
@@ -207,18 +206,24 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
      </div>
    </div>
 
-</div>
-
+   </div>
   </div>
 
 
 <div id="page-layer-search" class="justify-content-center align-items-center position-fixed top-0 end-0 start-0 bottom-0">
-  <div id="contents-page-layer-search" class="w-100 mt-4 text-center">
-   <input id="input-search" class="input-search-nav input-clear" type="text" name="search" placeholder="Search">
-   <input id="input-productPrice" class="input-clear" type="number" name="search" placeholder="productprice">
-   <button id="btn-search" class="m-auto">search</button>
-   <p id="text-error" class="text-error style-text-error"></p>
- </div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 m-auto">
+      <div id="contents-page-layer-search" class="w-100 mt-4">
+      <input id="input-search" class="input-search-nav input-clear w-100" type="text" name="search" placeholder="Search">
+      <input id="input-productPrice" class="input-clear w-100" type="number" name="search" placeholder="price">
+      <button id="btn-search" class="m-auto">search</button>
+      <p id="text-error" class="text-error style-text-error"></p>
+     </div>
+   </div>
+  </div>
+</div>
+  
 </div>
 
 <div class="loading">
@@ -239,7 +244,7 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
           <label class="layer-label-password">password</label>
           <input id="layer-input-password" class="input-clear inputs-content mt-1 mb-5" type="password">
         </form>
-        <p id="error-layer-logIn" class="m-auto"></p>
+        <p id="error-layer-logIn" class="m-auto">error</p>
         <button id="layer-btn-logIn" class="btn-login">sign in</button>     
  
      </div> 
@@ -251,21 +256,14 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 
   </div>       
 
-
-  <div class="container-fiuld ">
+  <div class="container">
     <div class='row' id="products-carts">
-    <div class="mt-5 d-flex" >
-  
-    </div>                
-    
+ 
   </div>     
   
 </div>
 
   </div>
-
- 
-
 
 <div id="lightbox-container" class=" align-items-center justify-content-center position-fixed top-0 bottom-0 start-0 end-0">
   <div id="lightbox-item" class="d-flex col-sm-6 align-items-center justify-content-between position-relative "> 
@@ -281,47 +279,45 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 <h2 class="text-no-product">There Are No Products</h2>
 </div>
 
-<div id="purchase-data" class="mt-4"></div> 
-<div id="section-end" class="section-end mt-5">
-
   <div class="container">
-    
     <div class="row">
-     
-      <div class="col-sm-12 col-md-3 col-xxl-3">
-        <h5>call us </h5>
-       
-        <p class="icon text-icon-home "><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24">
-          <path d="M 12 2 A 1 1 0 0 0 11.289062 2.296875 L 1.203125 11.097656 A 0.5 0.5 0 0 0 1 11.5 A 0.5 0.5 0 0 0 1.5 12 L 4 12 L 4 20 C 4 20.552 4.448 21 5 21 L 9 21 C 9.552 21 10 20.552 10 20 L 10 14 L 14 14 L 14 20 C 14 20.552 14.448 21 15 21 L 19 21 C 19.552 21 20 20.552 20 20 L 20 12 L 22.5 12 A 0.5 0.5 0 0 0 23 11.5 A 0.5 0.5 0 0 0 22.796875 11.097656 L 12.716797 2.3027344 A 1 1 0 0 0 12.710938 2.296875 A 1 1 0 0 0 12 2 z"></path>
-      </svg> King Al-Hakim Street - Sixth District - Obour City </p>
-      <p class="icon text-icon-home "><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 24 24">
-        <path d="M 12 2 A 1 1 0 0 0 11.289062 2.296875 L 1.203125 11.097656 A 0.5 0.5 0 0 0 1 11.5 A 0.5 0.5 0 0 0 1.5 12 L 4 12 L 4 20 C 4 20.552 4.448 21 5 21 L 9 21 C 9.552 21 10 20.552 10 20 L 10 14 L 14 14 L 14 20 C 14 20.552 14.448 21 15 21 L 19 21 C 19.552 21 20 20.552 20 20 L 20 12 L 22.5 12 A 0.5 0.5 0 0 0 23 11.5 A 0.5 0.5 0 0 0 22.796875 11.097656 L 12.716797 2.3027344 A 1 1 0 0 0 12.710938 2.296875 A 1 1 0 0 0 12 2 z"></path>
-    </svg> 01221479721 </p>
-    <p class="icon text-icon-home "><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 24 24">
-      <path d="M 12 2 A 1 1 0 0 0 11.289062 2.296875 L 1.203125 11.097656 A 0.5 0.5 0 0 0 1 11.5 A 0.5 0.5 0 0 0 1.5 12 L 4 12 L 4 20 C 4 20.552 4.448 21 5 21 L 9 21 C 9.552 21 10 20.552 10 20 L 10 14 L 14 14 L 14 20 C 14 20.552 14.448 21 15 21 L 19 21 C 19.552 21 20 20.552 20 20 L 20 12 L 22.5 12 A 0.5 0.5 0 0 0 23 11.5 A 0.5 0.5 0 0 0 22.796875 11.097656 L 12.716797 2.3027344 A 1 1 0 0 0 12.710938 2.296875 A 1 1 0 0 0 12 2 z"></path>
-  </svg> Speed_co41@yahoo.com</p>
-      </div>
-      <div class="col-sm-12 col-md-4 col-xl-4">
-          <i class="icons-section-end fa-brands fa-facebook"></i>
-          <i class="icons-section-end fa-brands fa-youtube"></i>
-          <i class="icons-section-end fa-brands fa-instagram"></i>
-          <i class="icons-section-end fa-brands fa-tiktok"></i>
-      </div>
-      <div class="col-sm-12 col-md-2 col-xl-2">
- <h6 class="text-light">Our refreshing store</h6>
- <ui>
-  <span class="btn-section-end"> About the store</span>
-  <span class="btn-section-end"> privacy policy </span>
-  <span class="btn-section-end"> Terms and Conditions</span>
-  <span class="btn-section-end"> Blog</span>
+     <div class="col-sm-6 col-md-12">
+        <div id="purchase-data" class="mt-4">
 
+        </div>
+    </div>
 
- </ui>
- <p></p>
+  </div>
+</div> 
+
+<div class="footer mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-5 col-xxl-4 error-layer-logIn">
+        <h5 class="text-main mt-3 mb-2">call us </h5>
+        <p class="icon text ms-3"> <i class="fa-solid fa-house me-2"></i> King Al-Hakim Street - Sixth District - Obour City </p>
+        <p class="icon text ms-3 "><i class="fa-solid fa-phone-volume me-2"></i> 01221479721 </p>
+        <p class="icon text ms-3 "><i class="fa-solid fa-envelope me-2"></i> Speed_co41@yahoo.com</p>
       </div>
-      <div class="col-3">
-        <p class="text-light">One of the best and best online stores that is easy to use
-        </p>
+
+     <div class="col-sm-12 col-md-4 col-xxl-4">
+       <h5 class="text-main mt-3 mb-2 fs-5">Our refreshing store</h5>
+
+       <ui>
+        <p class="text ms-3"> About the store</p>
+        <p class="text ms-3"> privacy policy </p>
+        <p class="text ms-3"> Terms and Conditions</p>
+        <p class="text ms-3"> Blog</p>
+       </ui>
+      </div>
+
+      <div class="col-sm-12 col-md-3 col-xxl-4">
+          <h5 class="text-main mt-3 mb-2">Contact Us</h5>
+          <p class="text ms-3">One of the best and best online stores that is easy to use</p>
+          <i class="icons fs-5 fa-brands fa-facebook"></i>
+          <i class="icons fs-5 fa-brands fa-youtube"></i>
+          <i class="icons fs-5 fa-brands fa-instagram"></i>
+          <i class="icons fs-5 fa-brands fa-tiktok"></i>
       </div>
   
     </div>
@@ -330,12 +326,6 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 </div>
 
 </div>
-
-
-
-
-
-
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -347,6 +337,7 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
     </script>
   <script>AOS.init();</script>
   <script src="js/code.jquery.com_jquery-3.7.0.js"></script>
+  <script src></script>
   <script src="js/main.js"></script>
 </body>
 
