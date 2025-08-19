@@ -1,12 +1,13 @@
 body {
   background-color: #f8f8f8;  
-  
+  min-height: 100vh;  
 }
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+#nav-btn-logIn
 input{
   outline: none;
 }
@@ -69,6 +70,7 @@ button{
   font-size:1rem;
 }
 #nav-btn-logIn ,#nav-btn-signUp{
+  font-size: 1rem;
   width: 7rem;
   text-align: center;
   background-color: #56cac7;
@@ -765,30 +767,45 @@ font-family: serif;
   border-color: #0034de #0000 #0000 #0000 ;
   transform: translate(32px, 3px) rotate(-35deg);
 }
-@media screen and (min-width:500px) {
-html{
-  font-size:18px;
+
+@media screen and (max-width:1068px) {
+:root{
+  font-size:27px;
 }
-#purchase-data {
-width:28rem;
+.icon-add-cart{
+  width: 2rem;
 }
+#purchase-data{
+  width:18rem;
 }
-@media screen and (min-width:500px) and (max-width:759px) {
-  html{
-    font-size:15px;
-  }
+#lightbox-item{
+  width:35rem;
+  height:25rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0.5rem;
+  background-size:100% 100%;
 }
-@media screen and (min-width:759px) and (max-width:959px) {
-  html{
-      font-size:15px;
-  }
+.img{
+  width: 20%;
 }
-@media screen and (min-width:959px){
-  html{
-      font-size:16px;
-  }
+#store-products{
+min-height: 100%;
 }
 
+}
+
+/*
+@media screen and (min-width:500px) and (max-width:759px) {
+
+}
+@media screen and (min-width:759px) and (max-width:959px) {
+  
+}
+@media screen and (min-width:959px){
+  
+}
+*/
 @keyframes animloader {
   0% {
     transform: translate(0px, 0px) scaleX(1);

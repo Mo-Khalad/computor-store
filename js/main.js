@@ -1820,15 +1820,18 @@ displayProductDetails=(index)=>{
     clear(storeProducts);
     hide(totalMoney);
    storeProducts.innerHTML+=`
-   <div p-3 my-5 mx-4 col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
-   <img class="img" src="${homePageProducts[index].images}" width="100%" height="100%" alt="${homePageProducts[index].name}"></div>
-   <div class="mt-5">
-    <h3 class="w-100">${homePageProducts[index].name}</h3>
-    <P class="description">${homePageProducts[index].type}</p>
-   <h5 class="salary w-100">Salary : ${homePageProducts[index].salary} EGP</h5> </div>
-   <button class="btns-details button-shrink" onclick="displayAllProducts()">page product</button>
-   <button onclick="addProductsOnTheShoppingCart(${homePageProducts[index].id} , ${index})" class="btns-details button-shrink" >buy product</button></div>`
-}
+   <div>
+     <div p-3 my-5 mx-4 col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+     <img class="imgs" src="${homePageProducts[index].images}" width="100%" height="100%" alt="${homePageProducts[index].name}"></div>
+     <div class="mt-5">
+     <h3 class="w-100">${homePageProducts[index].name}</h3>
+     <P class="description">${homePageProducts[index].type}</p>
+     <h5 class="salary w-100">Salary : ${homePageProducts[index].salary} EGP</h5> </div>
+     <button class="btns-details button-shrink" onclick="displayAllProducts()">page product</button>
+     <button onclick="addProductsOnTheShoppingCart(${homePageProducts[index].id} , ${index})" class="btns-details button-shrink" >buy product</button></div>
+   </div>`
+
+  }
 displayErrorProduct=()=>{
    $("#layer-page-logIn").css("display","flex");
 }
