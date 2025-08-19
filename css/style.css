@@ -1,5 +1,6 @@
 body {
   background-color: #f8f8f8;  
+  
 }
 *{
   margin: 0;
@@ -17,6 +18,7 @@ i ,.logo ,#logOut{
   box-shadow: none !important;
   transition: 1s all;
 } 
+#no-product
 .navbar-toggler:hover{
   background-color: #e4e5eb !important;
   color: #2521217c !important;
@@ -412,6 +414,9 @@ swiper-slide img {
 }
 #search-product ,#no-product{
   display: none;
+}
+#no-product{
+  height:25rem;
 }
 .btns-details  ,.btn-Final-purchase ,#total-money ,.cars-sopping-total{
   background-color: #033472;

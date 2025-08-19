@@ -595,7 +595,7 @@ const mouse1 = {
   const hardDisk1 = {
     name: "hard disk",
     type: "Western Digital Surveillance Hard Disk Drive_2TB - Purple",
-    count:1 ,
+    count: 1 ,
     id:76 ,
     images: "img/hard disk(1).jpg",
     salary: 1300,
@@ -1583,7 +1583,7 @@ const mouse1 = {
   const ram24 = {
     name: "ram",
     type: "Kingston FURY Beast 8GB 3200MHz DDR4 CL16 DIMM Black",
-    count:1 ,
+    count: 1 ,
     id:199,
     images: "img/ram(24).jpg",
     salary: 750,
@@ -1592,7 +1592,7 @@ const mouse1 = {
     name: "ram",
     type: "Crucial RAM CB16GS2666 4GB DDR4 2666 MHz Laptop Memory",
     count:1 ,
-     id:200,
+    id:200,
     images: "img/ram(25).jpg",
     salary: 400,
 };
@@ -1627,7 +1627,7 @@ const mouse1 = {
   const Password=document.getElementById("password");
   const inputClear=document.querySelectorAll(".input-clear");
   const error=document.getElementById("Error");
-  const btnLogIn=document.querySelectorAll(".btn-login");
+  const btnLogIn= document.getElementById("btn-login");
   const btnRegister=document.getElementById("btn-register");
   const pageSignUp=document.getElementById("page-signUp")
   const firstName=document.getElementById("first-name");
@@ -1648,10 +1648,10 @@ const mouse1 = {
   const inputSearchProduct=document.getElementById("input-search-product");
   const iconSearch = document.getElementById("icon-search");
   const iconsProducts=document.querySelectorAll(".icons-products");
-  const pageLayerSearch=document.getElementById("page-layer-search")
   const inputSearch = document.getElementById("input-search");
   const btnSearch = document.getElementById("btn-search")
   const layerPageLogIn =document.getElementById("layer-page-logIn");
+  const pageLayerSearch=document.getElementById("page-layer-search")
   const contentLayerLogIn =document.getElementById("content-layer-logIn");
   const loginLayerText=document.getElementById("login-layer-text");
   const layerInputEmail=document.getElementById("layer-input-email");
@@ -1673,7 +1673,6 @@ const mouse1 = {
   const purchaseData=document.getElementById("purchase-data");
   const totalMoney = document.getElementById("total-money");
   const btnMouseCursor= document.getElementsByClassName("mouse-cursor-gradient-tracking");
-  const btnBuyProduct = document.querySelector(".btn-buy");
   const iconComputerTools=document.getElementById("icon-computer-tools");
   const navbar= document.querySelector(".navbar"); 
   const contentsPageLayerSearch= document.getElementById("contents-page-layer-search");
@@ -1735,14 +1734,13 @@ showBtnTotalMoney=()=>totalMoney.style.display="block";
 
 //* add functions *
 addProductsOnTheShoppingCart=( id , index)=>{  
-  const totalProductsCounter= arrayCartsShopping.reduce((totalNumberOfItems, CartItem) => {
-   return totalNumberOfItems + CartItem.count    
-  }, 1);
-    
 let item = arrayCartsShopping.findIndex( item => item.id === id ) 
 if( item === -1 ){
  arrayCartsShopping.push(homePageProducts[index])
 } else homePageProducts[index].count ++;
+ const totalProductsCounter = arrayCartsShopping.reduce((totalNumberOfItems, CartItem) => {
+   return totalNumberOfItems + CartItem.count    
+  }, 0);
   productsCounter.innerHTML= totalProductsCounter 
   carsSoppingTotal.style.color="#052a74ff";
   localStorage.setItem("itemsCartsShopping",JSON.stringify(arrayCartsShopping))
@@ -1772,7 +1770,7 @@ displayPage=(show,hide,hide2,show2)=>{
   hide.style.display="none";
   show.style.display="flex";
   hide2.style.display="none";
-  show2.style.display="block";
+  show2 !== '' ? show2.style.display="block" :'';
 }
 displayProduct =(element)=>{
      hide(productsCarts);
@@ -1824,12 +1822,12 @@ displayProductDetails=(index)=>{
    storeProducts.innerHTML+=`
    <div p-3 my-5 mx-4 col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
    <img class="img" src="${homePageProducts[index].images}" width="100%" height="100%" alt="${homePageProducts[index].name}"></div>
-   <div class="d-flex flex-wrap align-items-center mt-5">
+   <div class="mt-5">
     <h3 class="w-100">${homePageProducts[index].name}</h3>
     <P class="description">${homePageProducts[index].type}</p>
    <h5 class="salary w-100">Salary : ${homePageProducts[index].salary} EGP</h5> </div>
    <button class="btns-details button-shrink" onclick="displayAllProducts()">page product</button>
-   <button onclick="buyProduct" class="btns-details  button-shrink" onclick="display sBuyPage(${index})" >buy product</button></div>`
+   <button onclick="addProductsOnTheShoppingCart(${homePageProducts[index].id} , ${index})" class="btns-details button-shrink" >buy product</button></div>`
 }
 displayErrorProduct=()=>{
    $("#layer-page-logIn").css("display","flex");
@@ -1884,29 +1882,12 @@ displayProductImage=i=>{
 }
 displayAllProducts=()=>{
 storeProducts.innerHTML=""
-  display (homePageProducts)
+  displayProduct(homePageProducts)
 }
 displayLightBoxItem=element=>lightboxItem.style.backgroundImage=`url("${element}")`;
 
-// * remove functions *
-removeProduct=i=>{
-    arrayCartsShopping.splice(i,1);
-    if(arrayCartsShopping.length===0){
-      noProduct.style.display='flex';
-      totalMoney.style.display='none';
-    }
-    else noProduct.style.display='none';
-    clear(storeProducts);
-    if(arrayCartsShopping.length<=0)[productsCounter.innerHTML="",carsSoppingTotal.style.color="rgb(22, 23, 24)"]
-    displayPageBuy(arrayCartsShopping);
-    localStorage.setItem("itemsCartsShopping",JSON.stringify(arrayCartsShopping))
-}
-
-let local= JSON.parse(localStorage.getItem("products")) ;
-if(local==="success"){
-  const data = JSON.parse(localStorage.getItem("email"));  
-  
-  $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
+displayDataAfterLoginIn=(data)=>{
+$(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
        storeProducts.innerHTML="";
        displayProduct(homePageProducts);
        navbarHomeBeforeLogIn.style.display='none'; 
@@ -1916,7 +1897,7 @@ if(local==="success"){
        Home.style.display="block";
        searchProduct.style.display='block';
        productPreviewImage.style.display="block";
-       purchaseData.innerHTML+=`
+        purchaseData.innerHTML+=`
         <h4 class="product-datas text-center fs-5">Check Out</h4>
         <form>
         <input class="inputs input-clear" name="card-number" type="text" placeholder="card number"> 
@@ -1933,6 +1914,27 @@ if(local==="success"){
          displayPage(navbar,navbarHomeBeforeLogIn,pageLogIn,contentsPageLayerSearch);
          displayPage(storeProducts,navbarHomeBeforeLogIn,pageSignUp,productPreviewImage);
 }
+// * remove functions *
+removeProduct=i=>{
+    arrayCartsShopping.splice(i,1);
+    if(arrayCartsShopping.length===0){
+      noProduct.style.display='flex';
+      totalMoney.style.display='none';
+    }
+    else noProduct.style.display='none';
+    clear(storeProducts);
+    if(arrayCartsShopping.length<=0)[productsCounter.innerHTML="",carsSoppingTotal.style.color="rgb(22, 23, 24)"]
+    displayPageBuy(arrayCartsShopping);
+    localStorage.setItem("itemsCartsShopping",JSON.stringify(arrayCartsShopping))
+}
+
+// * Restore the data after refresh *
+let local= JSON.parse(localStorage.getItem("products")) ;
+
+if(local==="success"){
+     const data = JSON.parse(localStorage.getItem("email"));    
+     displayDataAfterLoginIn(data)
+}
 else $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
   iconsSearchNav.addEventListener("click",()=>{
   pageLayerSearch.style.display="flex"
@@ -1940,13 +1942,16 @@ else $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
   inputSearch.value='';
 })
 
+
+// *scroll navbar *
 let scroll=element=>{ 
   window.onscroll= scroll=()=>{if(this.scrollY<= height)$(element).css({"position":"",'height':"100px" })
   else if(this.scrollY>=height)$(element).css({"position":"fixed" ,"top":"0" ,"left":"0" ,'right':"0" ,"height":"82px" })}
 }
 scroll('.navbar-products');
 scroll('.navbar-home-before-logIn');
-  //*function changing colors and background *
+
+//*function changing colors and background *
 changingStyle=(element,i,background,color)=>[element[i].style.backgroundColor=background,element[i].style.color=color];
 //*changing colors and backgound btn-nav*
 for (let i = 0; i < navBtns.length; i++){
@@ -1980,7 +1985,6 @@ return response
 }catch(error){
  return error
 }
-
 }
 async function chackSignUp(){
   product={
@@ -2005,35 +2009,24 @@ async function chackSignUp(){
      }           
   }
     
-    }
+}
     
 let chack=element=>element.value;
 
-async function chacklogin(elementOne ,elementTwo){
-     product={
-       email:elementOne.value,
-       password:elementTwo.value,
-    }
-  const message = await fetchData(product , "signin") ; 
+async function chacklogin(elementOne , elementTwo){
+product={
+    email:elementOne.value,
+    password:elementTwo.value,
+}
+const message = await fetchData( product , "signin"); 
+console.log(message.status);
 
   if( message.status === 200){
-   $(".loading").fadeIn(()=>$(".loading").fadeOut(3000)); 
-     storeProducts.innerHTML='';
-     displayProduct(homePageProducts);
-     carsSoppingTotal.style.display="block";
-     iconComputerTools.style.display="none";
-     layerPageLogIn.style.display="none";
-     Home.style.display="block";
-     searchProduct.style.display='block';
-     productPreviewImage.style.display="block";
-     purchaseData.innerHTML+=`
-      <h4 class="product-datas"> email : ${email.value}</h4> `;   
-       displayPage(navbar,navbarHomeBeforeLogIn,pageLogIn,contentsPageLayerSearch);
-       displayPage(storeProducts,navbarHomeBeforeLogIn,pageSignUp,productPreviewImage);
-       localStorage.setItem("products",JSON.stringify("success"))  
-       localStorage.setItem("email",JSON.stringify(message))        
-  }
-  else{
+   displayDataAfterLoginIn(message)
+    localStorage.setItem("products",JSON.stringify("success"))  
+    localStorage.setItem("email",JSON.stringify(message))  
+    $("#Error").hide()      
+} else{
     error.innerHTML= message?.response?.data?.errors.msg 
     $("#Error").fadeIn(()=>$("#Error").fadeOut(5000));
    }    
@@ -2077,6 +2070,7 @@ onclickIconProducts=element=>{
 }
 
 iconHouse.forEach((element)=>element.addEventListener("click",()=>{
+ $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
   productPreviewImage.style.display='block';
   searchProduct.style.display='block';
   noProduct.style.display="none";
@@ -2086,7 +2080,11 @@ iconHouse.forEach((element)=>element.addEventListener("click",()=>{
 totalMoney.addEventListener("click",()=>{
      hide(productsCarts); 
      hide(totalMoney); 
-     if(totalMoney.innerHTML!=='total salary : 0 EGP')purchaseData.style.display="block";
+     if(totalMoney.innerHTML!=='total salary : 0 EGP')
+      {  purchaseData.style.display="block" 
+
+      }
+
 }) 
 
 iconSearch.onclick=()=>{
@@ -2135,10 +2133,10 @@ clear(storeProducts)
   }
   clearInputs();
 })
-btnHome.addEventListener("click",()=>displayPage(storeProducts,pageSignUp,pageLogIn));
-navBtnLogIn.addEventListener("click",()=>displayPage(pageLogIn,pageSignUp,storeProducts));
-navBtnSignUp.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
-btnRegister.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts));
+btnHome.addEventListener("click",()=>displayPage(storeProducts,pageSignUp,pageLogIn , ''));
+navBtnLogIn.addEventListener("click",()=>displayPage(pageLogIn,pageSignUp,storeProducts , ''));
+navBtnSignUp.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts , ''));
+btnRegister.addEventListener("click",()=>displayPage(pageSignUp,pageLogIn,storeProducts , ''));
 lightboxContainer.addEventListener('click',e=>{if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon)getClose()});
 pageLayerSearch.addEventListener('click',e=>{ if(e.target!=inputSearch&&e.target!=inputProductPrice&&e.target!=btnSearch){
 pageLayerSearch.style.display='none';
@@ -2170,8 +2168,8 @@ e.target!=layerInputPassword&&e.target!=layerBtnLogIn&&e.target!=errorLayerLogIn
 closeIcon.addEventListener("click",getClose);
 nextIcon.addEventListener("click",getNext);
 prevIcon.addEventListener("click",getPrev);
-btnLogIn.forEach(element => element.addEventListener("click" ,()=>chacklogin(email ,Password)) )
-btnLogIn.forEach(element => element.addEventListener("click" ,()=>chacklogin(layerInputEmail ,layerInputPassword))  )
+btnLogIn.addEventListener("click" ,()=> chacklogin(email ,Password)) 
+layerBtnLogIn.addEventListener("click" ,()=>chacklogin(layerInputEmail ,layerInputPassword)) 
 btnLoginSignUp.addEventListener("click",chackSignUp);
 
 // * run functions *
