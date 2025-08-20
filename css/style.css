@@ -596,9 +596,12 @@ h6{
   width:57%;
 }
 .icons{
-  padding: 0.5rem 0.3rem;
-  padding-left: 2rem;
-  color: #e4e2e2;
+  padding: 0.5rem 0.3rem !important;
+  padding-left: 2rem !important;
+  color: #e4e2e2 !important;
+}
+.icon-house-2{
+  color: #e4e2e2 !important;
 }
 .name{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -768,7 +771,7 @@ font-family: serif;
   border-color: #0034de #0000 #0000 #0000 ;
   transform: translate(32px, 3px) rotate(-35deg);
 }
-.fa-house{
+.btn-home{
   margin-left:0.1rem;
   border-radius: 50% !important;
   background-color: transparent;
@@ -794,16 +797,16 @@ font-family: serif;
 .img{
   width: 20%;
 }
-.details-product{
- min-height:50rem;
-}
 .card{
   width: 250px;
 }
-  
+.store-products{
+  min-height:40rem;
 }
-
-
+.details-product{
+ min-height:50rem !important;
+}  
+}
 
 
 @keyframes animloader {
