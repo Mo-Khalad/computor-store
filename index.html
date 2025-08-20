@@ -13,6 +13,7 @@
  
   <nav id="navbar-home-before-logIn" class="navbar-home-before-logIn w-100 position-absolute top-0">
       <ul>
+        <li id="btn-home"><button><i class="fa-solid fa-house bg-light"></i></button></li>
         <li id="nav-btn-logIn"><button class="btns-navbar text-dark">Login</button></li>
         <li id="nav-btn-signUp"><button class="btns-navbar text-dark">Register</button><li>
       </ul>
@@ -54,16 +55,17 @@
 
 <div id="home">
 <nav class="navbar-icons navbar navbar-expand-lg bg-body-tertiary"> 
+
   <div class="container-fluid">
-     <a class="navbar-brand text-light icon-house" href="#" id="icon-house" ><i class="icon-house fa-solid fa-house bg-light"></i></a>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       <li class="nav-item me-5">
-          <i class="icons mt-1 fa-brands fa-facebook"></i>
-          <i class="icons mt-1 fa-brands fa-youtube"></i>
-          <i class="icons mt-1 fa-brands fa-instagram"></i>
-          <i class="icons mt-1 fa-brands fa-tiktok"></i>
+       
+          <i class="icons fa-brands fa-facebook"></i>
+          <i class="icons fa-brands fa-youtube"></i>
+          <i class="icons fa-brands fa-instagram"></i>
+          <i class="icons fa-brands fa-tiktok"></i>    <span id="logOut" class="icons">logOut</span>
+                  
       </li>
-      <li id="logOut" class="icons">logOut</li>
 </ul>
   </div>  
 </nav>
@@ -71,7 +73,7 @@
 <nav class="navbar-products navbar navbar-expand-lg bg-body-tertiary">
   <div class="nav container-fluid d-flex justify-content-between">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <img id="btn-home" class="logo" src="img/icons-home.png" width="75px" class="icon-house me-3">
+        <img id="icon-house" class="logo icon-house" src="img/icons-home.png" width="75px" class="icon-house me-3">
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 m-auto">
         <li class="nav-item">
@@ -104,7 +106,7 @@
 
      </div>
 
- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -113,27 +115,26 @@
         <i id="cars-sopping-total" class="fa-solid fa-cart-shopping"> <p id="Products-counter" class="text-center fs-6"></p></i>
     </div>
   </div>
-    
-   
+     
 </nav>
 
 <swiper-container id="mySwiper" class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
 centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
-<swiper-slide class="imges-swiper  d-flex align-items-center justify-content-center wow bounceInUp"><h2 class="text-swiper text-center text-light wow bounceInUp">ضمان شهر ضد عيوب الصناعة بفتورة مختومة من شركتنا </h2> </swiper-slide>
+<swiper-slide class="imges-swiper d-flex align-items-center justify-content-center wow bounceInUp"><h2 class="text-swiper text-center text-light wow bounceInUp">ضمان شهر ضد عيوب الصناعة بفتورة مختومة من شركتنا </h2> </swiper-slide>
 <swiper-slide><img src="img/icon-swiper.png" class="wow bounceInUp w-100 h-100 d-flex align-items-center justify-content-center"></swiper-slide>
 </swiper-container>
  
 </div>
 
 <div id="search-product" class="w-100 mt-4 search-product text-center">
-  <input id="input-search-product" class="bg-light text-center input-clear" type="text" name="search" placeholder="Search">
+  <input id="input-search-product" class="bg-light mt-5 text-center input-clear" type="text" name="search" placeholder="Search">
   <i id="icon-search" class="fa-solid fa-magnifying-glass"></i>
   <p id="text-error" class="text-error"></p>
 </div>
 
 <div id="product-preview-image" class="container-fiuld">
   <div class="row position-relative display-flex justify-content-around">
-    <div class="card col-md-3">
+    <div class="card col-md-3 col-lg-3">
        <div class="card-side position-absolute top-0 start-0 w-100 front">
        <img src="img/rams(1).png" width="100%" height="100%" alt="ram">
     </div>
@@ -143,13 +144,14 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
     </div>
 
     <div class="card col-md-3">
-      <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
+       <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
        <img class="icons-products" src="img/mouses.png" width="100%" height="100%" alt="mouse">
-      </div>
-    <div class="card-side p-4 position-absolute top-0 start-0 w-100 back">
+       </div>
+
+       <div class="card-side position-absolute top-0 start-0 w-100 back">
        <img class="icons-products" src="img/mouses(1).png" width="100%" height="100%" alt="mouse">
        </div>
-   </div>
+    </div>
 
    <div class="card col-md-3">
       <div class="card-side  p-4 position-absolute top-0 start-0 w-100 front">
@@ -251,18 +253,11 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
   </div>
  
   <div class="container">
-  <div id="store-products" class="w-100 m-1 rom align-items-center justify-content-center">
-
-  </div>       
-
-  <div class="container">
-    <div class='row' id="products-carts">
- 
-  </div>     
-  
-</div>
-
-  </div>
+    <div id="store-products" class="w-100 m-1 rom align-items-center justify-content-center"></div>       
+      <div class="container">
+        <div class='row' id="products-carts"></div>     
+      </div>
+    </div>
 
 <div id="lightbox-container" class=" align-items-center justify-content-center position-fixed top-0 bottom-0 start-0 end-0">
   <div id="lightbox-item" class="d-flex col-sm-6 align-items-center justify-content-between position-relative "> 
@@ -280,7 +275,7 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 
   <div class="container">
     <div class="row">
-     <div class="col-sm-6 col-md-12">
+     <div class="mt-5 col-sm-6 col-md-12 d-flex justify-content-center align-items-center">
         <div id="purchase-data" class="mt-4">
 
         </div>
@@ -343,56 +338,3 @@ centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="fa
 </body>
 
 
-
-
-
-
-<!--
-
-
-
-<body>
-
-
-
-
-<div class="product-preview-wrapper col-md-3 ">
-
-  <div class="product-preview ">
-    <img class="img" src='img/box.jpg' width="100%" height="55%" alt="img">
-    <h3>mohmed </h3>
-    <p><span></span>mo</p>
-    <h3 class="h3-salary">moo</h3>
-    <button id="btn"  class="w-100 button-shrink">buy</button>
-
-  </div>
-  
-
-</div>
-
-   
-</body>
-
-
- <div class="position-relative products col-md-12 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
-      <img class="img" src="${element[i].imges}" width="100%" height="65%" alt="${element[i].name}">
-      <h3> ${element[i].name} </h3>
-      <p><span></span>${element[i].type}</p>
-      <h3 class="h3-salary">${element[i].salary} EGP</h3>
-      <button id="btn-preview" onclick="displayProductError(${i})" class="w-100 button-shrink">buy</button>
-
-      </div> 
-
-  <div class="products mb-5 col-sm-12  col-md-12 col-lg-4 col-xl-3 col-xxl-3" data-aos="fade-up">
-      <img class="img" onclick="displayProductImage(${i})" src="${element[i].imges}" width="100%" height="68%" alt="${element[i].name}">
-      <button id="btn-preview" onclick="displayProductDetails(${i})" class="button-shrink">buy</button>
-      <h3>name : ${element[i].name}</h3>
-      <h3 class="h3-salary">Salary : ${element[i].salary} EGP</h3>
-      <i onclick="addProductsOnTheShoppingCar(${i})"class="iconSoppingCars fa-solid fa-cart-shopping"></i></div>`}
-   } 
-}
-
-
--->
-
-</html>

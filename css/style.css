@@ -18,6 +18,8 @@ i ,.logo ,#logOut{
 ,.navbar-toggler{
   box-shadow: none !important;
   transition: 1s all;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
 } 
 #no-product
 .navbar-toggler:hover{
@@ -26,6 +28,7 @@ i ,.logo ,#logOut{
 }
 .nav{
   background-color: #f3f3f3 !important;
+  padding: 0 !important;
 }
 .navbar-toggler-icon{
   box-shadow: none !important;
@@ -155,7 +158,7 @@ button{
 .navbar-icons{
     background-color:#033472 !important;
     padding: 0.1rem 0.3rem !important;
-    height: 2.2rem !important;
+    height: 2.5rem !important;
 }
 .icon-house{
   background-color: transparent !important;
@@ -179,7 +182,7 @@ button{
 .navbar-products{
   background-color: #f3f3f3 !important;
   z-index:9999999 !important ;
-  padding: 0.8rem 0.8rem !important;
+  height: 100px !important;
 }
 .collapse{
   background-color: #f3f3f3 !important;
@@ -262,7 +265,7 @@ swiper-slide img {
   background-color: #fffcfb;
   margin:2rem;
   margin-top: 5rem;
-  max-width:100px;
+  width:100px;
   cursor: pointer;
 }
 .card-side{
@@ -544,11 +547,9 @@ h3{
   background-color: #02246d !important;
   color: #d6d9db !important;}
 #purchase-data{
-  width: 50rem;
+  width:100%;
   height: 27rem;
-  margin: 3rem auto auto;
   margin-bottom: 1rem;
-  padding: 1rem;
   border-radius: 1rem;
   display: none;
 }
@@ -559,7 +560,7 @@ h3{
   flex-wrap: wrap;
 }
 .inputs{
-  width:25rem;
+  width:95%;
   display: inline;
   margin-top: 1rem;
   border-width: 0px;
@@ -571,10 +572,10 @@ h4{
   color:#081722;
   font-weight: 800;
 }
-.btn-Final-purchase {
+.btn-Final-purchase{
   margin-top: 2rem;
   border-radius: 2rem;
-  width:25rem;
+  width:94%;
   border: 0;
   margin-bottom: 2rem;
   padding: 10px 16px;
@@ -767,16 +768,20 @@ font-family: serif;
   border-color: #0034de #0000 #0000 #0000 ;
   transform: translate(32px, 3px) rotate(-35deg);
 }
-
-@media screen and (max-width:1068px) {
+.fa-house{
+  margin-left:0.1rem;
+  border-radius: 50% !important;
+  background-color: transparent;
+  color: #aadddd;
+  padding: 0.5rem;
+  font-size:1rem;
+}
+@media screen and ( max-width:988px ){
 :root{
-  font-size:27px;
+  font-size:25px !important;
 }
 .icon-add-cart{
   width: 2rem;
-}
-#purchase-data{
-  width:18rem;
 }
 #lightbox-item{
   width:35rem;
@@ -789,23 +794,18 @@ font-family: serif;
 .img{
   width: 20%;
 }
-#store-products{
-min-height: 100%;
+.details-product{
+ min-height:50rem;
 }
-
+.card{
+  width: 250px;
 }
-
-/*
-@media screen and (min-width:500px) and (max-width:759px) {
-
-}
-@media screen and (min-width:759px) and (max-width:959px) {
   
 }
-@media screen and (min-width:959px){
-  
-}
-*/
+
+
+
+
 @keyframes animloader {
   0% {
     transform: translate(0px, 0px) scaleX(1);
@@ -849,6 +849,7 @@ min-height: 100%;
   z-index:999999999;
   background-color: #060a11;
 }
+
 @keyframes rotate {
   100%{    transform: rotate(360deg)}
 }

@@ -1779,7 +1779,7 @@ displayProduct =(element)=>{
     if(element.length===52) {
       for(let i=0; i<element.length;i++){
       storeProducts.innerHTML+=`
-        <div class="product-preview-wrapper p-1 position-relative col-md-12 col-12">
+        <div class="product-preview-wrapper p-1 position-relative col-12 col-md-12">
          <div class="product-preview">
           <div class="preview w-100">
              <img class="img-preview" src="${element[i].images}" width="100%" height="100%" alt="${element[i].name}">
@@ -1820,6 +1820,7 @@ displayProductDetails=(index)=>{
     clear(storeProducts);
     hide(totalMoney);
    storeProducts.innerHTML+=`
+   <div class="details-product d-flex align-items-center justify-content-center">
    <div>
      <div p-3 my-5 mx-4 col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
      <img class="imgs" src="${homePageProducts[index].images}" width="100%" height="100%" alt="${homePageProducts[index].name}"></div>
@@ -1827,9 +1828,10 @@ displayProductDetails=(index)=>{
      <h3 class="w-100">${homePageProducts[index].name}</h3>
      <P class="description">${homePageProducts[index].type}</p>
      <h5 class="salary w-100">Salary : ${homePageProducts[index].salary} EGP</h5> </div>
-     <button class="btns-details button-shrink" onclick="displayAllProducts()">page product</button>
+     <button class="btns-details button-shrink product-datas" onclick="displayAllProducts()">page product</button>
      <button onclick="addProductsOnTheShoppingCart(${homePageProducts[index].id} , ${index})" class="btns-details button-shrink" >buy product</button></div>
-   </div>`
+     </div>  
+     </div>`
 
   }
 displayErrorProduct=()=>{
@@ -1901,8 +1903,8 @@ $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
        searchProduct.style.display='block';
        productPreviewImage.style.display="block";
         purchaseData.innerHTML+=`
-        <h4 class="product-datas text-center fs-5">Check Out</h4>
-        <form>
+        <h4 class="product-datas mt-2 text-center fs-5">Check Out</h4>
+        <form class="text-center">
         <input class="inputs input-clear" name="card-number" type="text" placeholder="card number"> 
          <input class="inputs input-clear" name="number-phone" type="text" placeholder="number phone"> 
          <img src="img/card-mastercard.svg" class="mt-3" width="7%">
@@ -1911,8 +1913,8 @@ $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
          <img src="img/card-amex.svg" class="mt-3" width="7%">
          <input class="inputs input-clear" name="card-number" type="number" placeholder="Discount coupon"> 
          <button class="btn-Final-purchase">buy</button></form>
-         <h4 class="product-datas">name : ${data.data.user.name}</h4>
-         <h4 class="product-datas">email : ${data.data.user.email}</h4>
+         <h4 class="product-datas ms-3">name : ${data.data.user.name}</h4>
+         <h4 class="product-datas ms-3">email : ${data.data.user.email}</h4>
          `;
          displayPage(navbar,navbarHomeBeforeLogIn,pageLogIn,contentsPageLayerSearch);
          displayPage(storeProducts,navbarHomeBeforeLogIn,pageSignUp,productPreviewImage);
@@ -2073,10 +2075,12 @@ onclickIconProducts=element=>{
 }
 
 iconHouse.forEach((element)=>element.addEventListener("click",()=>{
- $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
-  productPreviewImage.style.display='block';
+  storeProducts.innerHTML = ""
+ $(".loading").fadeIn(()=>$(".loading product-preview-wrapper").fadeOut(3000));
+  productPreviewImage.style.display='block details-product';
   searchProduct.style.display='block';
   noProduct.style.display="none";
+  
   displayProduct(homePageProducts=computerStore)
   mySwiper.style.display='block';
 }))
