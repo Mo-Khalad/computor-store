@@ -1638,7 +1638,7 @@ const mouse1 = {
   const ErrorSignUp=document.getElementById("Error-signUp");
   const btnLoginSignUp=document.getElementById("btn-logIn-signUp");
   const Home =document.getElementById("home");
-  const iconHouse = document.querySelectorAll(".icon-house");
+  const iconHouse = document.getElementById("icon-house");
   const carsSoppingTotal=document.getElementById("cars-sopping-total");
   const productsCounter=document.getElementById("Products-counter");
   const iconsSearchNav=document.getElementById("icon-search-nav");
@@ -2073,17 +2073,15 @@ onclickIconProducts=element=>{
          clear(storeProducts);
          displayProduct(homePageProducts)})};
 }
-
-iconHouse.forEach((element)=>element.addEventListener("click",()=>{
+iconHouse.addEventListener("click",()=>{
   storeProducts.innerHTML = ""
- $(".loading").fadeIn(()=>$(".loading product-preview-wrapper").fadeOut(3000));
+ $(".loading").fadeIn(()=>$(".loading").fadeOut(3000));
   productPreviewImage.style.display='block details-product';
   searchProduct.style.display='block';
   noProduct.style.display="none";
-  
   displayProduct(homePageProducts=computerStore)
   mySwiper.style.display='block';
-}))
+})
 totalMoney.addEventListener("click",()=>{
      hide(productsCarts); 
      hide(totalMoney); 

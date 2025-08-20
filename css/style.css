@@ -808,7 +808,6 @@ font-family: serif;
 }  
 }
 
-
 @keyframes animloader {
   0% {
     transform: translate(0px, 0px) scaleX(1);
