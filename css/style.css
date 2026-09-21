@@ -587,6 +587,11 @@ swiper-slide img {
 }
 
 /* Loading */
+.loading{
+  position: relative;
+  display:block;
+  z-index: 999999999;
+}
 .spinner{
   z-index:999999999;
   background-color: #060a11;
