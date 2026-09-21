@@ -10,13 +10,13 @@ body {
 }
 a{
   text-decoration: none;
- }
- input{
+}
+input{
    outline: none;
- }
- i,#house-icon-link ,#nav-logOut{
+}
+i,#house-icon-link ,#nav-logOut{
    cursor: pointer;
- }
+}
 button{
    background-color: transparent;
    border: 0;
@@ -587,9 +587,14 @@ swiper-slide img {
 }
 
 /* Loading */
+.loading{
+  position: relative;
+  display:block;
+  z-index: 999999999;
+}
 .spinner{
-  z-index:999999999;
   background-color: #060a11;
+  z-index: 999999999;
 }
 .loader{
   color: #FFF;

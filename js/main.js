@@ -1456,11 +1456,9 @@ displayAllProducts=()=>{
 }
 displaySliderModalItem=element=>sliderModalItem.style.backgroundImage=`url("${element}")`;
 
-
 displayDataAfterLoginIn=(data)=>{
-  $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
-       storeProducts.innerHTML="";
-    
+  $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));    
+     storeProducts.innerHTML="";  
      displayProduct(homePageProducts);
         purchaseData.innerHTML+=`
         <h1 class="mt-2 text-center fs-5">Check Out</h1>
@@ -1519,7 +1517,7 @@ removeProduct=(i)=>{
       notFound.style.display='none';
       displayCartPage(shoppingCartItems);
     }
-    clear(storeProducts);
+    clear(storeProducts); 
     if(shoppingCartItems.length<=0)[productsCounter.innerHTML="",shoppingCartLink.style.color="rgb(22, 23, 24)"]
     localStorage.setItem("itemsCartsShopping",JSON.stringify(shoppingCartItems))     
 }
@@ -1531,7 +1529,7 @@ if(local==="success"){
      const data = JSON.parse(localStorage.getItem("email"));    
      displayDataAfterLoginIn(data);
 }
-else $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
+else $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
 
 searchIconLink.addEventListener("click",()=>{
   homeSlider.style.display="none";  
@@ -1555,7 +1553,7 @@ changingStyle=(element,i,background,color)=>[element[i].style.backgroundColor=ba
 //*changing colors and backgound btn-nav*
 for (let i = 0; i < navLinks.length; i++){
      navLinks[i].addEventListener("click",()=>{
-     $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
+    $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
       displayPage(
         showPage='',
         optionShow2 = productSearch ,
@@ -1644,13 +1642,13 @@ const message = await fetchData( product , "signin");
     )      
 } else{
     logInError.innerHTML= message?.response?.data?.errors.msg 
-    $("#logIn-error").fadeIn(()=>$("#logIn-error").fadeOut(4000));
+    $("#logIn-error").fadeIn(()=>$("#logIn-error").fadeOut(2000));
    }    
 }
     
 // * onclick functions *
 shoppingCartLink.addEventListener("click",()=>{
-  $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
+  $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
   homeSlider.style.display ='none'
   cartProducts.innerHTML="";
   productSearch.style.display='';
@@ -1685,7 +1683,7 @@ onclickIconProducts=element=>{
         element[i].addEventListener("click",()=>{
           console.log(element[i].alt);
           const values = element[i].alt
-          $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
+          $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
           for (let i = 0; i < navLinks.length; i++){    
             if(navLinks[i].innerHTML=== values){              
               changingStyle(navLinks,i,"transparent","#033472")
@@ -1701,7 +1699,7 @@ onclickIconProducts=element=>{
          displayProduct(homePageProducts)})};
 }
 houseIconLink.addEventListener("click",()=>{
- $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
+ $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
   displayPage(
     showPage= '' ,
     optionShow2 = productSearch,
@@ -1729,8 +1727,7 @@ searchIcon.onclick=()=>{
   let values=productSearchField.value;
   homeSlider.style.display ='none'
   
-  $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
- 
+  $(".loading").fadeIn(()=>$(".loading").fadeOut(2000))
      if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyboard"||values==="mather board"||values==="head phones"||values==="graphics card"||values==="hard disk"){
       homePageProducts=computerStore.filter(element=>element.name==values);
       clear(storeProducts)
@@ -1754,7 +1751,7 @@ searchIcon.onclick=()=>{
   clearInputs();
 }
 searchModalBtn.addEventListener("click",()=>{
-  $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
+  $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
 
   values=productModalField.value; 
   let valueSearch=priceModalField.value;
@@ -1771,7 +1768,7 @@ searchModalBtn.addEventListener("click",()=>{
 
   if(values!=='' && valueSearch!==''&&productModalField.value==="mouse"||productModalField.value==="ram"||productModalField.value==="computer monitor"||productModalField.value==="keyboard"||productModalField.value==="mather board"||productModalField.value==="head phones"
     ||productModalField.value==="graphics card"||productModalField.value==="hard disk"){  
-    $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
+    $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
 
     homePageProducts=computerStore.filter((element)=>element.price==priceModalField.value&&element.name==productModalField.value);
     searchModal.style.display='none';
@@ -1802,7 +1799,7 @@ searchModalBtn.addEventListener("click",()=>{
 
 // Display HomePage Function
 mainHomeLink.addEventListener("click",()=>{
-  $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
+  $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
   displayPage(
   showPage = homeSlider,
   optionShow2 = '',
@@ -1863,7 +1860,7 @@ searchModal.style.display='none';
 })
 
 logOutLink.addEventListener("click",()=>{
-  $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
+  $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
 
   for (let i = 0; i < navLinks.length; i++){    
     changingStyle(navLinks,i,"transparent","#04090f")
