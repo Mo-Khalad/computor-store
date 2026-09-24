@@ -145,7 +145,7 @@ h4 ,h6{
   min-height:94%;
   overflow: hidden;
 }
-#logIn-content-layer ,.login-content ,.signUp-content{
+.logIn-content ,.signUp-content{
   width:25rem;
   height: 28rem;
   border-radius:1rem; 
@@ -193,14 +193,14 @@ h4 ,h6{
   font-weight: 400;
   font-size:1rem;
 }
-#logIn-error ,#signUp-error{
-  width: 80%;
+.logIn-error ,#signUp-error{
   color: #c92f1b;
+  text-align: center !important;
 }
 #signUp-password , #rePassword{
-  width: 45%;
+  width: 45% !important;
 }
-#logIn-btn-layer ,#logIn-btn ,#signUp-btn{
+.logIn-btn ,#signUp-btn{
   background-color: #303636;
   width:80% !important;
   color: #e4e2e2;
@@ -209,25 +209,14 @@ h4 ,h6{
   margin-right: 1rem;
   margin-left: 1rem;
 }
-#register-btn ,#have-account-btn{
+.register-btn ,#have-account-btn{
   cursor: pointer;
 }
-#logIn-page-layer{
+#logIn-modal{
   position:fixed;
   background-color: #2521217c;
   z-index: 999999; 
   display: none; 
-}
-#logIn-error-layer{
-  background-color: #a52920 !important;
-  color: #d6d9db;
-  margin-top:-1rem !important;
-  margin-bottom: 0.2rem !important;
-  width:85%;
-  border-radius: 2rem;
-  padding: 1rem;
-  z-index: 99999;
-  display: none;  
 }
 
 /* Home , Product Details And Store Products Pages */
@@ -424,6 +413,20 @@ swiper-slide img {
 .cart-page-content{
   max-height:600px;
   overflow: auto;
+}
+.cart-page-content::-webkit-scrollbar {
+  width: 8px;
+}
+.cart-page-content::-webkit-scrollbar-track {
+  background: #140b745b;
+}
+.cart-page-content::-webkit-scrollbar-thumb {
+  background:#011557;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.cart-page-content::-webkit-scrollbar-thumb:hover {
+  background:#033472;
 }
 #cart-page h1 ,#checkOut-page h1{
   text-align: center;
@@ -653,6 +656,14 @@ swiper-slide img {
 .loader-two:after {
   border-color: #0034de #0000 #0000 #0000 ;
   transform: translate(32px, 3px) rotate(-35deg);
+}
+
+/* Toaster */
+.toast-header{
+  background: #0d0752
+}
+.toast-header i{
+  color: #e2e2e2 !important;
 }
 
 /*Footer*/

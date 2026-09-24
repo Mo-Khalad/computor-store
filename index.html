@@ -26,7 +26,7 @@
           </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a id="login-link" class="nav-btn-logIn btns-navbar">Login</a>
+            <a id="logIn-link" class="nav-btn-logIn btns-navbar">Login</a>
             <a id="signUp-link" class="nav-btn-signUp btns-navbar">Register</a>
             <a id="logOut-link">logOut</a>
           </li>
@@ -96,72 +96,79 @@
   </div>
     
   <div id="logIn-page" class="justify-content-center align-items-center w-100">
-      <div class="text-center logIn-content">
+      <form class="text-center logIn-content">
         <h3 class="mt-4 mb-5 logIn-text fs-4 fw-bolder">Sign In</h3>
         <button class="facebook-btn text-light"><i class="facebook-icon fa-brands fa-facebook-f"></i>facebook</button>
         <button class="google-btn text-light"><i class="google-icon text-light fa-brands fa-google"></i>google</button>
-        <form class="p-2">
+        <div class="p-2">
           <label for="logIn-email" class="labelFields">email</label>
           <input
-            id="logIn-email"
-            class="input-clear mt-1 inputFields"
+            class="input-clear mt-1 inputFields logIn-email"
             type="logIn-email"
             placeholder="email"
           />
           <label for="logIn-password" class="labelFields">password</label>
           <input
-            id="logIn-password"
-            class="input-clear mt-1 inputFields"
+            class="input-clear mt-1 inputFields logIn-password"
             type="password"
             placeholder="password"
           />
-        </form>
-        <p id="logIn-error" class="m-auto"> </p>
-        <button id="login-btn" class="mb-1 button-shrink w-100">
+        </div>
+        <p class="logIn-error "> </p>
+        <button class="mb-1 button-shrink w-100 login-btn" type="button">
           LogIn
         </button>
-        <p id="register-btn"> Create a new account </p>     
-      </div>
+        <p class="register-btn"> Create a new account </p>     
+      </form>
   </div>
 
   <div id="signUp-page" class="top-0 justify-content-center align-items-center w-100">
-          <div class="text-center signUp-content">
+      <form class="text-center signUp-content">
             <h3 class="my-4 logIn-text fs-4 fw-bold">Sign Up</h3>
             <button class="facebook-btn text-light"><i class="facebook-icon fa-brands fa-facebook-f"></i>facebook</button>
             <button class="google-btn text-light mb-3"><i class="google-icon text-light fa-brands fa-google"></i>google</button>
-            <form class="text-center mb-2">
+            <div class="text-center mb-2">
               <input id="first-name" class="input-clear inputFields mt-2" type="text" placeholder="name">
               <input id="phone" class="input-clear inputFields mt-2" type="number" placeholder="phone">
-              <input id="signUp-password" class="input-clear inputFields mt-2" type="password" placeholder="password">
+              <input id="signUp-password" class="input-clear logIn-password inputFields mt-2" type="password" placeholder="password">
               <input id="rePassword" class="input-clear inputFields mt-2" type="password" placeholder="rePassword">
               <input id="signUp-email" class="input-clear inputFields mt-2" type="text" placeholder="email">
-            </form>
-            <p id="signUp-error" class="m-auto"></p>
-            <button id="signUp-btn" class="button-shrink">Register</button>
+            </div>
+            <p class="m-auto logIn-error"></p>
+            <button id="signUp-btn" class="button-shrink" type="button">Register</button>
             <p id="have-account-btn"> I already have an account </p>     
 
-          </div>
-  
+      </form>
   </div>
   
-  <div id="logIn-page-layer" class="login-layer top-0 bottom-0 start-0 end-0 align-items-center justify-content-center">
-    <div id="logIn-content-layer" class="text-center m-2">
-        <h3 id="login-text-layer" class="mt-4 mb-5">Sign In</h3>
-        <button class="facebook-btn text-light"><i class="facebook-icon fa-brands fa-facebook-f"></i>facebook</button>
-        <button class="google-btn text-light"><i class="google-icon text-light fa-brands fa-google"></i>google</button>
-        <form class="text-center">
-          <label for="email-layer" class="labelFields">email</label>
-          <input id="email-layer" class="input-clear inputFields mt-1" name="email-layer" type="email">
-          <label for="password-layer" class="labelFields">password</label>
-          <input id="password-layer" class="input-clear inputFields mt-1 mb-5" name="password-layer" type="password">
-        </form>
-        <p id="logIn-error-layer" class="m-auto">error</p>
-
-        <button id="logIn-btn-layer" class="btn-login">sign in</button>     
-
-    </div> 
+  <div id="logIn-modal" class="top-0 bottom-0 start-0 end-0 align-items-center justify-content-center">
+    <form class="text-center logIn-content">
+      <h3 class="mt-4 mb-5 logIn-text fs-4 fw-bolder">Sign In</h3>
+      <button class="facebook-btn text-light"><i class="facebook-icon fa-brands fa-facebook-f"></i>facebook</button>
+      <button class="google-btn text-light"><i class="google-icon text-light fa-brands fa-google"></i>google</button>
+      <div class="p-2">
+        <label for="logIn-email" class="labelFields">email</label>
+        <input
+          class="input-clear mt-1 inputFields logIn-email"
+          type="logIn-email"
+          placeholder="email"
+        />
+        <label for="logIn-password" class="labelFields">password</label>
+        <input
+          class="input-clear mt-1 inputFields logIn-password"
+          type="password"
+          placeholder="password"
+        />
+      </div>
+      <p class="m-auto logIn-error"> </p>
+      <button class="mb-1 button-shrink w-100 login-btn" type="button">
+        LogIn
+      </button>
+      <p class="register-btn"> Create a new account </p>     
+    </form>
   </div>
   
+
   <div id="product-search" class="w-100 mt-4 text-center">
     <input id="product-search-field" class="bg-light mt-5 text-center input-clear" type="text" name="search" placeholder="Search">
     <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
@@ -174,8 +181,8 @@
           <form id="search-modal-content" class="w-100 mt-4">
             <input id="product-modal-field" class="input-clear w-100" type="text" name="product" placeholder="Search">
             <input id="price-modal-field" class="input-clear w-100" type="number" name="price" placeholder="price">
-            <button id="search-modal-btn" class="m-auto">search</button>
-        </form>
+            <button id="search-modal-btn" class="m-auto" type="button">search</button>
+          </form>
       </div>
       </div>
     </div>  
@@ -343,6 +350,16 @@
       </div>
   </div>
 
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <i class="far fa-times-circle fa-2x" data-bs-dismiss="toast" aria-label="Close"></i>
+      </div>
+      <div id="toast-body" class="toast-body">
+      </div>
+    </div>
+  </div>
+
 </div>
 
   <script src="js/bootstrap.bundle.min.js"></script>
@@ -355,5 +372,5 @@
     </script>
   <script>AOS.init();</script>
   <script src="js/code.jquery.com_jquery-3.7.0.js"></script>
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
