@@ -26,8 +26,8 @@
           </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a id="logIn-link" class="nav-btn-logIn btns-navbar">Login</a>
-            <a id="signUp-link" class="nav-btn-signUp btns-navbar">Register</a>
+            <a class="logIn-links nav-logIn">Login</a>
+            <a class="signUp-links nav-signUp">Register</a>
             <a id="logOut-link">logOut</a>
           </li>
         </ul>
@@ -35,7 +35,7 @@
       </nav>
     
       <nav id="navbar" class="navbar sub-navbar navbar-expand-lg bg-body-tertiary">
-      <div class="sub-nav container-fluid d-flex justify-content-between">
+        <div class="nav container-fluid d-flex justify-content-between">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <img id="house-icon-link" class="me-3" src="img/icons-home.png" width="75px">
     
@@ -114,11 +114,11 @@
             placeholder="password"
           />
         </div>
-        <p class="logIn-error "> </p>
+        <p class="logIn-error"> </p>
         <button class="mb-1 button-shrink w-100 login-btn" type="button">
           LogIn
         </button>
-        <p class="register-btn"> Create a new account </p>     
+        <p class="signUp-links"> Create a new account </p>     
       </form>
   </div>
 
@@ -136,8 +136,7 @@
             </div>
             <p class="m-auto logIn-error"></p>
             <button id="signUp-btn" class="button-shrink" type="button">Register</button>
-            <p id="have-account-btn"> I already have an account </p>     
-
+            <p class="logIn-links"> I already have an account </p>     
       </form>
   </div>
   
@@ -164,11 +163,10 @@
       <button class="mb-1 button-shrink w-100 login-btn" type="button">
         LogIn
       </button>
-      <p class="register-btn"> Create a new account </p>     
+      <p class="signUp-links"> Create a new account </p>     
     </form>
   </div>
   
-
   <div id="product-search" class="w-100 mt-4 text-center">
     <input id="product-search-field" class="bg-light mt-5 text-center input-clear" type="text" name="search" placeholder="Search">
     <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
@@ -285,8 +283,8 @@
     </div>
   </div>
 
-  <div id="not-found" class="justify-content-around align-items-center">
-      <img width="20%" src="img/box.png">
+  <div id="not-found" class="flex-wrap justify-content-around align-items-center">
+      <img class="not-found-image" width="20%" src="img/box.png">
       <h2 class="not-found-text">There are no products available</h2>
   </div>
 
