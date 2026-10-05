@@ -11,35 +11,35 @@ import computerStore from "./API.js";
   const searchIconLink=document.getElementById("search-icon-link");  
   const shoppingCartLink=document.getElementById("shopping-cart-link");
   const productsCounter=document.getElementById("Products-counter");
-  const collapse=document.querySelector('.collapse')
+  const collapse=document.querySelector('.collapse');
 
   // cart page //
-  const cartPage =document.getElementById('cart-page')
-  const cartProducts= document.getElementById("cart-products");
-  const totalPrice = document.getElementById("total-price");
-  const checkOutBtn = document.getElementById("checkOut-btn");
-
+  const cartPage=document.getElementById('cart-page')
+  const cartProducts=document.getElementById("cart-products");
+  const totalPrice=document.getElementById("total-price");
+  const checkOutBtn=document.getElementById("checkOut-btn");
+  const allRemoveBtn=document.getElementById("all-remove-btn")
+  
   // CheckOut //
   const checkOutPage=document.getElementById("checkOut-page");
   const purchaseData=document.getElementById("purchase-data");
 
  // Authentication //
-/* LogIn Page */
   const logInPage=document.getElementById("logIn-page");
-  const logInEmail=document.querySelectorAll(".logIn-email");
-  const logInPassword=document.querySelectorAll(".logIn-password");
-  const inputClear=document.querySelectorAll(".input-clear");
-  const logInError=document.querySelectorAll(".logIn-error");
-  const logInBtn= document.querySelectorAll(".login-btn");
-  
-/* SignUp Page */
-  const signUpPage=document.getElementById("signUp-page")
+  const signUpPage=document.getElementById("signUp-page");
+
+  // Fields
+  const logInModal=document.getElementById("logIn-modal");
   const firstName=document.getElementById("first-name");
   const phone=document.getElementById("phone");
+  const email=document.querySelectorAll(".email");
+  const password=document.querySelectorAll(".password");
   const rePassword=document.getElementById("rePassword");
-  const signUpEmail=document.getElementById("signUp-email");
+  const fieldClear=document.querySelectorAll(".field-clear");
+
+  const error=document.querySelectorAll(".error");
+  const logInBtn=document.querySelectorAll(".login-btn");
   const signUpBtn=document.getElementById("signUp-btn");
-  const logInModal=document.getElementById("logIn-modal");
 
   /* Modals */
  // Search Modal // 
@@ -107,7 +107,7 @@ if(JSON.parse(localStorage.getItem("itemsCartsShopping")!==null)){
 }
 /* Clear Inputs Functions */
 const clearPage=(page)=>page.innerHTML='';
-const clearInputs=()=>inputClear.forEach(element=>element.value="");
+const clearInputs=()=>fieldClear.forEach(element=>element.value="");
 // * display functions *
 const displayProducts=(elements)=>{  
   checkOutPage.style.display='none';
@@ -146,7 +146,6 @@ const displayProducts=(elements)=>{
             </div>
           </div> `
 }}
-
 const displayPage=( showPage , optionShow2='', hidePage1 , hidePage2 , optionHide3='', optionHide4='' )=>{  
   clearInputs();
   showPage !== '' ? showPage.style.display="flex" : '';
@@ -156,8 +155,8 @@ const displayPage=( showPage , optionShow2='', hidePage1 , hidePage2 , optionHid
   optionHide3 !== '' ? optionHide3.style.display="none" : '';
   optionHide4 !== '' ? optionHide4.style.display="none" : '';
 
-  logInError.forEach((error)=>{
-    error.style.display="none";
+  error.forEach((err)=>{
+    err.style.display="none";
   })
 }
 const displayLogInModal=()=>{
@@ -166,7 +165,6 @@ const displayLogInModal=()=>{
 window.displayLogInModal = displayLogInModal
 
 const displaySliderModalItem=element=>sliderModalItem.style.backgroundImage=`url("${element}")`;
-
 const displaySliderModal=i=>{
   sliderModal.style.display="flex"
   displaySliderModalItem(homePageProducts[i].images); 
@@ -364,12 +362,12 @@ productPreviewImage.forEach(image=>
   image.addEventListener("click" , ()=>{
   clearPage(cartProducts);
     const values = image.alt
-    $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
+    $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
     for (let i = 0; i < navLinks.length; i++){    
       if(navLinks[i].innerHTML=== values){              
-        activeNavLink(navLinks,i,"transparent","#033472")
+        activeNavLink(navLinks,i,"transparent","#033472");
       }else {
-        activeNavLink(navLinks,i,"transparent","#04090f")
+        activeNavLink(navLinks,i,"transparent","#04090f");
       }
     }
     productsPreview.style.display='none';
@@ -407,6 +405,7 @@ window.addProducts = addProducts
 const incrementproducts=(index)=>{
   shoppingCartItems[index].count++;
   displayCartPage(shoppingCartItems);  
+  localStorage.setItem("itemsCartsShopping",JSON.stringify(shoppingCartItems))
 }
 window.incrementproducts = incrementproducts
 // * decrement * //
@@ -421,19 +420,30 @@ window.decrementProducts = decrementProducts
 const removeProduct=(i)=>{
   shoppingCartItems.splice(i,1);
   if(shoppingCartItems.length===0){
-      displayPage(notFound , '' , cartPage , footer);
-    }
-    else {
-      notFound.style.display='none';
-      footer.style.display="flex"
-      displayCartPage(shoppingCartItems);
-    }
-    clearPage(storeProducts);
-    if(shoppingCartItems.length<=0)[productsCounter.innerHTML="",shoppingCartLink.style.color="rgb(22, 23, 24)"];
-    localStorage.setItem("itemsCartsShopping",JSON.stringify(shoppingCartItems));     
+    $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
+    displayPage(notFound , '' , cartPage , footer);
+  }
+  else {
+    notFound.style.display='none';
+    footer.style.display="flex"
+    displayCartPage(shoppingCartItems);
+  }
+  clearPage(storeProducts);
+  if(shoppingCartItems.length<=0)[productsCounter.innerHTML="",shoppingCartLink.style.color="rgb(22, 23, 24)"];
+  localStorage.setItem("itemsCartsShopping",JSON.stringify(shoppingCartItems));     
 }
 window.removeProduct = removeProduct
-  
+
+const removeAllProducts =()=>{
+  $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
+  shoppingCartItems.length = 0
+  displayPage(notFound , '' , cartPage , footer);
+  clearPage(storeProducts);
+  if(shoppingCartItems.length<=0)[productsCounter.innerHTML="",shoppingCartLink.style.color="rgb(22, 23, 24)"];
+  localStorage.setItem("itemsCartsShopping",JSON.stringify(shoppingCartItems));     
+}
+allRemoveBtn.addEventListener("click",removeAllProducts)
+
 /* Slider Modals Functions */
 // * Next Function * //
 const getNext=()=>{ 
@@ -464,77 +474,122 @@ document.addEventListener("keydown",e=>{
   ;    
 })
 
+/* Validation Functions */
+ const nameRejex=/^[a-zA-Z]{4,15}$/
+ const passwordRejex=/^[A-Za-z0-9@]{6}/
+
+ const nameError=(elementOne,elementTwo)=>{ 
+   if(elementOne.value==="")elementTwo.style.display="none";
+   else if(!nameRejex.test(elementOne.value)){
+ 
+  elementTwo.forEach((err)=>{
+    err.style.display="flex";
+    err.innerHTML="Must start with 4+ letters and not a number";
+  })   
+  }else elementTwo.forEach((err)=>{
+    err.innerHTML='';
+    err.style.display ="none";
+  })
+  return nameRejex;
+}
+firstName.onkeyup=()=>nameError(firstName,error);
+
+const passwordError=(elementOne,elementTwo)=>{    
+   if(elementOne.value==="")elementTwo.forEach(err=>{ err.style.display ='none'}) 
+   else if(!passwordRejex.test(elementOne.value)){
+     elementTwo.forEach(err=>{
+       err.style.display="flex";
+       err.innerHTML="must start with at least six letters or number";
+     })    
+     
+   } else elementTwo.forEach(err=>{
+     err.style.display = 'none' ;
+     err.innerHTML ='' ;
+   }) 
+}
+password.forEach((err)=>{  
+  err.onkeyup=()=>passwordError(err , error);
+}) 
+
 /* Authentication Functions */
 const fetchData =async(product , type)=>{
   try{
   let response = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/${type}`, product);
   return response
-  }catch(error){
-   return error
+  }catch(errorCatch){
+   return errorCatch
   }
 }
 const signUp=async()=>{
- let product ={
-    name:firstName.value,
-    email:signUpEmail.value,  
-    password:logInPassword[1].value,
-    rePassword:rePassword.value,
-    phone:phone.value,
-  }
-
-  const message = await fetchData(product , "signup") ; 
-
-  for(let i=6;i>1;i--){
-      if(inputClear[i].value===''){
-        logInError.forEach((error)=> error.innerHTML='')
-          $(".logIn-error").show(()=>$(".logIn-error").fadeOut(4000));     
-          logInError.forEach((error)=>{
-            error.innerHTML=`${inputClear[i].placeholder} is required`;
-          })
-     }  
-    else if(inputClear[i].placeholder==inputClear[5].placeholder){
-    if(message.status === 200 || message.status ===201) {
-      $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
-      displayPage(logInPage , '' , signUpPage , storeProducts , homeSlider);
-      activeSignLink( signUpLinks[0] , logInLinks[0])
-    }
-    else $(".logIn-error").show(()=>$(".logIn-error").fadeOut(2000));   
-     logInError.forEach((error)=>{    
-      message?.response?.data?.errors?.msg ? error.innerHTML= message?.response?.data?.errors.msg : 
-      error.innerHTML = 'An error occurred. Please try again later' ; 
-    })
-     }           
-  }
+ let product = {
+  name:firstName.value,
+  email:email[1].value,  
+  password:password[1].value,
+  rePassword:rePassword.value,
+  phone:phone.value,
 }
-signUpBtn.addEventListener("click", signUp);
-const signIn=async(logInEmail , logInPassword)=>{
- let product={
-    email:logInEmail.value,
-    password:logInPassword.value,
- }
 
-const message = await fetchData( product , "signin"); 
-  if( message.status === 200){
-    displayHomePageAfterLogIn(message)
-    localStorage.setItem("products",JSON.stringify("success"))  
-    localStorage.setItem("email",JSON.stringify(message))  
-    $(".logIn-error").hide()
-    activeSignLink(logOutLink , logInLinks[0] , signUpLinks[0]);      
-} else{  
-    logInError.forEach((error)=>{    
-    message?.response?.data?.message ? error.innerHTML= message?.response?.data?.errors.msg : 
-    error.innerHTML = 'An error occurred. Please try again later' ; 
+ const message = await fetchData(product , "signup") ; 
+ 
+ for(let i=6;i>1;i--){
+  if(fieldClear[i].value===''){
+    error.forEach((err)=> err.innerHTML='')
+      $(".error").show(()=>$(".error").fadeOut(1000));
+    error.forEach((err)=>{
+      err.innerHTML=`${fieldClear[i].placeholder} is required`;
+    }) 
+  }
+    
+  else if(fieldClear[i].placeholder==fieldClear[5].placeholder){
+  if(message.status === 200 || message.status ===201) {
+    $(".loading").fadeIn(()=>$(".loading").fadeOut(2000));
+    displayPage(logInPage , '' , signUpPage , storeProducts , homeSlider);
+    activeSignLink( signUpLinks[0] , logInLinks[0])
+  }
+  else{ 
+  $(".error").show(()=>$(".error").fadeOut(1000));  
+  error.forEach((err)=>{
+    err.innerHTML= message?.response ?
+    message?.response?.data?.message =="fail" 
+    ? message?.response?.data?.errors?.msg : message?.response?.data?.message 
+    : "Something went wrong, try again later!" 
   })
-  $(".logIn-error").fadeIn(()=>$(".logIn-error").fadeOut(2000));
-   }    
+  }
+  }           
+ }
 }
-logInBtn.forEach((button , index)=>{
-  button.addEventListener("click", ()=> signIn(logInEmail[index], logInPassword[index]));
-})
+signUpBtn.addEventListener("click", signUp)
+  const signIn=async(email , password)=>{   
+  let product={
+      email:email.value,
+      password:password.value,
+  }
+
+  const message = await fetchData( product , "signin"); 
+  if( message.status === 200){
+      displayHomePageAfterLogIn(message)
+      localStorage.setItem("products",JSON.stringify("success"))  
+      localStorage.setItem("email",JSON.stringify(message))  
+      $(".error").hide()
+      activeSignLink(logOutLink , logInLinks[0] , signUpLinks[0]);      
+  } else{ 
+    error.forEach((err)=>{
+      err.innerHTML= message?.response ?
+      message?.response?.data?.message =="fail" 
+      ? message?.response?.data?.errors?.msg : message?.response?.data?.message 
+      : "Something went wrong, try again later!" 
+    })  
+    $(".error").fadeIn(()=>$(".error").fadeOut(1000));
+  }
+}
+logInBtn.forEach((button , index)=>{  
+  button.addEventListener("click", ()=> (index === 0 ) ? signIn(email[index], password[index]):
+  signIn(email[index + 1], password[index + 1]))
+})  
 const logOut=()=>{
   $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
   for (let i = 0; i < navLinks.length; i++){    
-    activeNavLink(navLinks,i,"transparent","#04090f")
+    activeNavLink(navLinks,i,"transparent","#04090f");
   }
     localStorage.removeItem("itemsCartsShopping"),
     localStorage.removeItem("email")
@@ -551,43 +606,6 @@ const logOut=()=>{
 }
 logOutLink.addEventListener('click' , logOut);
 
-/* Validation Functions */
-const nameError=(elementOne,elementTwo)=>{
-  let nameRejex=/^[a-zA-Z]{4,15}$/
-   if(elementOne.value==="")elementTwo.style.display="none";
-   else if(!nameRejex.test(elementOne.value)){
- 
-  elementTwo.forEach((error)=>{
-    error.style.display="flex";
-    error.innerHTML="Must start with 4+ letters and not a number";
-  })   
-  }else elementTwo.forEach((error)=>{
-    error.innerHTML='';
-    error.style.display ="none";
-  })
-  return nameRejex;
-}
-firstName.onkeyup=()=>nameError(firstName,logInError);
-
-const passwordError=(elementOne,elementTwo)=>{  
-  let passwordRejex=/^[A-Za-z0-9@]{6}/
-  
-   if(elementOne.value==="")elementTwo.forEach(error=>{ error.style.display ='none'}) 
-   else if(!passwordRejex.test(elementOne.value)){
-     elementTwo.forEach(error=>{
-       error.style.display="flex";
-       error.innerHTML="must start with at least six letters or number";
-     })    
-     
-   } else elementTwo.forEach(error=>{
-     error.style.display = 'none' ;
-     error.innerHTML ='' ;
-   }) 
-}
-logInPassword.forEach((error)=>{  
-  error.onkeyup=()=>passwordError(error , logInError)
-}) 
-
 /* Toggle CheckOut Page */
 checkOutBtn.addEventListener("click",()=>{
     cartPage.style.display = 'none';
@@ -600,21 +618,21 @@ checkOutBtn.addEventListener("click",()=>{
 searchIcon.onclick=()=>{
   let values=productSearchField.value;
   homeSlider.style.display ='none';
-  
+
   $(".loading").fadeIn(()=>$(".loading").fadeOut(1000));
- 
-if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyboard"
-  ||values==="mather board"||values==="head phones"||values==="graphics card"||values==="hard disk"){
+  
+  if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyboard"
+    ||values==="mather board"||values==="head phones"||values==="graphics card"||values==="hard disk"){
       homePageProducts=computerStore.filter(element=>element.name==values);
       clearPage(storeProducts);
       displayProducts(homePageProducts);
   }
-    
+      
   else if(values!==""){
-   clearPage(storeProducts)
-   productSearch.style.display='none';
-   notFound.style.display="flex";
-   footer.style.display='none';
+    clearPage(storeProducts)
+    productSearch.style.display='none';
+    notFound.style.display="flex";
+    footer.style.display='none';
   }
 
   for (let i = 0; i < navLinks.length; i++){    
@@ -624,7 +642,6 @@ if(values==="mouse"||values==="ram"||values==="computer monitor"||values==="keyb
       activeNavLink(navLinks,i,"transparent","#04090f");
     }
   }
-
   clearInputs();
 }
 searchModalBtn.addEventListener("click",()=>{
@@ -632,14 +649,14 @@ searchModalBtn.addEventListener("click",()=>{
 
   let values = productModalField.value; 
   let valueSearch = priceModalField.value;
-  
   cartPage.style.display ='none';
+
   for (let i = 0; i < navLinks.length; i++){    
-      if(navLinks[i].innerHTML=== values){
-        activeNavLink(navLinks,i,"transparent","#033472")
-      }else {
-        activeNavLink(navLinks,i,"transparent","#04090f")
-      }
+    if(navLinks[i].innerHTML=== values){
+      activeNavLink(navLinks,i,"transparent","#033472")
+    }else {
+      activeNavLink(navLinks,i,"transparent","#04090f")
+    }
   }   
   clearPage(storeProducts)
 
@@ -669,9 +686,9 @@ searchModal.addEventListener('click',(e)=>{
 // Close LogIn Modal
 logInModal.addEventListener("click",(e)=>{
   if(e.target === logInModal){
-  logInPassword.forEach((password)=> password.value=''); 
-  logInEmail.forEach((email)=> email.value='');   
-  $("#logIn-modal").css("display","none"); 
+    password.forEach((passwordField)=> passwordField.value=''); 
+    email.forEach((emailField)=> emailField.value='');   
+    $("#logIn-modal").css("display","none"); 
 }}) 
 
 /* save data in localStorage */

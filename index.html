@@ -96,47 +96,49 @@
   </div>
     
   <div id="logIn-page" class="justify-content-center align-items-center w-100">
-      <form class="text-center logIn-content">
-        <h3 class="mt-4 mb-5 logIn-text fs-4 fw-bolder">Sign In</h3>
-        <button class="facebook-btn text-light"><i class="facebook-icon fa-brands fa-facebook-f"></i>facebook</button>
-        <button class="google-btn text-light"><i class="google-icon text-light fa-brands fa-google"></i>google</button>
-        <div class="p-2">
-          <label for="logIn-email" class="labelFields">email</label>
-          <input
-            class="input-clear mt-1 inputFields logIn-email"
-            type="logIn-email"
-            placeholder="email"
-          />
-          <label for="logIn-password" class="labelFields">password</label>
-          <input
-            class="input-clear mt-1 inputFields logIn-password"
-            type="password"
-            placeholder="password"
-          />
-        </div>
-        <p class="logIn-error"> </p>
-        <button class="mb-1 button-shrink w-100 login-btn" type="button">
-          LogIn
-        </button>
-        <p class="signUp-links"> Create a new account </p>     
-      </form>
+    <form class="text-center logIn-content">
+      <h3 class="mt-4 mb-5 logIn-text fs-4 fw-bolder">Sign In</h3>
+      <button class="facebook-btn text-light"><i class="facebook-icon fa-brands fa-facebook-f"></i>facebook</button>
+      <button class="google-btn text-light"><i class="google-icon text-light fa-brands fa-google"></i>google</button>
+      <div class="p-2">
+        <label for="email" class="labelFields">email</label>
+        <input
+          class="field-clear mt-1 inputFields email"
+          type="email"
+          name="email"
+          placeholder="email"
+        />
+        <label for="password" class="labelFields">password</label>
+        <input
+          class="field-clear mt-1 inputFields password"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+      </div>
+      <p class="error"> </p>
+      <button class="mb-1 button-shrink w-100 login-btn" type="button">
+        LogIn
+      </button>
+      <p class="signUp-links"> Create a new account </p>     
+    </form>
   </div>
 
   <div id="signUp-page" class="top-0 justify-content-center align-items-center w-100">
       <form class="text-center signUp-content">
-            <h3 class="my-4 logIn-text fs-4 fw-bold">Sign Up</h3>
-            <button class="facebook-btn text-light"><i class="facebook-icon fa-brands fa-facebook-f"></i>facebook</button>
-            <button class="google-btn text-light mb-3"><i class="google-icon text-light fa-brands fa-google"></i>google</button>
-            <div class="text-center mb-2">
-              <input id="first-name" class="input-clear inputFields mt-2" type="text" placeholder="name">
-              <input id="phone" class="input-clear inputFields mt-2" type="number" placeholder="phone">
-              <input id="signUp-password" class="input-clear logIn-password inputFields mt-2" type="password" placeholder="password">
-              <input id="rePassword" class="input-clear inputFields mt-2" type="password" placeholder="rePassword">
-              <input id="signUp-email" class="input-clear inputFields mt-2" type="text" placeholder="email">
-            </div>
-            <p class="m-auto logIn-error"></p>
-            <button id="signUp-btn" class="button-shrink" type="button">Register</button>
-            <p class="logIn-links"> I already have an account </p>     
+        <h3 class="my-4 logIn-text fs-4 fw-bold">Sign Up</h3>
+        <button class="facebook-btn text-light"><i class="facebook-icon fa-brands fa-facebook-f"></i>facebook</button>
+        <button class="google-btn text-light mb-3"><i class="google-icon text-light fa-brands fa-google"></i>google</button>
+        <div class="text-center mb-2">
+          <input id="first-name" class="field-clear inputFields mt-2" type="text" placeholder="name">
+          <input id="phone" class="field-clear inputFields mt-2" type="number" placeholder="phone">
+          <input class="field-clear password inputFields mt-2 password-sginup" type="password" placeholder="password">
+          <input id="rePassword" class="field-clear inputFields mt-2" type="password" placeholder="rePassword">
+          <input class="email field-clear inputFields mt-2" type="text" placeholder="email">
+        </div>
+        <p class="error"></p>
+        <button id="signUp-btn" class="button-shrink" type="button">Register</button>
+        <p class="logIn-links"> I already have an account </p>     
       </form>
   </div>
   
@@ -146,20 +148,22 @@
       <button class="facebook-btn text-light"><i class="facebook-icon fa-brands fa-facebook-f"></i>facebook</button>
       <button class="google-btn text-light"><i class="google-icon text-light fa-brands fa-google"></i>google</button>
       <div class="p-2">
-        <label for="logIn-email" class="labelFields">email</label>
+        <label for="email-modal" class="labelFields">email</label>
         <input
-          class="input-clear mt-1 inputFields logIn-email"
-          type="logIn-email"
+          class="field-clear mt-1 inputFields email"
+          type="email"
+          name="email-modal"
           placeholder="email"
         />
-        <label for="logIn-password" class="labelFields">password</label>
+        <label for="password" class="labelFields">password</label>
         <input
-          class="input-clear mt-1 inputFields logIn-password"
+          class="field-clear mt-1 inputFields password"
           type="password"
+          name="password"
           placeholder="password"
         />
       </div>
-      <p class="m-auto logIn-error"> </p>
+      <p class="error"></p>
       <button class="mb-1 button-shrink w-100 login-btn" type="button">
         LogIn
       </button>
@@ -168,7 +172,7 @@
   </div>
   
   <div id="product-search" class="w-100 mt-4 text-center">
-    <input id="product-search-field" class="bg-light mt-5 text-center input-clear" type="text" name="search" placeholder="Search">
+    <input id="product-search-field" class="bg-light mt-5 text-center   field-clear" type="text" name="search" placeholder="Search">
     <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
   </div>
 
@@ -177,9 +181,9 @@
       <div class="row">
         <div class="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 m-auto">
           <form id="search-modal-content" class="w-100 mt-4">
-            <input id="product-modal-field" class="input-clear w-100" type="text" name="product" placeholder="Search">
-            <input id="price-modal-field" class="input-clear w-100" type="number" name="price" placeholder="price">
-            <button id="search-modal-btn" class="m-auto" type="button">search</button>
+            <input id="product-modal-field" class="field-clear w-100" type="text" name="product" placeholder="Search">
+            <input id="price-modal-field" class="field-clear w-100" type="number" name="price" placeholder="price">
+            <button id="search-modal-btn" class="m-auto login-btn" type="button">search</button>
           </form>
       </div>
       </div>
@@ -298,14 +302,17 @@
     </div>
         <div class="w-100 d-flex justify-content-between blue-background">
           <h5 id="total-price" class="p-3">Total Salary : 0 EGP </h5>
-          <button id="checkOut-btn" class="px-3">check out</button>
+          <div>
+            <button id="checkOut-btn" class="px-3">check out</button>
+            <button id="all-remove-btn" class="px-3">All Remove</button>
+          </div>
         </div>
   </div> 
     
   <div id="checkOut-page" class="w-100">
       <div class="container">
         <div class="row">
-        <div class="mt-5 col-sm-10 col-md-8 d-flex justify-content-center align-items-center m-auto">
+        <div class="mt-5 col-sm-11 col-md-8 d-flex justify-content-center align-items-center m-auto">
             <div id="purchase-data" class="mt-4">
             </div>
         </div>
