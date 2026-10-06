@@ -726,6 +726,7 @@ swiper-slide img {
   }
   #total-price{
     font-size: 1rem;
+    width: 100%;
   }
   .icon-links{
     display: none;
